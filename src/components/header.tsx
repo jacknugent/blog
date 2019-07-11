@@ -15,6 +15,9 @@ const text = css`
   margin: 0 auto;
   max-width: 960px;
   padding: 1.45rem 1.0875rem;
+  @media (max-width: 600px) {
+    text-align: center;
+  }
 `
 
 const Header = (props: HeaderProps) => (

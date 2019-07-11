@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
-import PageLinks from "../components/PageLinks"
+import PageLink from "../components/PageLink"
 import SEO from "../components/seo"
 import { css } from "@emotion/core"
 
@@ -13,26 +13,32 @@ const image = css`
 `
 const links = css`
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: 700px) {
+    display: block;
+  }
 `
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <p>
+      I am a Software Engineer and Film Critic. I consult for Fortune 500
+      Companies and have a YouTube Channel with over 750,000 subscribers. I'm
+      also very humble.
+    </p>
 
     <div css={links}>
-      <PageLinks />
-      <PageLinks />
-      <PageLinks />
-      <PageLinks />
+      <PageLink title="Resumé" link="resume" />
+      <PageLink title="Stripes" link="stripes" />
+      <PageLink title="Videos" link="videos" />
+      <PageLink title="Twitter" link="twitter" />
+      <PageLink title="LinkedIn" link="linked-in" />
+      <PageLink title="This Website" link="this-website" />
     </div>
 
-    <h1>Hi people</h1>
-    <p>Welcome to my blog.</p>
-    <p>
-      I know this looks just like the Gatsby starter page -- it's a work in
-      progress.
-    </p>
     <div css={image}>
       <Image />
     </div>
