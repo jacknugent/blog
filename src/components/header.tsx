@@ -14,7 +14,7 @@ const background = css`
 `
 const text = css`
   margin: 0 auto;
-  max-width: 960;
+  max-width: 960px;
   padding: 1.45rem 1.0875rem;
 `
 
