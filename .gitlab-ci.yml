@@ -62,7 +62,7 @@ deploy_staging:
    - master
    - tags
 
-deploy_QA:
+deploy_production:
   image: python:latest
   stage: deploy
   script:
@@ -73,16 +73,3 @@ deploy_QA:
     url: http://qa.jacknugent.io
   only:
     - master
-
-deploy_production:
-  image: python:latest
-  stage: deploy
-  script:
-    - pip install awscli
-    - aws s3 sync public/ s3://<PROD_BUCKET_NAME>/ --delete
-  environment:
-    name: production
-    url: https://<PROD_BUCKET_NAME>
-  only:
-    - tags
-
