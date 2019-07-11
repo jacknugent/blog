@@ -70,6 +70,6 @@ deploy_production:
     - aws s3 sync public/ s3://qa.jacknugent.io/ --delete
   environment:
     name: QA
-    url: http://qa.jacknugent.io
+    url: http://www.jacknugent.io
   only:
     - master
