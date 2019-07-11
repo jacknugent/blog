@@ -1,6 +1,5 @@
 stages:
   - build
-  - test
   - deploy
 
 build_staging:
@@ -38,16 +37,6 @@ build_site:
   only:
     - master
     - tags
-
-test_site:
-  image: node:lts
-  stage: test
-  script:
-    - npm run test
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - node_modules/
 
 deploy_staging:
   image: python:latest
