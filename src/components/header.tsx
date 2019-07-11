@@ -1,13 +1,14 @@
 import { Link } from "gatsby"
 import * as React from "react"
 import { css } from "@emotion/core"
+import { theme } from "../utils/themes"
 
 const link = css`
   color: white;
   text-decoration: none;
 `
 const background = css`
-  background: rebeccapurple;
+  background: ${theme.colors.blue};
   margin-bottom: 1.45rem;
 `
 const text = css`
