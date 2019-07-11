@@ -1,8 +1,6 @@
 import { Link } from "gatsby"
 import * as React from "react"
-// this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core"
+import { css } from "@emotion/core"
 
 const link = css`
   color: white;
