@@ -26,8 +26,8 @@ const IndexPage = () => (
     <SEO title="Home" />
     <p>
       I am a Software Engineer and Film Critic. I consult for Fortune 500
-      Companies and have a YouTube Channel with over 750,000 subscribers. I'm
-      also very humble.
+      Companies and have a YouTube Channel with over 750,000 subscribers and 20
+      Million Views. I'm also very humble.
     </p>
 
     <div css={links}>
