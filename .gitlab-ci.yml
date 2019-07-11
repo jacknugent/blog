@@ -54,10 +54,10 @@ deploy_staging:
   stage: deploy
   script:
     - pip install awscli
-    - aws s3 sync public/ s3://<DEV_BUCKET_NAME>/ --delete
+    - aws s3 sync public/ s3://dev.jacknugent.io/ --delete
   environment:
     name: staging
-    url: http://<DEV_BUCKET_NAME>
+    url: http://dev.jacknugent.io
   except:
    - master
    - tags
@@ -67,10 +67,10 @@ deploy_QA:
   stage: deploy
   script:
     - pip install awscli
-    - aws s3 sync public/ s3://<QA_BUCKET_NAME>.com/ --delete
+    - aws s3 sync public/ s3://qa.jacknugent.io/ --delete
   environment:
     name: QA
-    url: http://<QA_BUCKET_NAME>
+    url: http://qa.jacknugent.io
   only:
     - master
 
