@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Keith Denning <keithdenning1@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.14",
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",
