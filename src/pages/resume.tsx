@@ -3,10 +3,8 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-function BasicPage(props: BasicPage) {
+function resume(props: resume) {
   const page = props.data.markdownRemark
-
-  console.log(page)
   return (
     <Layout>
       <SEO title="Resumé" />
@@ -16,18 +14,19 @@ function BasicPage(props: BasicPage) {
   )
 }
 
-interface BasicPage {
+interface resume {
   data: any
 }
 
-export default BasicPage
+export default resume
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  {
+    markdownRemark(frontmatter: { path: { eq: "/resume" } }) {
       html
       frontmatter {
         title
+        path
       }
     }
   }

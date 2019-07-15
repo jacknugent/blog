@@ -1,10 +1,9 @@
 ---
 path: "/resume"
-date: "2019-05-04"
 title: "Resumé"
 ---
 
-Available in [Microsoft Word](https://drive.google.com/file/d/0Bw0_aAHPLyV4aEhxT0tobDlXcHg5MHZJTkRONEY3X3ZjR1ZR/view?usp=sharing) and a [PDF](https://drive.google.com/file/d/1vtvmmRWb8wIdBCwpFni61Y2DA7dE8uCx/view?usp=sharing).
+Available in [Microsoft Word](https://drive.google.com/file/d/0Bw0_aAHPLyV4aEhxT0tobDlXcHg5MHZJTkRONEY3X3ZjR1ZR/view?usp=sharing) or [PDF](https://drive.google.com/file/d/1vtvmmRWb8wIdBCwpFni61Y2DA7dE8uCx/view?usp=sharing).
 
 ### Team Comments
 
