@@ -4,11 +4,12 @@ import { css } from "@emotion/core"
 import { theme } from "../utils/themes"
 
 const link = css`
-  color: white;
+  color: black;
   text-decoration: none;
+  font-size: 45px;
 `
 const background = css`
-  background: ${theme.colors.blue};
+  background: ${theme.colors.red};
   margin-bottom: 1.45rem;
 `
 const text = css`

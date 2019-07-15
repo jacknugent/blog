@@ -1,8 +1,9 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 
 const iframeContainer = css`
   position: relative;
@@ -19,6 +20,31 @@ const iframe = css`
 `
 
 function stripes() {
+  const data = useStaticQuery(graphql`
+    {
+      allStripeListYaml {
+        edges {
+          node {
+            title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `).allStripeListYaml.edges
+
+  console.log(data)
+  const renderImages = (images: any) => {
+    return images.map((x: any, i: number) => (
+      <Img key={i} fluid={x.node.image.childImageSharp.fluid} />
+    ))
+  }
   return (
     <Layout>
       <SEO title="Stripes" />
@@ -28,7 +54,10 @@ function stripes() {
           css={iframe}
           src="https://www.youtube.com/embed/Y1U4YkNkoG0?rel=0"
         />
+        <div id="Y1U4YkNkoG0" />
+        <script src="https://labnol.googlecode.com/files/youtube.js" />
       </div>
+      <div>{renderImages(data)}</div>
     </Layout>
   )
 }
