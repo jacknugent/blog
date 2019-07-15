@@ -24,7 +24,7 @@ const link = css`
 `
 
 const PageLink = (props: PageLink) => (
-  <Link to="/page-2" css={link}>
+  <Link to={props.link} css={link}>
     {props.title}
   </Link>
 )

@@ -26,8 +26,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <p>
       I am a Software Engineer and Film Critic. I consult for Fortune 500
-      Companies and have a YouTube Channel with over 750,000 subscribers and 20
-      Million Views. I'm also very humble.
+      Companies and have a YouTube Channel with over 750,000 subscribers.
     </p>
 
     <div css={links}>
@@ -37,10 +36,6 @@ const IndexPage = () => (
       <PageLink title="Twitter" link="twitter" />
       <PageLink title="LinkedIn" link="linked-in" />
       <PageLink title="This Website" link="this-website" />
-    </div>
-
-    <div css={image}>
-      <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
