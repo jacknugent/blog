@@ -27,7 +27,17 @@ const youtubeVideo = css`
 `
 
 const imageGallery = css`
-  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+`
+
+const imageCSS = css`
+  max-height: 1200px;
+  flex-grow: 1;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
 `
 
 function stripes() {
@@ -39,7 +49,7 @@ function stripes() {
             title
             image {
               childImageSharp {
-                fluid(maxWidth: 300) {
+                fluid(maxWidth: 900, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -50,10 +60,11 @@ function stripes() {
     }
   `).allStripeListYaml.edges
 
-  console.log(data)
   const renderImages = (images: any) => {
     return images.map((x: any, i: number) => (
-      <Img key={i} fluid={x.node.image.childImageSharp.fluid} />
+      <div css={imageCSS}>
+        <Img key={i} fluid={x.node.image.childImageSharp.fluid} />
+      </div>
     ))
   }
 
@@ -71,7 +82,7 @@ function stripes() {
           </div>
         </div>
       </Layout>
-      <div css={imageGallery}>{renderImages(data)}</div>
+      <section css={imageGallery}>{renderImages(data)}</section>
     </>
   )
 }
