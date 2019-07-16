@@ -68,7 +68,7 @@ const Layout = (props: LayoutProps) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <div css={mainStyle}>
           <main>{props.children}</main>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </>
     )}

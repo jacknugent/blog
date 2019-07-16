@@ -6,7 +6,7 @@ import { theme } from "../utils/themes"
 const link = css`
   color: black;
   text-decoration: none;
-  font-size: 45px;
+  font-size: 40px;
 `
 const background = css`
   background: ${theme.colors.red};
