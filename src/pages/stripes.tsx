@@ -88,7 +88,7 @@ function stripes() {
               x.node.image.childImageSharp.fluid.aspectRatio}%;
           `}
         />
-        {x.node.image.childImageSharp && (
+        {x.node.image && (
           <Img
             css={mainImageCSS}
             key={i}
