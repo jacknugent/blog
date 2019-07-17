@@ -69,7 +69,6 @@ function stripes() {
   `).allStripeListYaml.edges
 
   const renderImages = (images: any) => {
-    console.log(images)
     return images.map((x: any, i: number) => (
       <div
         css={[
