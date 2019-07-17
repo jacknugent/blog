@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
+import Img from "gatsby-image/withIEPolyfill"
 import background from "../utils/stripe-gallery/juno-background.jpg"
 
 const iframeContainer = css`
@@ -29,15 +29,22 @@ const youtubeVideo = css`
 const imageGallery = css`
   display: flex;
   flex-wrap: wrap;
+  &:after {
+    content: "";
+    flex-grow: 99999999;
+  }
+`
+const imageCSS = css`
+  flex-grow: 1;
+  margin: 2px;
+  background-color: violet;
+  height: 400px;
 `
 
-const imageCSS = css`
-  max-height: 1200px;
-  flex-grow: 1;
-  object-fit: cover;
-  overflow: hidden;
-  width: 100%;
-  margin-bottom: 10px;
+const mainImageCSS = css`
+  min-width: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
 `
 
 function stripes() {
@@ -49,8 +56,8 @@ function stripes() {
             title
             image {
               childImageSharp {
-                fluid(maxWidth: 900, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                fixed(height: 400) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }
@@ -63,7 +70,12 @@ function stripes() {
   const renderImages = (images: any) => {
     return images.map((x: any, i: number) => (
       <div css={imageCSS}>
-        <Img key={i} fluid={x.node.image.childImageSharp.fluid} />
+        <Img
+          css={mainImageCSS}
+          key={i}
+          objectFit="cover"
+          fixed={x.node.image.childImageSharp.fixed}
+        />
       </div>
     ))
   }
