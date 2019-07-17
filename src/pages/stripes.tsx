@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image/withIEPolyfill"
 import background from "../utils/stripe-gallery/juno-background.jpg"
+import ImageGallery from "../components/ImageGallery"
 
 const iframeContainer = css`
   position: relative;
@@ -36,7 +36,6 @@ const imageGallery = css`
 `
 const imageContainer = css`
   margin: 2px;
-  background-color: violet;
   position: relative;
 `
 
@@ -48,61 +47,6 @@ const mainImageCSS = css`
 `
 
 function stripes() {
-  const data = useStaticQuery(graphql`
-    {
-      allStripeListYaml {
-        edges {
-          node {
-            id
-            title
-            image {
-              childImageSharp {
-                fluid(maxHeight: 9999) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `).allStripeListYaml.edges
-
-  const renderImages = (images: any) => {
-    return images.map(
-      (x: any, i: number) =>
-        x.node.image && (
-          <div
-            css={[
-              imageContainer,
-              css`
-                width: ${x.node.image.childImageSharp.fluid.aspectRatio *
-                  600}px !important;
-                flex-grow: ${x.node.image.childImageSharp.fluid.aspectRatio *
-                  600} !important;
-              `,
-            ]}
-          >
-            <i
-              css={css`
-                display: block;
-                padding-bottom: ${100 /
-                  x.node.image.childImageSharp.fluid.aspectRatio}%;
-              `}
-            />
-            {
-              <Img
-                css={mainImageCSS}
-                key={i}
-                objectFit="cover"
-                fluid={x.node.image.childImageSharp.fluid}
-              />
-            }
-          </div>
-        )
-    )
-  }
-
   return (
     <>
       <Layout>
@@ -117,7 +61,7 @@ function stripes() {
           </div>
         </div>
       </Layout>
-      <section css={imageGallery}>{renderImages(data)}</section>
+      <ImageGallery />
     </>
   )
 }
