@@ -34,17 +34,17 @@ const imageGallery = css`
     flex-grow: 99999999;
   }
 `
-const imageCSS = css`
-  flex-grow: 1;
+const imageContainer = css`
   margin: 2px;
   background-color: violet;
-  height: 400px;
+  position: relative;
 `
 
 const mainImageCSS = css`
-  min-width: 100%;
-  max-width: 100%;
-  vertical-align: bottom;
+  position: absolute !important;
+  top: 0 !important;
+  width: 100% !important;
+  vertical-align: bottom !important;
 `
 
 function stripes() {
@@ -53,11 +53,12 @@ function stripes() {
       allStripeListYaml {
         edges {
           node {
+            id
             title
             image {
               childImageSharp {
-                fixed(height: 400) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxHeight: 9999) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -68,13 +69,31 @@ function stripes() {
   `).allStripeListYaml.edges
 
   const renderImages = (images: any) => {
+    console.log(images)
     return images.map((x: any, i: number) => (
-      <div css={imageCSS}>
+      <div
+        css={[
+          imageContainer,
+          css`
+            width: ${x.node.image.childImageSharp.fluid.aspectRatio *
+              600}px !important;
+            flex-grow: ${x.node.image.childImageSharp.fluid.aspectRatio *
+              600} !important;
+          `,
+        ]}
+      >
+        <i
+          css={css`
+            display: block;
+            padding-bottom: ${100 /
+              x.node.image.childImageSharp.fluid.aspectRatio}%;
+          `}
+        />
         <Img
           css={mainImageCSS}
           key={i}
           objectFit="cover"
-          fixed={x.node.image.childImageSharp.fixed}
+          fluid={x.node.image.childImageSharp.fluid}
         />
       </div>
     ))
