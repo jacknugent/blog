@@ -69,35 +69,38 @@ function stripes() {
   `).allStripeListYaml.edges
 
   const renderImages = (images: any) => {
-    return images.map((x: any, i: number) => (
-      <div
-        css={[
-          imageContainer,
-          css`
-            width: ${x.node.image.childImageSharp.fluid.aspectRatio *
-              600}px !important;
-            flex-grow: ${x.node.image.childImageSharp.fluid.aspectRatio *
-              600} !important;
-          `,
-        ]}
-      >
-        <i
-          css={css`
-            display: block;
-            padding-bottom: ${100 /
-              x.node.image.childImageSharp.fluid.aspectRatio}%;
-          `}
-        />
-        {x.node.image && (
-          <Img
-            css={mainImageCSS}
-            key={i}
-            objectFit="cover"
-            fluid={x.node.image.childImageSharp.fluid}
-          />
-        )}
-      </div>
-    ))
+    return images.map(
+      (x: any, i: number) =>
+        x.node.image && (
+          <div
+            css={[
+              imageContainer,
+              css`
+                width: ${x.node.image.childImageSharp.fluid.aspectRatio *
+                  600}px !important;
+                flex-grow: ${x.node.image.childImageSharp.fluid.aspectRatio *
+                  600} !important;
+              `,
+            ]}
+          >
+            <i
+              css={css`
+                display: block;
+                padding-bottom: ${100 /
+                  x.node.image.childImageSharp.fluid.aspectRatio}%;
+              `}
+            />
+            {
+              <Img
+                css={mainImageCSS}
+                key={i}
+                objectFit="cover"
+                fluid={x.node.image.childImageSharp.fluid}
+              />
+            }
+          </div>
+        )
+    )
   }
 
   return (
