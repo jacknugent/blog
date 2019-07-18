@@ -18,7 +18,7 @@ const iframe = css`
   height: 100%;
   position: absolute;
   border: 0;
-  z-index: 2;
+  z-index: 0;
 `
 
 const youtubeVideo = css`
