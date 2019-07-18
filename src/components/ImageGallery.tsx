@@ -51,11 +51,12 @@ const imageOverlay = css`
 const imageText = css`
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 45%;
   transform: translate(-50%, -50%);
   color: white;
   width: 100%;
   text-align: center;
+  margin: 0;
 `
 
 function ImageGallery() {
