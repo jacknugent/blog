@@ -10,8 +10,6 @@ const iframeContainer = css`
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  background: url(${background}) center center no-repeat;
-  background-size: cover;
 `
 const iframe = css`
   top: 0;
@@ -20,30 +18,24 @@ const iframe = css`
   height: 100%;
   position: absolute;
   border: 0;
+  z-index: 2;
 `
 
 const youtubeVideo = css`
   padding-bottom: 2rem;
 `
 
-const imageGallery = css`
-  display: flex;
-  flex-wrap: wrap;
-  &:after {
-    content: "";
-    flex-grow: 99999999;
-  }
-`
-const imageContainer = css`
-  margin: 2px;
-  position: relative;
-`
-
-const mainImageCSS = css`
-  position: absolute !important;
-  top: 0 !important;
-  width: 100% !important;
-  vertical-align: bottom !important;
+const loadingThumbnail = css`
+  background: url(${background}) center center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 `
 
 function stripes() {
@@ -58,10 +50,11 @@ function stripes() {
               css={iframe}
               src="https://www.youtube.com/embed/Y1U4YkNkoG0?rel=0"
             />
+            <div css={loadingThumbnail} />
           </div>
         </div>
+        <ImageGallery />
       </Layout>
-      <ImageGallery />
     </>
   )
 }

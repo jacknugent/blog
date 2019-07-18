@@ -48,7 +48,7 @@ const globalStyles = css`
 const mainStyle = css`
   margin: 0 auto;
   max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
+  padding: 0px 0.5rem 1.45rem;
   padding-top: 0;
 `
 const Layout = (props: LayoutProps) => (
