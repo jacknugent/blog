@@ -48,6 +48,7 @@ const loadingThumbnail = css`
 function stripes() {
   const [isVideo, setIsVideo] = useState(false)
   const [search, setSearch] = useState("")
+  const [filter, setFilter] = useState("All")
 
   return (
     <>
@@ -69,8 +70,10 @@ function stripes() {
         <StripeSearch
           searchValue={search}
           search={(e: any) => setSearch(e.target.value)}
+          filterValue={filter}
+          filter={(e: any) => setFilter(e.target.value)}
         ></StripeSearch>
-        <ImageGallery filter={search} />
+        <ImageGallery search={search} filter={filter} />
       </Layout>
     </>
   )

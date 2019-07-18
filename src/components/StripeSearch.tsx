@@ -8,6 +8,11 @@ const StripeSearch = (props: any) => {
         css={css`
           width: 50%;
           display: inline-block;
+          @media (max-width: 600px) {
+            display: block;
+            width: 100%;
+            margin: 0.5rem 0;
+          }
         `}
       >
         <label
@@ -21,9 +26,15 @@ const StripeSearch = (props: any) => {
         <input
           css={css`
             width: 75%;
+            height: 24px;
+            font-size: 16px;
+            @media (max-width: 600px) {
+              width: 100%;
+              box-sizing: border-box;
+            }
           `}
           id="titleSearch"
-          placeholder="Search by Title"
+          placeholder=""
           value={props.searchValue}
           onChange={e => props.search(e)}
         ></input>
@@ -33,6 +44,11 @@ const StripeSearch = (props: any) => {
           width: 50%;
           display: inline-block;
           text-align: right;
+          @media (max-width: 600px) {
+            text-align: left;
+            margin: 0.5rem 0;
+            width: 100%;
+          }
         `}
       >
         <label
@@ -43,7 +59,21 @@ const StripeSearch = (props: any) => {
         >
           Filter by Stripe
         </label>
-        <select id="titleSearch" placeholder="Search by Title"></select>
+        <select
+          id="titleSearch"
+          css={css`
+            width: 75%;
+            height: 24px;
+            @media (max-width: 600px) {
+              width: 100%;
+              height: 24px;
+            }
+          `}
+          onChange={e => props.filter(e)}
+        >
+          <option value="All">All</option>
+          <option value="deviant">Deviant</option>
+        </select>
       </div>
       <div
         css={css`

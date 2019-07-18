@@ -67,6 +67,7 @@ const ImageGallery = (props: any) => {
           node {
             id
             title
+            tags
             image {
               childImageSharp {
                 fluid(maxHeight: 9999) {
@@ -81,13 +82,18 @@ const ImageGallery = (props: any) => {
   `).allStripeListYaml.edges
 
   const renderImages = (images: any) => {
-    return images
+    const filtered = images
       .filter(
         (x: any) =>
-          props.filter === "" ||
-          x.node.title.toLowerCase().includes(props.filter.toLowerCase())
+          props.search === "" ||
+          x.node.title.toLowerCase().includes(props.search.toLowerCase())
       )
-      .map(
+      .filter(
+        (x: any) => props.filter === "All" || x.node.tags.includes(props.filter)
+      )
+
+    if (filtered.length > 0) {
+      return filtered.map(
         (x: any, i: number) =>
           x.node.image && (
             <div
@@ -122,11 +128,21 @@ const ImageGallery = (props: any) => {
             </div>
           )
       )
+    } else {
+      return (
+        <div
+          css={css`
+            width: 100%;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+          `}
+        >
+          No results found.
+        </div>
+      )
+    }
   }
-  return (
-    <div>
-      <section css={imageGallery}>{renderImages(data)}</section>
-    </div>
-  )
+  return <section css={imageGallery}>{renderImages(data)}</section>
 }
 export default ImageGallery

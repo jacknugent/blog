@@ -1,16 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import PageLink from "../components/PageLink"
 import SEO from "../components/seo"
 import { css } from "@emotion/core"
 
-const image = css`
-  max-width: 300px;
-  margin-bottom: 1.45rem;
-`
 const links = css`
   display: flex;
   flex-wrap: wrap;
