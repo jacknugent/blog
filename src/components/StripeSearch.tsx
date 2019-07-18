@@ -6,80 +6,9 @@ const StripeSearch = (props: any) => {
     <div>
       <div
         css={css`
-          width: 50%;
-          display: inline-block;
-          @media (max-width: 600px) {
-            display: block;
-            width: 100%;
-            margin: 0.5rem 0;
-          }
-        `}
-      >
-        <label
-          css={css`
-            display: block;
-          `}
-          htmlFor="titleSearch"
-        >
-          Search by Title
-        </label>
-        <input
-          css={css`
-            width: 75%;
-            height: 24px;
-            font-size: 16px;
-            @media (max-width: 600px) {
-              width: 100%;
-              box-sizing: border-box;
-            }
-          `}
-          id="titleSearch"
-          placeholder=""
-          value={props.searchValue}
-          onChange={e => props.search(e)}
-        ></input>
-      </div>
-      <div
-        css={css`
-          width: 50%;
-          display: inline-block;
-          text-align: right;
-          @media (max-width: 600px) {
-            text-align: left;
-            margin: 0.5rem 0;
-            width: 100%;
-          }
-        `}
-      >
-        <label
-          css={css`
-            display: block;
-          `}
-          htmlFor="titleSearch"
-        >
-          Filter by Stripe
-        </label>
-        <select
-          id="titleSearch"
-          css={css`
-            width: 75%;
-            height: 24px;
-            @media (max-width: 600px) {
-              width: 100%;
-              height: 24px;
-            }
-          `}
-          onChange={e => props.filter(e)}
-        >
-          <option value="All">All</option>
-          <option value="deviant">Deviant</option>
-        </select>
-      </div>
-      <div
-        css={css`
           margin: 4rem 1.5rem;
           @media (max-width: 600px) {
-            margin: 2rem 1.5rem;
+            margin: 2rem 0;
           }
         `}
       >
@@ -90,7 +19,6 @@ const StripeSearch = (props: any) => {
             text-align: center;
             @media (max-width: 600px) {
               font-size: 2rem;
-              text-align: left;
             }
           `}
         >
@@ -109,6 +37,83 @@ const StripeSearch = (props: any) => {
         >
           - Paul Rand
         </p>
+      </div>
+      <div
+        css={css`
+          margin: 1rem 0;
+        `}
+      >
+        <div
+          css={css`
+            width: 50%;
+            display: inline-block;
+            @media (max-width: 600px) {
+              display: block;
+              width: 100%;
+              margin: 0.5rem 0;
+            }
+          `}
+        >
+          <label
+            css={css`
+              display: block;
+            `}
+            htmlFor="titleSearch"
+          >
+            Search by Title
+          </label>
+          <input
+            css={css`
+              width: 75%;
+              height: 24px;
+              font-size: 16px;
+              @media (max-width: 600px) {
+                width: 100%;
+                box-sizing: border-box;
+              }
+            `}
+            id="titleSearch"
+            placeholder=""
+            value={props.searchValue}
+            onChange={e => props.search(e)}
+          ></input>
+        </div>
+        <div
+          css={css`
+            width: 50%;
+            display: inline-block;
+            text-align: right;
+            @media (max-width: 600px) {
+              text-align: left;
+              margin: 0.5rem 0;
+              width: 100%;
+            }
+          `}
+        >
+          <label
+            css={css`
+              display: block;
+            `}
+            htmlFor="titleSearch"
+          >
+            Filter by Stripe
+          </label>
+          <select
+            id="titleSearch"
+            css={css`
+              width: 75%;
+              height: 24px;
+              @media (max-width: 600px) {
+                width: 100%;
+                height: 24px;
+              }
+            `}
+            onChange={e => props.filter(e)}
+          >
+            <option value="All">All</option>
+            <option value="deviant">Deviant</option>
+          </select>
+        </div>
       </div>
     </div>
   )
