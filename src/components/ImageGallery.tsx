@@ -59,7 +59,7 @@ const imageText = css`
   margin: 0;
 `
 
-function ImageGallery() {
+const ImageGallery = (props: any) => {
   const data = useStaticQuery(graphql`
     {
       allStripeListYaml {
@@ -81,36 +81,52 @@ function ImageGallery() {
   `).allStripeListYaml.edges
 
   const renderImages = (images: any) => {
-    return images.map(
-      (x: any, i: number) =>
-        x.node.image && (
-          <div
-            key={i}
-            css={[
-              imageContainer,
-              css`
-                width: ${x.node.image.childImageSharp.fluid.aspectRatio *
-                  450}px !important;
-                flex-grow: ${x.node.image.childImageSharp.fluid.aspectRatio *
-                  450} !important;
-              `,
-            ]}
-          >
-            <i
-              css={css`
-                display: block;
-                padding-bottom: ${100 /
-                  x.node.image.childImageSharp.fluid.aspectRatio}%;
-              `}
-            />
-            {<Img css={image} fluid={x.node.image.childImageSharp.fluid} />}
-            <div css={imageOverlay}>
-              <h2 css={imageText}>{x.node.title}</h2>
+    return images
+      .filter(
+        (x: any) =>
+          props.filter === "" ||
+          x.node.title.toLowerCase().includes(props.filter.toLowerCase())
+      )
+      .map(
+        (x: any, i: number) =>
+          x.node.image && (
+            <div
+              key={i}
+              css={[
+                imageContainer,
+                css`
+                  width: ${x.node.image.childImageSharp.fluid.aspectRatio *
+                    450}px !important;
+                  flex-grow: ${x.node.image.childImageSharp.fluid.aspectRatio *
+                    450} !important;
+                `,
+              ]}
+            >
+              <i
+                css={css`
+                  display: block;
+                  padding-bottom: ${100 /
+                    x.node.image.childImageSharp.fluid.aspectRatio}%;
+                `}
+              />
+              {
+                <Img
+                  alt={x.node.title}
+                  css={image}
+                  fluid={x.node.image.childImageSharp.fluid}
+                />
+              }
+              <div css={imageOverlay}>
+                <h2 css={imageText}>{x.node.title}</h2>
+              </div>
             </div>
-          </div>
-        )
-    )
+          )
+      )
   }
-  return <section css={imageGallery}>{renderImages(data)}</section>
+  return (
+    <div>
+      <section css={imageGallery}>{renderImages(data)}</section>
+    </div>
+  )
 }
 export default ImageGallery

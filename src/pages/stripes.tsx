@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import background from "../utils/stripe-gallery/juno-background.jpg"
 import ImageGallery from "../components/ImageGallery"
+import StripeSearch from "../components/StripeSearch"
 
 const iframeContainer = css`
   position: relative;
@@ -46,6 +47,7 @@ const loadingThumbnail = css`
 
 function stripes() {
   const [isVideo, setIsVideo] = useState(false)
+  const [search, setSearch] = useState("")
 
   return (
     <>
@@ -64,7 +66,11 @@ function stripes() {
             )}
           </div>
         </div>
-        <ImageGallery />
+        <StripeSearch
+          searchValue={search}
+          search={(e: any) => setSearch(e.target.value)}
+        ></StripeSearch>
+        <ImageGallery filter={search} />
       </Layout>
     </>
   )
