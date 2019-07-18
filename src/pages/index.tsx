@@ -30,7 +30,7 @@ const IndexPage = () => (
     </p>
 
     <div css={links}>
-      <PageLink title="Resumé" link="resume" />
+      <PageLink title="Resume" link="resume" />
       <PageLink title="Stripes" link="stripes" />
       <PageLink title="Videos" link="videos" />
       <PageLink title="Twitter" link="twitter" />

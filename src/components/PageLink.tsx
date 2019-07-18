@@ -13,6 +13,7 @@ const link = css`
   width: calc(50% - 40px - 10px - 4px);
   text-decoration: none;
   color: black;
+  font-size: 1.5rem;
   &:hover {
     cursor: pointer;
   }
