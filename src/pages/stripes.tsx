@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
@@ -19,6 +20,8 @@ const iframe = css`
   position: absolute;
   border: 0;
   z-index: 0;
+  background: url(${background}) center center no-repeat;
+  background-size: cover;
 `
 
 const youtubeVideo = css`
@@ -36,21 +39,29 @@ const loadingThumbnail = css`
   height: 100%;
   width: 100%;
   z-index: 1;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 function stripes() {
+  const [isVideo, setIsVideo] = useState(false)
+
   return (
     <>
       <Layout>
         <SEO title="Stripes" />
         <h1>Stripes in Film</h1>
         <div css={youtubeVideo}>
-          <div css={iframeContainer}>
-            <iframe
-              css={iframe}
-              src="https://www.youtube.com/embed/Y1U4YkNkoG0?rel=0"
-            />
-            <div css={loadingThumbnail} />
+          <div css={iframeContainer} onClick={x => setIsVideo(true)}>
+            {isVideo ? (
+              <iframe
+                css={iframe}
+                src="https://www.youtube.com/embed/Y1U4YkNkoG0?rel=0&autoplay=1&mute=0"
+              />
+            ) : (
+              <div css={loadingThumbnail} />
+            )}
           </div>
         </div>
         <ImageGallery />
