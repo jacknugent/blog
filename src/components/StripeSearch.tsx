@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 const StripeSearch = (props: any) => {
@@ -10,20 +11,20 @@ const StripeSearch = (props: any) => {
   `
 
   const quoteTitle = css`
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
-    text-align: center;
+    text-align: left;
     @media (max-width: 600px) {
       font-size: 2rem;
     }
   `
 
   const quoteName = css`
-    text-align: right;
-    font-size: 1.5rem;
+    text-align: left;
+    font-size: 1.25rem;
     margin: 1.5rem;
     @media (max-width: 600px) {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
   `
   const searchHeaders = css`
@@ -70,11 +71,45 @@ const StripeSearch = (props: any) => {
     }
   `
 
+  const data = useStaticQuery(graphql`
+    {
+      allStripeQuotesYaml {
+        edges {
+          node {
+            name
+            quote
+            filter
+          }
+        }
+      }
+    }
+  `).allStripeQuotesYaml.edges
+
+  const filterValues = data.map((x: any) => x.node.filter)
+
+  var quote = data.filter(
+    (x: any) => x.node.filter === props.filterSelection
+  )[0].node.quote
+
+  var name = data.filter((x: any) => x.node.filter === props.filterSelection)[0]
+    .node.name
+
+  const filter = (
+    <select id="titleSearch" css={FilterInput} onChange={e => props.filter(e)}>
+      {filterValues.map((options: any) => (
+        <option key={options}>{options}</option>
+      ))}
+    </select>
+  )
+
   return (
     <div>
       <div css={quoteContainer}>
-        <h1 css={quoteTitle}>&ldquo;Stripes attract attention.&rdquo;</h1>
-        <p css={quoteName}>- Paul Rand</p>
+        <h1 css={quoteTitle}>
+          &ldquo;{quote}
+          &rdquo;
+        </h1>
+        <p css={quoteName}>- {name}</p>
       </div>
       <div
         css={css`
@@ -97,14 +132,7 @@ const StripeSearch = (props: any) => {
           <label css={searchHeaders} htmlFor="titleSearch">
             Filter by Stripe
           </label>
-          <select
-            id="titleSearch"
-            css={FilterInput}
-            onChange={e => props.filter(e)}
-          >
-            <option value="All">All</option>
-            <option value="deviant">Deviant</option>
-          </select>
+          {filter}
         </div>
       </div>
     </div>

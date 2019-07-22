@@ -1,4 +1,10 @@
-- title: sadgsadg
-  image: asdgasgdsag
-- title: asdgsadg
-  image: sagsagd
+- filter: All
+  quote: Stripes attract attention.
+  name: Paul Rand, creator of the IBM logo
+- filter: Deviant
+  quote: Deviant is crazy
+  name: "The Devil's Cloth: A History of Stripes"
+- filter: Gangster
+  quote: Much more menacing is the 'Al Capone' stripe that appeared in the twenties and thirties to clothe American gangsters and Mafia godfathers.
+  name: "The Devil's Cloth: A History of Stripes"
+

@@ -70,7 +70,7 @@ function stripes() {
         <StripeSearch
           searchValue={search}
           search={(e: any) => setSearch(e.target.value)}
-          filterValue={filter}
+          filterSelection={filter}
           filter={(e: any) => setFilter(e.target.value)}
         ></StripeSearch>
         <ImageGallery search={search} filter={filter} />
