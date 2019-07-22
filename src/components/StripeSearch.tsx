@@ -29,7 +29,6 @@ const StripeSearch = (props: any) => {
             text-align: right;
             font-size: 1.5rem;
             margin: 1.5rem;
-
             @media (max-width: 600px) {
               font-size: 1.5rem;
             }
@@ -57,6 +56,8 @@ const StripeSearch = (props: any) => {
           <label
             css={css`
               display: block;
+              font-size: 20px;
+              margin: 0.25rem 0;
             `}
             htmlFor="titleSearch"
           >
@@ -67,9 +68,11 @@ const StripeSearch = (props: any) => {
               width: 75%;
               height: 24px;
               font-size: 16px;
+              border-radius: 2px;
               @media (max-width: 600px) {
                 width: 100%;
                 box-sizing: border-box;
+                height: 30px;
               }
             `}
             id="titleSearch"
@@ -93,6 +96,8 @@ const StripeSearch = (props: any) => {
           <label
             css={css`
               display: block;
+              font-size: 20px;
+              margin: 0.25rem 0;
             `}
             htmlFor="titleSearch"
           >
@@ -102,11 +107,10 @@ const StripeSearch = (props: any) => {
             id="titleSearch"
             css={css`
               width: 75%;
-              height: 24px;
+              height: 30px;
+              font-size: 16px;
               @media (max-width: 600px) {
                 width: 100%;
-                height: 24px;
-                font-size: 16px;
               }
             `}
             onChange={e => props.filter(e)}
