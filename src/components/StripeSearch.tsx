@@ -106,6 +106,7 @@ const StripeSearch = (props: any) => {
               @media (max-width: 600px) {
                 width: 100%;
                 height: 24px;
+                font-size: 16px;
               }
             `}
             onChange={e => props.filter(e)}
