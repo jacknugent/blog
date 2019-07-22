@@ -1,12 +1,21 @@
 - filter: All
-  quote: Stripes attract attention.
-  name: Paul Rand, creator of the IBM logo
+  quote: In any image, the striped element is the one seen first.
+  name: "The Devil's Cloth: A History of Stripes"
+- filter: Prostitute
+  quote: In the sumptury laws and the decrees concerning dress that proliferated in the towns of southern Europe at the end of the Middle Ages, it is sometimes the prostitudes, sometimes the jugglers and clowns, sometimes the hangment who are required to wear either an entirely striped suit of clothing or, more often, an item of striped clothing.
+  name: "The Devil's Cloth: A History of Stripes"
 - filter: Gangster
   quote: Much more menacing is the 'Al Capone' stripe that appeared in the twenties and thirties to clothe American gangsters and Mafia godfathers.
+  name: "The Devil's Cloth: A History of Stripes"
+- filter: Crooked
+  quote: A simple horizontally striped jersy is enough to present a dirty street urchin, a thug, a gangster, or some other character who is disquieting but not necessarily a full-fledged criminal.
   name: "The Devil's Cloth: A History of Stripes"
 - filter: Hygiene
   quote: Western sensibility had no tolerance for clothes and fabrics that touched the body directly being any color but white or ecru... the move from hygienic white to enlivening and diversifying color was made through the means either of pastel dyes or striped surfaces.
   name: "The Devil's Cloth: A History of Stripes"
-- filter: Crooked
-  quote: A simple horizontally striped jersy is enough to present a dirty street urchin, a thug, a gangster, or some other character who is disquieting but not necessarily a full-fledged criminal.
+- filter: Children
+  quote: The nineteenth-century childhood stripe is a mark of hygiene, a guarantee of cleanliness and health.
+  name: "The Devil's Cloth: A History of Stripes"
+- filter: Playful
+  quote: Its stripes are cheerful because they are a matter of disguise. Just as the stripes of clowns and public entertainers are cheerful.
   name: "The Devil's Cloth: A History of Stripes"
