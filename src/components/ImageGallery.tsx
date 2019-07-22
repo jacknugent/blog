@@ -62,7 +62,7 @@ const imageText = css`
 const ImageGallery = (props: any) => {
   const data = useStaticQuery(graphql`
     {
-      allStripeListYaml {
+      allStripeListYaml(sort: { fields: [title], order: ASC }) {
         edges {
           node {
             id
@@ -89,7 +89,9 @@ const ImageGallery = (props: any) => {
           x.node.title.toLowerCase().includes(props.search.toLowerCase())
       )
       .filter(
-        (x: any) => props.filter === "All" || x.node.tags.includes(props.filter)
+        (x: any) =>
+          props.filter === "All" ||
+          x.node.tags.includes(props.filter.toLowerCase())
       )
 
     if (filtered.length > 0) {

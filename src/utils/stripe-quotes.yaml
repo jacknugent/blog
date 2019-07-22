@@ -1,10 +1,12 @@
 - filter: All
   quote: Stripes attract attention.
   name: Paul Rand, creator of the IBM logo
-- filter: Deviant
-  quote: Deviant is crazy
-  name: "The Devil's Cloth: A History of Stripes"
 - filter: Gangster
   quote: Much more menacing is the 'Al Capone' stripe that appeared in the twenties and thirties to clothe American gangsters and Mafia godfathers.
   name: "The Devil's Cloth: A History of Stripes"
-
+- filter: Hygiene
+  quote: Western sensibility had no tolerance for clothes and fabrics that touched the body directly being any color but white or ecru... the move from hygienic white to enlivening and diversifying color was made through the means either of pastel dyes or striped surfaces.
+  name: "The Devil's Cloth: A History of Stripes"
+- filter: Crooked
+  quote: A simple horizontally striped jersy is enough to present a dirty street urchin, a thug, a gangster, or some other character who is disquieting but not necessarily a full-fledged criminal.
+  name: "The Devil's Cloth: A History of Stripes"
