@@ -91,7 +91,7 @@ const ImageGallery = (props: any) => {
       .filter(
         (x: any) =>
           props.filter === "All" ||
-          x.node.tags.includes(props.filter.toLowerCase())
+          (x.node.tags && x.node.tags.includes(props.filter.toLowerCase()))
       )
 
     if (filtered.length > 0) {

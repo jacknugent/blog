@@ -147,7 +147,7 @@
   tags:   children prisoner
 - title: The Boy in the Striped Pajamas (2008)
   image: ./stripe-gallery/The.Boy.In.The.Striped.Pajamas.2008.jpg
-  tags:  children prisoner
+  tags:  prisoner
 - title: The Emperors New Groove (2000)
   image: ./stripe-gallery/The.Emperors.New.Groove.2000.jpg
   tags:  playful children
@@ -202,3 +202,6 @@
 - title: Wall Street (1987)
   image: ./stripe-gallery/Wall.Street.1987(4).jpg
   tags:  crooked
+- title: Deadwood (2004)
+  image: ./Deadwood.2004.png
+  tags: crooked playful

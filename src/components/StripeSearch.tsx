@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 
 const StripeSearch = (props: any) => {
   const quoteContainer = css`
-    margin: 4rem 1.5rem;
+    margin: 2rem 1.5rem;
     @media (max-width: 600px) {
       margin: 0.5rem 0;
     }
@@ -102,15 +102,24 @@ const StripeSearch = (props: any) => {
     </select>
   )
 
+  const renderQuote = () => {
+    return (
+      quote && (
+        <div css={quoteContainer}>
+          <h1 css={quoteTitle}>
+            &ldquo;{quote}
+            &rdquo;
+          </h1>
+          <p css={quoteName}>- {name}</p>
+        </div>
+      )
+    )
+  }
+
   return (
     <div>
-      <div css={quoteContainer}>
-        <h1 css={quoteTitle}>
-          &ldquo;{quote}
-          &rdquo;
-        </h1>
-        <p css={quoteName}>- {name}</p>
-      </div>
+      {renderQuote()}
+
       <div
         css={css`
           margin: 1rem 0;
