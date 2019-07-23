@@ -10,7 +10,6 @@ const link = css`
 `
 const background = css`
   background: ${theme.colors.red};
-  margin-bottom: 1.45rem;
 `
 const text = css`
   margin: 0 auto;
