@@ -14,6 +14,13 @@ module.exports = {
         path: `${__dirname}/src/utils/stripe-gallery`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog_images`,
+        path: `${__dirname}/src/utils/markdown-pages/images`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

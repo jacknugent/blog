@@ -22,7 +22,7 @@ const YouTubeVideo = (props: YouTubeVideoProps) => {
       url(${`https://img.youtube.com/vi/` + props.id + `/maxresdefault.jpg`})
         center center no-repeat;
 
-    background-size: 100px, cover;
+    background-size: calc(5vw + 40px), cover;
   `
 
   const youtubeVideo = css`
@@ -33,7 +33,7 @@ const YouTubeVideo = (props: YouTubeVideoProps) => {
     background: url(${youtube_grey}) center center no-repeat,
       url(${`https://img.youtube.com/vi/` + props.id + `/maxresdefault.jpg`})
         center center no-repeat;
-    background-size: 100px, cover;
+    background-size: calc(5vw + 40px), cover;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -47,7 +47,7 @@ const YouTubeVideo = (props: YouTubeVideoProps) => {
       background: url(${youtube_red}) center center no-repeat,
         url(${`https://img.youtube.com/vi/` + props.id + `/maxresdefault.jpg`})
           center center no-repeat;
-      background-size: 100px, cover;
+      background-size: calc(5vw + 40px), cover;
     }
   `
   const [isVideo, setIsVideo] = useState(false)
