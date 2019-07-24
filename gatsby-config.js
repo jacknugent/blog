@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Jack Nugent Things`,
@@ -51,14 +55,14 @@ module.exports = {
         path: `./src/utils/`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-youtube`,
-    //   options: {
-    //     channelId: "UCWTFGPpNQ0Ms6afXhaWDiRw",
-    //     apiKey: "<< Add your Youtube api key here>>",
-    //     maxVideos: 50, // Defaults to 50
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-youtube`,
+      options: {
+        channelId: "UCWTFGPpNQ0Ms6afXhaWDiRw",
+        apiKey: process.env.GATSBY_YOUTUBE_API,
+        maxVideos: 50, // Defaults to 50
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

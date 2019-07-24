@@ -15,7 +15,10 @@ function stripes() {
       <Layout>
         <SEO title="Stripes" />
         <h1>Stripes in Film</h1>
-        <YouTubeVideo id="Y1U4YkNkoG0"></YouTubeVideo>
+        <YouTubeVideo
+          id="Y1U4YkNkoG0"
+          url="https://i.ytimg.com/vi/Y1U4YkNkoG0/maxresdefault.jpg"
+        ></YouTubeVideo>
         <StripeSearch
           searchValue={search}
           search={(e: any) => setSearch(e.target.value)}
