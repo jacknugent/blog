@@ -2,7 +2,7 @@ import * as React from "react"
 import { css } from "@emotion/core"
 import { useState } from "react"
 import youtube_red from "../utils/youtube-play-red.png"
-import youtube_grey from "../utils/youtube-play-grey.png"
+import Img from "gatsby-image"
 
 const YouTubeVideo = (props: YouTubeVideoProps) => {
   const youtubeIcon = css`
@@ -14,14 +14,10 @@ const YouTubeVideo = (props: YouTubeVideoProps) => {
     height: 100%;
     width: 100%;
     z-index: 2;
-    width: 150px;
-    height: 100px;
+    width: 15%;
+    height: 18%;
     display: block;
     margin: auto;
-    @media (max-width: 600px) {
-      width: 100px !important;
-      height: 66px;
-    }
   `
 
   const iframeContainer = css`
@@ -44,12 +40,8 @@ const YouTubeVideo = (props: YouTubeVideoProps) => {
     background-size: calc(5vw + 40px), cover;
   `
 
-  const youtubeVideo = css`
-    padding-bottom: 2rem;
-  `
-
   const loadingThumbnail = css`
-    position: absolute;
+    position: absolute !important;
     top: 0;
     bottom: 0;
     left: 0;
@@ -61,7 +53,7 @@ const YouTubeVideo = (props: YouTubeVideoProps) => {
   const [isVideo, setIsVideo] = useState(false)
 
   return (
-    <div css={youtubeVideo}>
+    <div>
       <div css={iframeContainer} onClick={x => setIsVideo(true)}>
         {isVideo ? (
           <iframe
@@ -75,7 +67,7 @@ const YouTubeVideo = (props: YouTubeVideoProps) => {
         ) : (
           <>
             <img css={youtubeIcon} src={youtube_red} />
-            <img css={loadingThumbnail} src={props.url} />
+            <Img css={loadingThumbnail} fluid={props.fluid_url} />
           </>
         )}
       </div>
@@ -85,7 +77,7 @@ const YouTubeVideo = (props: YouTubeVideoProps) => {
 
 interface YouTubeVideoProps {
   id: string
-  url: string
+  fluid_url: string
 }
 
 export default YouTubeVideo

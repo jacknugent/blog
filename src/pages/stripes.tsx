@@ -5,10 +5,28 @@ import SEO from "../components/seo"
 import ImageGallery from "../components/ImageGallery"
 import StripeSearch from "../components/StripeSearch"
 import YouTubeVideo from "../components/YouTubeVideo"
+import { useStaticQuery, graphql } from "gatsby"
 
 function stripes() {
   const [search, setSearch] = useState("")
   const [filter, setFilter] = useState("All")
+
+  const stripe = useStaticQuery(graphql`
+    query MyQuery {
+      youtubeVideo(
+        title: { eq: "Stripes in Movies: Why Do Characters Wear Them?" }
+      ) {
+        title
+        localThumbnail {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  `).youtubeVideo.localThumbnail
 
   return (
     <>
@@ -17,7 +35,7 @@ function stripes() {
         <h1>Stripes in Film</h1>
         <YouTubeVideo
           id="Y1U4YkNkoG0"
-          url="https://i.ytimg.com/vi/Y1U4YkNkoG0/maxresdefault.jpg"
+          fluid_url={stripe.childImageSharp.fluid}
         ></YouTubeVideo>
         <StripeSearch
           searchValue={search}
