@@ -5,7 +5,7 @@
   quote: Much more menacing is the 'Al Capone' stripe that appeared in the twenties and thirties to clothe American gangsters and Mafia godfathers.
   name: "The Devil's Cloth: A History of Stripes"
 - filter: Crooked
-  quote: A simple horizontally striped jersey is enough to present a dirty street urchin, a thug, a gangster, or some other character who is disquieting but not necessarily a full-fledged criminal.
+  quote: A simple striped jersey is enough to present a dirty street urchin, a thug, a gangster, or some other character who is disquieting but not necessarily a full-fledged criminal.
   name: "The Devil's Cloth: A History of Stripes"
 - filter: Hygiene
   quote: The move from hygienic white to enlivening and diversifying color was made through the means either of pastel dyes or striped surfaces.
@@ -19,9 +19,9 @@
 - filter: Prisoner
   quote:
   name:
-- filter: Freedom
-  quote:
-  name:
+# - filter: Freedom
+#   quote:
+#   name:
 - filter: Evil
   quote:
   name:

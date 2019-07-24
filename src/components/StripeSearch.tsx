@@ -15,7 +15,7 @@ const StripeSearch = (props: any) => {
     margin: 0;
     text-align: left;
     @media (max-width: 600px) {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   `
 

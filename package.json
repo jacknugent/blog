@@ -22,6 +22,7 @@
     "gatsby-plugin-sharp": "^2.0.37",
     "gatsby-plugin-typescript": "^2.0.15",
     "gatsby-source-filesystem": "^2.1.4",
+    "gatsby-source-youtube": "^1.0.1",
     "gatsby-transformer-remark": "^2.6.3",
     "gatsby-transformer-sharp": "^2.1.19",
     "gatsby-transformer-yaml": "^2.2.3",

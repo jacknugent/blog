@@ -19,8 +19,15 @@ const topImageStyle = css`
 `
 
 function resume() {
-  const markdown = useStaticQuery(graphql`
-    {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "resume.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       markdownRemark(frontmatter: { path: { eq: "/resume" } }) {
         html
         frontmatter {
@@ -29,33 +36,18 @@ function resume() {
         }
       }
     }
-  `).markdownRemark
+  `)
 
-  console.log(markdown)
+  console.log(data)
   return (
     <Layout>
       <SEO title="Resumé" />
-      <StaticQuery
-        query={graphql`
-          query {
-            placeholderImage: file(relativePath: { eq: "resume.jpg" }) {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        `}
-        render={(data: any) => (
-          <Img
-            css={topImageStyle}
-            fluid={data.placeholderImage.childImageSharp.fluid}
-          />
-        )}
+      <Img
+        css={topImageStyle}
+        fluid={data.placeholderImage.childImageSharp.fluid}
       />
-      <h1>{markdown.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: markdown.html }} />
+      <h1>{data.markdownRemark.frontmatter.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </Layout>
   )
 }

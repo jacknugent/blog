@@ -15,6 +15,11 @@ const imageGallery = css`
     margin-left: calc(-100vw / 2 + 960px / 2 + 0.5rem);
     margin-right: calc(-100vw / 2 + 960px / 2 + 0.5rem);
   }
+
+  @media (max-width: 600px) {
+    margin-left: calc(-0.5rem);
+    margin-right: calc(-0.5rem);
+  }
 `
 const imageContainer = css`
   margin: 0.25rem;
