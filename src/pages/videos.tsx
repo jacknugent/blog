@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { css } from "@emotion/core"
 import YouTubeVideo from "../components/YouTubeVideo"
+import YouTubeThumbnail from "../components/YouTubeThumbnail"
 
 function videos() {
   const videoInfo = useStaticQuery(graphql`
@@ -15,7 +16,7 @@ function videos() {
             videoId
             localThumbnail {
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 960) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -31,12 +32,10 @@ function videos() {
     flex-wrap: wrap;
   `
   const videoContainer = css`
+    margin: 0.5rem;
     flex-grow: 1;
     width: 33%;
-    height: 100%;
   `
-
-  console.log(videoInfo)
   return (
     <Layout>
       <div
@@ -47,11 +46,9 @@ function videos() {
         <SEO title="Videos" />
         <div css={youtubeVideoGallery}>
           {videoInfo.map((x: any, i: number) => (
-            <div css={videoContainer}>
-              <YouTubeVideo
-                key={i}
-                id={x.node.videoId}
-                fluid_url={x.node.localThumbnail.childImageSharp.fluid}
+            <div css={videoContainer} onClick={e => console.log("hello!")}>
+              <YouTubeThumbnail
+                fluid={x.node.localThumbnail.childImageSharp.fluid}
               />
             </div>
           ))}
