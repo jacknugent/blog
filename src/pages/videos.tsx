@@ -38,6 +38,10 @@ function videos() {
     margin: 0.5rem;
     flex-grow: 1;
     width: 33%;
+
+    @media (max-width: 600px) {
+      width: 50%;
+    }
   `
 
   const handleModal = (videoId: string) => {
