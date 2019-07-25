@@ -10,7 +10,6 @@ const thumbnailContainer = css`
 `
 
 const youtubeIcon = css`
-  z-index: 2;
   width: 15%;
   height: 18%;
   margin: auto;
@@ -28,7 +27,6 @@ const loadingThumbnail = css`
   right: 0;
   height: 100%;
   width: 100%;
-  z-index: 1;
 `
 
 const YouTubeThumbnail = (props: YouTubeThumbnailProps) => {
