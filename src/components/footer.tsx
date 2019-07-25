@@ -1,10 +1,4 @@
 import * as React from "react"
 
-const Footer = () => (
-  <footer>
-    © {new Date().getFullYear()}, Built with
-    {` `}
-    <a href="https://www.gatsbyjs.org">Gatsby</a>
-  </footer>
-)
+const Footer = () => <footer>© {new Date().getFullYear()}</footer>
 export default Footer

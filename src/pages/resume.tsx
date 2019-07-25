@@ -11,10 +11,8 @@ const topImageStyle = css`
   margin-bottom: 3rem;
 
   @media (max-width: 960px) {
-    width: 100%;
-    margin-top: 0.5rem;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 `
 
@@ -38,7 +36,6 @@ function resume() {
     }
   `)
 
-  console.log(data)
   return (
     <Layout>
       <SEO title="Resumé" />
