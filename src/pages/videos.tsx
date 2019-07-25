@@ -65,7 +65,11 @@ function videos() {
           ))}
         </div>
       </div>
-      <IFrameModal isModal={isModal} video={videoId}></IFrameModal>
+      <IFrameModal
+        isModal={isModal}
+        showModal={(e: boolean) => setIsModal(e)}
+        videoId={videoId}
+      ></IFrameModal>
     </Layout>
   )
 }
