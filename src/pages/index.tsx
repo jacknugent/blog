@@ -27,11 +27,18 @@ const IndexPage = () => (
       <PageLink title="Resume" link="resume" />
       <PageLink title="Stripes" link="stripes" />
       <PageLink title="Videos" link="videos" />
-      <PageLink title="Twitter" link="twitter" />
-      <PageLink title="LinkedIn" link="linked-in" />
+      <PageLink
+        title="Twitter"
+        link="www.twitter.com/jacknugent27"
+        external={true}
+      />
+      <PageLink
+        title="LinkedIn"
+        link="www.linkedin.com/in/jack-nugent-34ba98ba/"
+        external={true}
+      />
       <PageLink title="This Website" link="this-website" />
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 

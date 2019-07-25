@@ -19,7 +19,7 @@ function videos() {
             videoId
             localThumbnail {
               childImageSharp {
-                fluid(maxWidth: 960) {
+                fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -33,14 +33,22 @@ function videos() {
   const youtubeVideoGallery = css`
     display: flex;
     flex-wrap: wrap;
+    margin-left: calc(-100vw / 2 + 960px / 2 + 0.5rem);
+    margin-right: calc(-100vw / 2 + 960px / 2 + 0.5rem);
+    @media (max-width: 960px) {
+      margin: 0;
+    }
   `
   const videoContainer = css`
     margin: 0.5rem;
     flex-grow: 1;
-    width: 33%;
+    width: 25%;
 
-    @media (max-width: 600px) {
-      width: 50%;
+    @media (max-width: 1200px) {
+      width: 33%;
+    }
+    @media (max-width: 960px) {
+      width: 100%;
     }
   `
 

@@ -24,19 +24,26 @@ const link = css`
   }
 `
 
-const PageLink = (props: PageLink) => (
-  <Link to={props.link} css={link}>
-    {props.title}
-  </Link>
-)
+const PageLink = (props: PageLink) =>
+  props.external ? (
+    <a href={"//" + props.link} target="_blank" css={link}>
+      {props.title}
+    </a>
+  ) : (
+    <Link to={props.link} css={link}>
+      {props.title}
+    </Link>
+  )
 
 interface PageLink {
   title?: string
   link?: string
+  external?: boolean
 }
 
 PageLink.defaultProps = {
   title: `TBD`,
   link: "/",
+  external: false,
 }
 export default PageLink
