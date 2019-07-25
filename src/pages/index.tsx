@@ -37,7 +37,7 @@ const IndexPage = () => (
         link="www.linkedin.com/in/jack-nugent-34ba98ba/"
         external={true}
       />
-      <PageLink title="This Website" link="this-website" />
+      <PageLink title="This Website" link="how-i-built-this-website" />
     </div>
   </Layout>
 )
