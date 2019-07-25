@@ -36,7 +36,8 @@ function videos() {
     margin-left: calc(-100vw / 2 + 960px / 2 + 0.5rem);
     margin-right: calc(-100vw / 2 + 960px / 2 + 0.5rem);
     @media (max-width: 960px) {
-      margin: 0;
+      margin-left: -1rem;
+      margin-right: -1rem;
     }
   `
   const videoContainer = css`
