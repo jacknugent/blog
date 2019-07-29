@@ -56,9 +56,9 @@ deploy_production:
   stage: deploy
   script:
     - pip install awscli
-    - aws s3 sync public/ s3://www.jacknugent.io/ --delete
+    - aws s3 sync public/ s3://jacknugent.io/ --delete
   environment:
     name: PROD
-    url: http://www.jacknugent.io
+    url: http://jacknugent.io
   only:
     - master
