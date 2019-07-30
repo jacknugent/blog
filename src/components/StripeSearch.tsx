@@ -95,7 +95,7 @@ const StripeSearch = (props: any) => {
     .node.name
 
   const filter = (
-    <select id="titleSearch" css={FilterInput} onChange={e => props.filter(e)}>
+    <select id="titleFilter" css={FilterInput} onChange={e => props.filter(e)}>
       {filterValues.map((options: any) => (
         <option key={options}>{options}</option>
       ))}
@@ -138,7 +138,7 @@ const StripeSearch = (props: any) => {
           </label>
         </div>
         <div css={[StripeSearchContainer, StripeFilterContainer]}>
-          <label css={searchHeaders} htmlFor="titleSearch">
+          <label css={searchHeaders} htmlFor="titleFilter">
             Filter by Stripe
             {filter}
           </label>
