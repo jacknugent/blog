@@ -63,6 +63,7 @@ module.exports = {
         maxVideos: 50, // Defaults to 50
       },
     },
+    `gatsby-plugin-offline`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
