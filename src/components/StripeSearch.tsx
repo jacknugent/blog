@@ -128,20 +128,20 @@ const StripeSearch = (props: any) => {
         <div css={StripeSearchContainer}>
           <label css={searchHeaders} htmlFor="titleSearch">
             Search by Title
+            <input
+              css={TitleInput}
+              id="titleSearch"
+              placeholder=""
+              value={props.searchValue}
+              onChange={e => props.search(e)}
+            ></input>
           </label>
-          <input
-            css={TitleInput}
-            id="titleSearch"
-            placeholder=""
-            value={props.searchValue}
-            onChange={e => props.search(e)}
-          ></input>
         </div>
         <div css={[StripeSearchContainer, StripeFilterContainer]}>
           <label css={searchHeaders} htmlFor="titleSearch">
             Filter by Stripe
+            {filter}
           </label>
-          {filter}
         </div>
       </div>
     </div>
