@@ -57,6 +57,7 @@ deploy_production:
   script:
     - pip install awscli
     - aws s3 sync public/ s3://jacknugent.io/ --delete
+    - aws cloudfront create-invalidation --distribution-id E2PCC8Q8LHLJMY --paths '/*' && aws cloudfront create-invalidation --distribution-id E1AB7TWPAABPC1 --paths '/*'
   environment:
     name: PROD
     url: http://jacknugent.io
