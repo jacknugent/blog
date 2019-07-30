@@ -50,11 +50,16 @@ const YouTubeThumbnail = (props: YouTubeThumbnailProps) => {
   `)
 
   return (
-    <div
+    <button
       css={css`
         position: relative;
         width: 100%;
         padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        border: 0;
+        display: -webkit-box;
       `}
     >
       <section css={thumbnailContainer}>
@@ -95,7 +100,7 @@ const YouTubeThumbnail = (props: YouTubeThumbnailProps) => {
         ]}
         fluid={playButtons.redPlay.childImageSharp.fluid}
       ></Img>
-    </div>
+    </button>
   )
 }
 

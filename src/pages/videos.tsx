@@ -1,16 +1,11 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
-import { useState } from "react"
 import SEO from "../components/seo"
 import { css } from "@emotion/core"
-import YouTubeThumbnail from "../components/YouTubeThumbnail"
-import IFrameModal from "../components/IFrameModal"
+import YouTubeVideo from "../components/YouTubeVideo"
 
 function videos() {
-  const [isModal, setIsModal] = useState(false)
-  const [videoId, setVideoId] = useState("")
-
   const videoInfo = useStaticQuery(graphql`
     {
       allYoutubeVideo {
@@ -53,10 +48,6 @@ function videos() {
     }
   `
 
-  const handleModal = (videoId: string) => {
-    setIsModal(true)
-    setVideoId(videoId)
-  }
   return (
     <Layout>
       <div
@@ -67,23 +58,16 @@ function videos() {
         <SEO title="Videos" />
         <div css={youtubeVideoGallery}>
           {videoInfo.map((x: any, i: number) => (
-            <div
-              css={videoContainer}
-              onClick={e => handleModal(x.node.videoId)}
-              key={"youtube_video_" + i}
-            >
-              <YouTubeThumbnail
-                fluid={x.node.localThumbnail.childImageSharp.fluid}
-              />
+            <div css={videoContainer} onClick={() => console.log("helo")}>
+              <YouTubeVideo
+                key={"youtube_video_" + i}
+                id={x.node.videoId}
+                fluid_url={x.node.localThumbnail.childImageSharp.fluid}
+              ></YouTubeVideo>
             </div>
           ))}
         </div>
       </div>
-      <IFrameModal
-        isModal={isModal}
-        showModal={(e: boolean) => setIsModal(e)}
-        videoId={videoId}
-      ></IFrameModal>
     </Layout>
   )
 }
