@@ -61,7 +61,7 @@ function videos() {
     <Layout>
       <div
         css={css`
-          margin-top: 2rem;
+          margin-top: 0.5rem;
         `}
       >
         <SEO title="Videos" />
@@ -70,6 +70,7 @@ function videos() {
             <div
               css={videoContainer}
               onClick={e => handleModal(x.node.videoId)}
+              key={"youtube_video_" + i}
             >
               <YouTubeThumbnail
                 fluid={x.node.localThumbnail.childImageSharp.fluid}

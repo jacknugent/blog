@@ -30,9 +30,9 @@ const PageLink = (props: PageLink) =>
       {props.title}
     </a>
   ) : (
-    <Link to={props.link} css={link}>
+    <a href={props.link} css={link}>
       {props.title}
-    </Link>
+    </a>
   )
 
 interface PageLink {
