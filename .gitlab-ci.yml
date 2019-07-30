@@ -56,7 +56,7 @@ deploy_production:
   stage: deploy
   script:
     - pip install awscli
-    - aws s3 sync public/ s3://jacknugent.io/ --delete
+    - aws s3 sync public/ s3://jacknugent.io/ --delete --recursive --cache-control max-age=31557600
     - aws cloudfront create-invalidation --distribution-id E2PCC8Q8LHLJMY --paths '/*' && aws cloudfront create-invalidation --distribution-id E1AB7TWPAABPC1 --paths '/*'
   environment:
     name: PROD
