@@ -38,32 +38,36 @@ function videos() {
 
     @media (max-width: 1200px) {
       grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0.5rem;
     }
+
     @media (max-width: 960px) {
       grid-template-columns: repeat(1, 1fr);
-      margin-left: -1rem;
-      margin-right: -1rem;
+      margin-left: 0;
+      margin-right: 0;
     }
   `
   const videoContainer = css``
 
   const handleIFrameClick = (e: any, i: number) => {
-    const video_width = window.innerWidth / 3 - 18
-    const aspect_ratio = 16 / 9
-    const video_height = video_width / aspect_ratio
-    const row = Math.floor(i / 3)
-    const first_in_row = Number.isInteger(i / 3) ? 0 : 1
-
-    console.log("row", row)
-    console.log(first_in_row, "first_in_row")
-    const expanded_video = video_height * 2 + 9
-
     setClickedVideo(i)
-    window.scroll({
-      top: 98 + (row + first_in_row) * (video_height + 9),
-      left: 0,
-      behavior: "smooth",
-    })
+
+    if (window.innerWidth > 960) {
+      const row_count = window.innerWidth > 1200 ? 3 : 2
+      const video_margin = window.innerWidth > 1200 ? 18 : 23
+      const video_width = window.innerWidth / row_count - video_margin
+      const aspect_ratio = 16 / 9
+      const video_height = video_width / aspect_ratio
+
+      const row = Math.floor(i / row_count)
+      const first_in_row = Number.isInteger(i / row_count) ? 0 : 1
+
+      window.scroll({
+        top: 98 + (row + first_in_row) * (video_height + 9),
+        left: 0,
+        behavior: "smooth",
+      })
+    }
   }
 
   return (
@@ -90,11 +94,18 @@ function videos() {
                   videoContainer,
                   css`
                     grid-column: 1 / 4;
-                    grid-row: ${i / 4} / ${i / 3 + 4};
-                    // -webkit-transition: width 0.5s; /* Safari prior 6.1 */
-                    // transition: width 0.5s;
-                    -webkit-transition: max-width 0.5s; /* Safari prior 6.1 */
-                    transition: max-width 0.5s;
+                    grid-row: ${Math.ceil(i / 3) + 1} / ${Math.ceil(i / 3) + 3};
+
+                    @media (max-width: 1200px) {
+                      grid-column: 1 / 3;
+                      grid-row: ${Math.ceil(i / 2) + 1} /
+                        ${Math.ceil(i / 2) + 2};
+                    }
+
+                    @media (max-width: 960px) {
+                      grid-column: auto;
+                      grid-column: auto;
+                    }
                   `,
                 ]}
                 onClick={() => {}}

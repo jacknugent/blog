@@ -60,7 +60,7 @@ module.exports = {
       options: {
         channelId: "UCWTFGPpNQ0Ms6afXhaWDiRw",
         apiKey: process.env.GATSBY_YOUTUBE_API,
-        maxVideos: 50, // Defaults to 50
+        maxVideos: 100, // Defaults to 50
       },
     },
     `gatsby-plugin-offline`,
