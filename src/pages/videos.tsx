@@ -95,15 +95,20 @@ function videos() {
                 css={[
                   videoContainer,
                   css`
+                    @media (max-width: 1200px and min-width: 960px) {
+                      grid-column: 1 / 3;
+                      grid-row: ${Math.ceil(i / 2) + 1} /
+                        ${Math.ceil(i / 2) + 2};
+                    }
                     @media (min-width: 1200px) {
                       grid-column: 1 / 4;
                       grid-row: ${Math.ceil(i / 3) + 1} /
                         ${Math.ceil(i / 3) + 3};
                     }
-                    @media (max-width: 1200px and min-width: 960px) {
+                    @media (min-width: 1700px) {
                       grid-column: 1 / 3;
-                      grid-row: ${Math.ceil(i / 2) + 1} /
-                        ${Math.ceil(i / 2) + 2};
+                      grid-row: ${Math.ceil(i / 3) + 1} /
+                        ${Math.ceil(i / 3) + 3};
                     }
                   `,
                 ]}
