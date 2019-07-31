@@ -45,6 +45,8 @@ function videos() {
       grid-template-columns: repeat(1, 1fr);
       margin-left: 0;
       margin-right: 0;
+      grid-column-gap: 0rem;
+      grid-row-gap: 0.5rem;
     }
   `
   const videoContainer = css``
@@ -93,18 +95,15 @@ function videos() {
                 css={[
                   videoContainer,
                   css`
-                    grid-column: 1 / 4;
-                    grid-row: ${Math.ceil(i / 3) + 1} / ${Math.ceil(i / 3) + 3};
-
-                    @media (max-width: 1200px) {
+                    @media (min-width: 1200px) {
+                      grid-column: 1 / 4;
+                      grid-row: ${Math.ceil(i / 3) + 1} /
+                        ${Math.ceil(i / 3) + 3};
+                    }
+                    @media (max-width: 1200px and min-width: 960px) {
                       grid-column: 1 / 3;
                       grid-row: ${Math.ceil(i / 2) + 1} /
                         ${Math.ceil(i / 2) + 2};
-                    }
-
-                    @media (max-width: 960px) {
-                      grid-column: auto;
-                      grid-column: auto;
                     }
                   `,
                 ]}
