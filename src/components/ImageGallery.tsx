@@ -109,9 +109,9 @@ const ImageGallery = (props: any) => {
                 imageContainer,
                 css`
                   width: ${x.node.image.childImageSharp.fluid.aspectRatio *
-                    450}px !important;
+                    400}px !important;
                   flex-grow: ${x.node.image.childImageSharp.fluid.aspectRatio *
-                    450} !important;
+                    400} !important;
                 `,
               ]}
             >
