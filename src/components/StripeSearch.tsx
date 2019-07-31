@@ -54,10 +54,12 @@ const StripeSearch = (props: any) => {
     width: 75%;
     height: 24px;
     font-size: 16px;
-    border-radius: 2px;
+    border-radius: 4px;
+    padding: 1rem 0.5rem;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
     @media (max-width: 600px) {
       width: 100%;
-      box-sizing: border-box;
       height: 30px;
     }
   `
