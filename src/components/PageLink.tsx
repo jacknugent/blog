@@ -18,6 +18,15 @@ const link = css`
     cursor: pointer;
   }
   @media (max-width: 700px) {
+    height: 200px;
+
+    display: block;
+    width: auto;
+    margin: 0 0 10px 0;
+  }
+  @media (max-width: 500px) {
+    height: 150px;
+    line-height: 150px;
     display: block;
     width: auto;
     margin: 0 0 10px 0;

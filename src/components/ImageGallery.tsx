@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Img from "gatsby-image"
@@ -45,26 +46,23 @@ const imageOverlay = css`
   right: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
-  background-color: #000000;
-  transition: 0.25s;
-  &:hover {
-    opacity: 0.7;
-  }
+  transition: 0.5s;
 `
 
 const imageText = css`
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: -1.6rem;
   transform: translate(-50%, -50%);
-  color: white;
+  color: black;
   width: 100%;
   text-align: center;
   margin: 0;
 `
 
 const ImageGallery = (props: any) => {
+  const [clickedPic, setClickedPic] = useState(null)
+
   const data = useStaticQuery(graphql`
     {
       allStripeListYaml(sort: { fields: [title], order: ASC }) {
@@ -72,6 +70,7 @@ const ImageGallery = (props: any) => {
           node {
             id
             title
+            description
             tags
             image {
               childImageSharp {
@@ -104,14 +103,28 @@ const ImageGallery = (props: any) => {
         (x: any, i: number) =>
           x.node.image && (
             <div
+              onClick={e => {
+                setClickedPic(i)
+              }}
               key={i}
               css={[
                 imageContainer,
                 css`
                   width: ${x.node.image.childImageSharp.fluid.aspectRatio *
-                    400}px !important;
+                    300}px !important;
                   flex-grow: ${x.node.image.childImageSharp.fluid.aspectRatio *
-                    400} !important;
+                    300} !important;
+                  transition: margin 0.25s ease
+                    ${clickedPic === i ? "0s" : ".25s"};
+                  margin-top: ${clickedPic === i
+                    ? "3.5rem !important"
+                    : ".25rem !important"};
+                  margin-bottom: ${clickedPic === i && x.node.description
+                    ? "3.5rem !important"
+                    : ".25rem !important"};
+                  &:hover {
+                    cursor: pointer;
+                  }
                 `,
               ]}
             >
@@ -122,15 +135,31 @@ const ImageGallery = (props: any) => {
                     x.node.image.childImageSharp.fluid.aspectRatio}%;
                 `}
               />
-              {
-                <Img
-                  alt={x.node.title}
-                  css={image}
-                  fluid={x.node.image.childImageSharp.fluid}
-                />
-              }
-              <div css={imageOverlay}>
+              <Img
+                alt={x.node.title}
+                css={image}
+                fluid={x.node.image.childImageSharp.fluid}
+              />
+              <div
+                css={[
+                  imageOverlay,
+                  css`
+                    opacity: ${clickedPic === i ? 1 : 0};
+                  `,
+                ]}
+              >
                 <h2 css={imageText}>{x.node.title}</h2>
+                <h3
+                  css={[
+                    imageText,
+                    css`
+                      top: 110%;
+                      font-size: 18px;
+                    `,
+                  ]}
+                >
+                  {x.node.description}
+                </h3>
               </div>
             </div>
           )

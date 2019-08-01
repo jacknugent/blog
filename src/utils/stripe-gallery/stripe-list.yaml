@@ -274,19 +274,19 @@
   image: ./images/Deadwood.2004.jpg
   tags: crooked playful
   description:
-- title:
+- title: 12 Angry Men (1957)
   image: ./images/12.angry.men.jpg
-  tags:
-  description:
-- title:
+  tags: playful
+  description: Hello!
+- title: Ladybird 2017
   image: ./images/lady.bird.2017(3).jpeg
-  tags:
+  tags: playful
   description:
-- title:
+- title: 2001 A Space Odyssey (2001)
   image: ./images/2001.a.space.odyssey.jpg
-  tags:
+  tags: illusion
   description:
-- title:
+- title: Ladybird (2017)
   image: ./images/lady.bird.jpeg
   tags:
   description:
@@ -783,10 +783,6 @@
   tags:
   description:
 - title:
-  image: ./images/west.side.story.jpg
-  tags:
-  description:
-- title:
   image: ./images/what.about.bob.jpg
   tags:
   description:
@@ -820,9 +816,5 @@
   description:
 - title:
   image: ./images/zootopie.jpg
-  tags:
-  description:
-- title:
-  image: ./images/labyrinth.1986.jpg
   tags:
   description:

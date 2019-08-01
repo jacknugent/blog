@@ -57,6 +57,7 @@ const IndexPage = () => {
       </p>
 
       <div css={links}>
+        <PageLink title="This Website" link="how-i-built-this-website" />
         <PageLink title="Resume" link="resume" />
         <PageLink title="Stripes" link="stripes" />
         <PageLink title="Videos" link="videos" />
@@ -70,7 +71,6 @@ const IndexPage = () => {
           link="www.linkedin.com/in/jack-nugent-34ba98ba/"
           external={true}
         />
-        <PageLink title="This Website" link="how-i-built-this-website" />
       </div>
     </Layout>
   )
