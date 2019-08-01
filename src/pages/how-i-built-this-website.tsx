@@ -7,8 +7,8 @@ import { css } from "@emotion/core"
 import { theme } from "../utils/themes"
 
 const topImageStyle = css`
-  margin-left: calc(-100vw / 2 + 960px / 2);
-  margin-right: calc(-100vw / 2 + 960px / 2);
+  margin-left: calc(-100vw / 2 + 975px / 2);
+  margin-right: calc(-100vw / 2 + 975px / 2);
 
   @media (max-width: 960px) {
     margin-left: -1rem;
