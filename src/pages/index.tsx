@@ -40,6 +40,7 @@ const IndexPage = () => {
         `}
       >
         <Img
+          alt="Me coding at the MIT Hackathon"
           css={css`
             width: 100%;
             max-width: 300px;
