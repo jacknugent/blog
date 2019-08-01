@@ -58,10 +58,6 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint **/*.tsx"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/denningk/gatsby-starter-typescript-jest"
-  },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
