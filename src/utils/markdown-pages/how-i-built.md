@@ -2,7 +2,7 @@
 path: "/how-i-built-this-website"
 title: "How I Built This Website"
 image: "how-i-build.jpg"
-image_subtitle: "An audit of the /videos page"
+image_subtitle: "Performance analysis of the /videos page"
 ---
 
 Available in [Microsoft Word](https://drive.google.com/file/d/0Bw0_aAHPLyV4aEhxT0tobDlXcHg5MHZJTkRONEY3X3ZjR1ZR/view?usp=sharing) or [PDF](https://drive.google.com/file/d/1vtvmmRWb8wIdBCwpFni61Y2DA7dE8uCx/view?usp=sharing).

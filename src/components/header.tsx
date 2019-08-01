@@ -7,6 +7,7 @@ const link = css`
   color: black;
   text-decoration: none;
   font-size: 40px;
+  padding: 1rem 0;
 `
 const background = css`
   background: ${theme.colors.red};
@@ -14,7 +15,7 @@ const background = css`
 const text = css`
   margin: 0 auto;
   max-width: 960px;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.25rem 1.0875rem;
   @media (max-width: 600px) {
     text-align: center;
   }
