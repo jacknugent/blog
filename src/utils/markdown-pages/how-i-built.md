@@ -5,7 +5,21 @@ image: "how-i-build.jpg"
 image_subtitle: "Performance analysis of the /videos page"
 ---
 
-This is a React website using the Gatsby framework, hosted in an S3 bucket and distributed over Cloudfront. It performs extremely well for several reasons:
+It's a React website using the Gatsby framework, hosted in an S3 bucket and distributed over Cloudfront.
 
-- JAMstack uses client-side javascript, reusable API's, and prebuilt markup. Prebuilt files are served over a CDN and can be served anywhere.
-- Lazy image loading. Gatsby image
+## Speed
+
+The site performs extremely well for several reasons:
+
+- JAMstack. Gatsby uses client-side javascript and prebuilt markup to easily cache a site on a CDN.
+- Lazy image loading. Gatsby-image caches images in several sizes and loads them incrementally.
+- Minimal CSS. Avoiding frameworks like Bootstrap that slow down a site and become outdated. I use CSS-In-JS (with Emotion) to modularize styling.
+- Know when to do it yourself.
+
+## Minimalism
+
+I favor simple, modular layouts over flashy, complicated ones.
+
+## Browsers
+
+This site functions on all modern browsers, NOT IE11 or less. Because who wants to support that? All that work for <3% of users? No thanks.
