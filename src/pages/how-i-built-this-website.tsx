@@ -24,7 +24,7 @@ const image_subtitle = css`
 function HowIBuilt() {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "resume.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "performance-test.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid

@@ -9,8 +9,8 @@ module.exports = {
     author: `@jacknugent`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-emotion`,
+    { resolve: `gatsby-plugin-react-helmet` },
+    { resolve: `gatsby-plugin-emotion` },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,8 +25,8 @@ module.exports = {
         path: `${__dirname}/src/utils/markdown-pages/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    { resolve: `gatsby-transformer-sharp` },
+    { resolve: `gatsby-plugin-sharp` },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -39,7 +39,7 @@ module.exports = {
         icon: `src/utils/blog-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-typescript`,
+    { resolve: `gatsby-plugin-typescript` },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -47,8 +47,8 @@ module.exports = {
         path: `${__dirname}/src/utils/markdown-pages`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-yaml`,
+    { resolve: `gatsby-transformer-remark` },
+    { resolve: `gatsby-transformer-yaml` },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -63,7 +63,7 @@ module.exports = {
         maxVideos: 100, // Defaults to 50
       },
     },
-    `gatsby-plugin-offline`,
+    { resolve: `gatsby-plugin-offline` },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
