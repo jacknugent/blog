@@ -29,13 +29,12 @@ const IndexPage = () => {
     }
   `)
 
-  console.log(icon)
   return (
     <Layout>
       <SEO title="Home" />
       <div
         css={css`
-          margin-top: 2rem;
+          margin-top: 1rem;
           text-align: center;
         `}
       >
@@ -45,6 +44,9 @@ const IndexPage = () => {
             width: 100%;
             max-width: 300px;
             display: inline-block;
+            @media (max-width: 600px) {
+              width: 200px;
+            }
           `}
           fluid={icon.placeholderImage.childImageSharp.fluid}
         />
