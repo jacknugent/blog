@@ -9,6 +9,8 @@ import YouTubeVideo from "../components/YouTubeVideo"
 function videos() {
   const [clickedVideo, setClickedVideo] = useState(null)
 
+  const marginRem = 1
+
   const videoInfo = useStaticQuery(graphql`
     {
       allYoutubeVideo {
@@ -17,7 +19,7 @@ function videos() {
             videoId
             localThumbnail {
               childImageSharp {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 10000) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -29,43 +31,56 @@ function videos() {
   `).allYoutubeVideo.edges
 
   const youtubeVideoGallery = css`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
-    margin-left: calc(-100vw / 2 + 960px / 2 + 1rem);
-    margin-right: calc(-100vw / 2 + 960px / 2 + 1rem);
-
-    @media (max-width: 1200px) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 0.5rem;
-    }
-
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-100vw / 2 + 960px / 2 + ${marginRem / 2 + "rem"});
+    margin-right: calc(-100vw / 2 + 960px / 2 + ${marginRem / 2 + "rem"});
     @media (max-width: 960px) {
-      grid-template-columns: repeat(1, 1fr);
       margin-left: 0;
       margin-right: 0;
-      grid-column-gap: 0rem;
-      grid-row-gap: 0.5rem;
     }
   `
-  const videoContainer = css``
+  const videoContainer = css`
+    flex: 0 calc(50% - ${marginRem + "rem"});
+    margin: 0.5rem;
+
+    @media (max-width: 960px) {
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      flex: 0 100%;
+    }
+  `
 
   const handleIFrameClick = (e: any, i: number) => {
     setClickedVideo(i)
 
+    const remToPx = 18
+    const headerHeight = 89
+
     if (window.innerWidth > 960) {
-      const row_count = window.innerWidth > 1200 ? 3 : 2
-      const video_margin = window.innerWidth > 1200 ? 18 : 23
-      const video_width = window.innerWidth / row_count - video_margin
+      const row_count = 2
+
+      // calculate the amount of pixels per rem styling
+      const marginPx = marginRem * remToPx
+
+      const rowVideoMargin = (marginPx * row_count) / 2
+      const outerMargin = marginPx / 2
+
+      // calculate total spacing between videos in row
+      // using the marginPx variable to allow quick margin cuztomization
+
+      const video_width =
+        window.innerWidth / row_count - rowVideoMargin - outerMargin
       const aspect_ratio = 16 / 9
-      const video_height = video_width / aspect_ratio
+      const video_height = video_width / aspect_ratio + rowVideoMargin
 
       const row = Math.floor(i / row_count)
       const first_in_row = Number.isInteger(i / row_count) ? 0 : 1
 
       window.scroll({
-        top: 98 + (row + first_in_row) * (video_height + 9),
+        top: headerHeight + (row + first_in_row) * video_height,
         left: 0,
         behavior: "smooth",
       })
@@ -95,21 +110,8 @@ function videos() {
                 css={[
                   videoContainer,
                   css`
-                    @media (min-width: 960px) {
-                      grid-column: 1 / 3;
-                      grid-row: ${Math.ceil(i / 2) + 1} /
-                        ${Math.ceil(i / 2) + 2};
-                    }
-                    @media (min-width: 1200px) {
-                      grid-column: 1 / 4;
-                      grid-row: ${Math.ceil(i / 3) + 1} /
-                        ${Math.ceil(i / 3) + 3};
-                    }
-                    @media (min-width: 1700px) {
-                      grid-column: 1 / 3;
-                      grid-row: ${Math.ceil(i / 3) + 1} /
-                        ${Math.ceil(i / 3) + 3};
-                    }
+                    flex: 0 100%;
+                    transition: all 0.5s;
                   `,
                 ]}
                 onClick={() => {}}

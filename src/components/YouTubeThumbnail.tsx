@@ -58,6 +58,7 @@ const YouTubeThumbnail = (props: YouTubeThumbnailProps) => {
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;
+        margin: 0;
         border: none;
         display: -webkit-box;
       `}

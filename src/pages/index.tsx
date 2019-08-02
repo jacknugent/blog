@@ -17,18 +17,6 @@ const links = css`
 `
 
 const IndexPage = () => {
-  const icon = useStaticQuery(graphql`
-    {
-      placeholderImage: file(relativePath: { eq: "jack.coding.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Layout>
       <SEO title="Home" />
@@ -37,23 +25,10 @@ const IndexPage = () => {
           margin-top: 1rem;
           text-align: center;
         `}
-      >
-        <Img
-          alt="Me coding at the MIT Hackathon"
-          css={css`
-            width: 100%;
-            max-width: 300px;
-            display: inline-block;
-            @media (max-width: 600px) {
-              width: 200px;
-            }
-          `}
-          fluid={icon.placeholderImage.childImageSharp.fluid}
-        />
-      </div>
+      ></div>
       <p>
-        I am a Software Engineer and Film Critic. I consult for Fortune 500
-        Companies and have a YouTube Channel with over 750,000 subscribers.
+        I write software for Fortune 500 Companies and have a YouTube Channel
+        with over 750,000 subscribers.
       </p>
 
       <div css={links}>
