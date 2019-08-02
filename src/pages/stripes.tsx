@@ -3,46 +3,108 @@ import { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ImageGallery from "../components/ImageGallery"
-import StripeSearch from "../components/StripeSearch"
-import YouTubeVideo from "../components/YouTubeVideo"
+import { css } from "@emotion/core"
+
 import { useStaticQuery, graphql } from "gatsby"
 
 function stripes() {
   const [search, setSearch] = useState("")
   const [filter, setFilter] = useState("All")
 
-  const stripe = useStaticQuery(graphql`
-    query MyQuery {
-      youtubeVideo(
-        title: { eq: "Stripes in Movies: Why Do Characters Wear Them?" }
-      ) {
-        title
-        localThumbnail {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+  const quote = css`
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+    animation: fadein 1s;
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
       }
     }
-  `).youtubeVideo.localThumbnail
+
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Internet Explorer */
+    @-ms-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Opera < 12.1 */
+    @-o-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 960px) {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  `
+  const headerQuote = css`
+    margin: 2rem 0;
+    font-size: 4rem;
+    @media (max-width: 960px) {
+      font-size: 2.5rem;
+    }
+  `
+
+  const nameQuote = css`
+    text-align: right;
+    margin-right: 4rem;
+    font-size: 2rem;
+    @media (max-width: 960px) {
+      font-size: 1rem;
+      margin-right: 0;
+    }
+  `
 
   return (
     <>
       <Layout>
+        <div css={quote}>
+          <h1 css={headerQuote}>
+            <q>Stripes attract attention.</q>
+          </h1>
+          <p css={nameQuote}>- Paul Rand, Creator of the IBM Logo</p>
+        </div>
+
         <SEO title="Stripes" />
-        <h1>Stripes in Film</h1>
-        <YouTubeVideo
-          id="Y1U4YkNkoG0"
-          fluid_url={stripe.childImageSharp.fluid}
-        ></YouTubeVideo>
-        <StripeSearch
-          searchValue={search}
-          search={(e: any) => setSearch(e.target.value)}
-          filterSelection={filter}
-          filter={(e: any) => setFilter(e.target.value)}
-        ></StripeSearch>
         <ImageGallery search={search} filter={filter} />
       </Layout>
     </>

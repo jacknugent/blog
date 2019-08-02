@@ -27,14 +27,14 @@ const IndexPage = () => {
         `}
       ></div>
       <p>
-        I write software for Fortune 500 Companies and have a YouTube Channel
-        with over 750,000 subscribers.
+        I build software for Fortune 500 Companies and have a Film Analysis
+        YouTube Channel with over 750,000 subscribers.
       </p>
 
       <div css={links}>
         <PageLink title="This Website" link="how-i-built-this-website" />
         <PageLink title="Resume" link="resume" />
-        <PageLink title="Stripes" link="stripes" />
+        {/* <PageLink title="Stripes" link="stripes" /> */}
         <PageLink title="Videos" link="videos" />
         <PageLink
           title="Twitter"

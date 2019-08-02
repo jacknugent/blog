@@ -14,12 +14,4 @@ The site performs extremely well for several reasons:
 - JAMstack. Gatsby uses client-side javascript and prebuilt markup to easily cache a site on a CDN.
 - Lazy image loading. Gatsby-image caches images in several sizes and loads them incrementally.
 - Minimal CSS. Avoiding frameworks like Bootstrap that slow down a site and become outdated. I use CSS-In-JS (with Emotion) to modularize styling.
-- Know when to do it yourself.
-
-## Minimalism
-
-I favor simple, modular layouts over flashy, complicated ones.
-
-## Browsers
-
-This site functions on all modern browsers, NOT IE11 or less. Because who wants to support that? All that work for <3% of users? No thanks.
+- Compress files. Cloudfront automatically gzips HTML, CSS, and JS, smaller files means faster loading times.
