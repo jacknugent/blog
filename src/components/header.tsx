@@ -1,16 +1,15 @@
 import { Link } from "gatsby"
 import * as React from "react"
 import { css } from "@emotion/core"
-import { theme } from "../utils/themes"
 
+const header = css`
+  flex-shrink: 0;
+`
 const link = css`
   color: black;
   text-decoration: none;
-  font-size: 40px;
-  padding: 1rem 0;
-`
-const background = css`
-  background: ${theme.colors.red};
+  font-size: 20px;
+  padding: 1rem;
 `
 const text = css`
   margin: 0 auto;
@@ -21,24 +20,22 @@ const text = css`
   }
 `
 
-const Header = (props: HeaderProps) => (
-  <header css={background}>
+const Header = () => (
+  <header css={header}>
     <div css={text}>
       <h1 css={{ margin: 0 }}>
         <Link to="/" css={link}>
-          {props.siteTitle}
+          Home
+        </Link>
+        <Link to="/projects" css={link}>
+          Projects
+        </Link>
+        <Link to="/videos" css={link}>
+          Videos
         </Link>
       </h1>
     </div>
   </header>
 )
-
-interface HeaderProps {
-  siteTitle?: string
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

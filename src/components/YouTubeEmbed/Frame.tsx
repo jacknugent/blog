@@ -18,7 +18,7 @@ const iframe = css`
   background-size: calc(5vw + 40px), cover;
 `
 
-const IFrame = (props: IFrameProps) => {
+const Frame = (props: HTMLFrameProps) => {
   return (
     <div css={iframeContainer}>
       <iframe
@@ -34,8 +34,8 @@ const IFrame = (props: IFrameProps) => {
   )
 }
 
-interface IFrameProps {
+interface HTMLFrameProps {
   videoId: string
 }
 
-export default IFrame
+export default Frame

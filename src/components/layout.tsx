@@ -21,11 +21,13 @@ const globalStyles = css`
     font: 112.5%/1.45em georgia, serif;
     box-sizing: border-box;
     overflow-y: scroll;
+    height: 100%;
   }
   body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
   }
   h1,
   h2,
@@ -33,48 +35,45 @@ const globalStyles = css`
   h4,
   h5,
   h6 {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI,
+      Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+      sans-serif;
     font-weight: bold;
     text-rendering: optimizeLegibility;
     line-height: 1.1;
   }
   p,
   a {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI,
+      Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+      sans-serif;
   }
 `
-const mainStyle = css`
+const body = css`
   margin: 0 auto;
   max-width: 960px;
   padding: 0px 0.5rem 1.45rem;
   padding-top: 0;
+  flex-grow: 1;
 `
-const Layout = (props: LayoutProps) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Global styles={globalStyles} />
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div css={mainStyle}>
-          <main>{props.children}</main>
-          <Footer />
-        </div>
-      </>
-    )}
-  />
-)
-
+const Layout = (props: LayoutProps) => {
+  return (
+    <div
+      css={css`
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      `}
+    >
+      <Global styles={globalStyles} />
+      <Header />
+      <div css={body}>
+        <main>{props.children}</main>
+      </div>
+      <Footer />
+    </div>
+  )
+}
 interface LayoutProps {
   children: any
 }

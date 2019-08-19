@@ -15,6 +15,9 @@ const links = css`
     display: block;
   }
 `
+const introduction = css`
+  text-align: center;
+`
 
 const IndexPage = () => {
   return (
@@ -26,27 +29,14 @@ const IndexPage = () => {
           text-align: center;
         `}
       ></div>
-      <p>
-        I build software for Fortune 500 Companies and have a Film Analysis
-        YouTube Channel with over 750,000 subscribers.
-      </p>
-
-      <div css={links}>
-        <PageLink title="This Website" link="how-i-built-this-website" />
-        <PageLink title="Resume" link="resume" />
-        {/* <PageLink title="Stripes" link="stripes" /> */}
-        <PageLink title="Videos" link="videos" />
-        <PageLink
-          title="Twitter"
-          link="www.twitter.com/jacknugent27"
-          external={true}
-        />
-        <PageLink
-          title="LinkedIn"
-          link="www.linkedin.com/in/jack-nugent-34ba98ba/"
-          external={true}
-        />
+      <div css={introduction}>
+        <h1>Jack Nugent</h1>
+        <p>
+          I build software for Fortune 500 Companies and have a Film Analysis
+          YouTube Channel with over 750,000 subscribers.
+        </p>
       </div>
+      <div css={links}></div>
     </Layout>
   )
 }

@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { css } from "@emotion/core"
-import YouTubeVideo from "../components/YouTubeVideo"
+import YouTubeEmbed from "../components/YouTubeEmbed/YouTubeEmbed"
 
 function videos() {
   const [clickedVideo, setClickedVideo] = useState(null)
@@ -98,11 +98,11 @@ function videos() {
         <div css={youtubeVideoGallery}>
           {videoInfo.map((x: any, i: number) => {
             const video = (
-              <YouTubeVideo
+              <YouTubeEmbed
                 key={"youtube_video_" + i}
                 id={x.node.videoId}
                 fluid_url={x.node.localThumbnail.childImageSharp.fluid}
-              ></YouTubeVideo>
+              ></YouTubeEmbed>
             )
 
             return i === clickedVideo ? (

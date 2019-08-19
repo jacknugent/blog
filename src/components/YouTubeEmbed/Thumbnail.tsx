@@ -29,7 +29,7 @@ const loadingThumbnail = css`
   width: 100%;
 `
 
-const YouTubeThumbnail = (props: YouTubeThumbnailProps) => {
+const Thumbnail = (props: ThumbnailProps) => {
   const playButtons = useStaticQuery(graphql`
     {
       greyPlay: file(relativePath: { eq: "youtube-play-grey.png" }) {
@@ -105,8 +105,8 @@ const YouTubeThumbnail = (props: YouTubeThumbnailProps) => {
   )
 }
 
-interface YouTubeThumbnailProps {
+interface ThumbnailProps {
   fluid: any
 }
 
-export default YouTubeThumbnail
+export default Thumbnail
