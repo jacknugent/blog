@@ -16,11 +16,9 @@ const footer = css`
 
 const Footer = () => (
   <footer css={footer}>
-    <div>
-      <a css={dot}>G</a>
-      <a css={dot}>F</a>
-      <a css={dot}>T</a>
-    </div>
+    <a css={dot}>G</a>
+    <a css={dot}>F</a>
+    <a css={dot}>T</a>
   </footer>
 )
 export default Footer

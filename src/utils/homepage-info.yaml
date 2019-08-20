@@ -1,4 +1,12 @@
-- title: Wall Street (1987)
-  image: ./images/Wall.Street.1987.jpg
-  tags: crooked
-  description:
+introduction:
+  - title: Jack Nugent
+  - Description: My name is Jack Nugent. I am an awesome software developer who has done lots of things!
+experience:
+  - title: My Experience
+  - Experiences:
+    - Skills:  sagasg
+    - Job 1: asdgsadg
+    - Job 2: sdgsag
+    - University: safgsadgdsg
+
+
