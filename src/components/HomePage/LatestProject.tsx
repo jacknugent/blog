@@ -1,20 +1,9 @@
 import { useStaticQuery, graphql } from "gatsby"
 import * as React from "react"
-import { useEffect, useState } from "react"
 import { css } from "@emotion/core"
 import YouTubeEmbed from "../../components/YouTubeEmbed/YouTubeEmbed"
 
 function LatestProject() {
-  const [width, setWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth)
-    window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  })
-
   const video = useStaticQuery(graphql`
     {
       youtubeVideo {
@@ -62,7 +51,7 @@ function LatestProject() {
             nesciunt amet quibusdam asperiores tempore mollitia accusantium
             praesentium assumenda! Dicta, autem.
           </p>
-          {width > 1200 && <button>Link to Site</button>}
+          <button>Link to Site</button>
         </div>
 
         <div
@@ -75,7 +64,7 @@ function LatestProject() {
             fluid_url={video.localThumbnail.childImageSharp.fluid}
           ></YouTubeEmbed>
         </div>
-        {width <= 1200 && <button>Link to Site</button>}
+        <button>Link to Site</button>
       </div>
     </div>
   )
