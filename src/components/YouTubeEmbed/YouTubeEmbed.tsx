@@ -9,7 +9,7 @@ const YouTubeEmbed = (props: YouTubeEmbedProps) => {
 
   return (
     <div>
-      <div onClick={x => setIsVideo(true)}>
+      <div onClick={() => setIsVideo(true)}>
         {isVideo ? (
           <Frame videoId={props.id}></Frame>
         ) : (

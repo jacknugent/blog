@@ -103,7 +103,7 @@ const ImageGallery = (props: any) => {
         (x: any, i: number) =>
           x.node.image && (
             <div
-              onClick={e => {
+              onClick={() => {
                 setClickedPic(i)
               }}
               key={i}

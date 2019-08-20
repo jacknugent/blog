@@ -41,7 +41,7 @@ function videos() {
       margin: 0.5rem;
       @media (max-width: 900px) {
         flex: 1 100%;
-        margin: 0.5rem 0;
+        margin: 0.25rem 0;
       }
     }
   `
@@ -58,9 +58,8 @@ function videos() {
       </p>
       <div css={VideoGallery}>
         {videoInfo.map((x: any, i: number) => (
-          <div css={videoContainer}>
+          <div key={"youtube_video_" + i} css={videoContainer}>
             <YouTubeEmbed
-              key={"youtube_video_" + i}
               id={x.node.videoId}
               fluid_url={x.node.localThumbnail.childImageSharp.fluid}
             ></YouTubeEmbed>

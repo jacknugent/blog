@@ -5,7 +5,6 @@ import Introduction from "../components/HomePage/Introduction"
 import PeerTestimonies from "../components/HomePage/PeerTestimonies"
 import LatestProject from "../components/HomePage/LatestProject"
 import SEO from "../components/seo"
-import { css } from "@emotion/core"
 
 const IndexPage = () => {
   return (

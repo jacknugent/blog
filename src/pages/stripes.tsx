@@ -5,8 +5,6 @@ import SEO from "../components/seo"
 import ImageGallery from "../components/ImageGallery"
 import { css } from "@emotion/core"
 
-import { useStaticQuery, graphql } from "gatsby"
-
 function stripes() {
   const [search, setSearch] = useState("")
   const [filter, setFilter] = useState("All")

@@ -51,7 +51,6 @@ function LatestProject() {
             nesciunt amet quibusdam asperiores tempore mollitia accusantium
             praesentium assumenda! Dicta, autem.
           </p>
-          <button>Link to Site</button>
         </div>
 
         <div
@@ -64,6 +63,8 @@ function LatestProject() {
             fluid_url={video.localThumbnail.childImageSharp.fluid}
           ></YouTubeEmbed>
         </div>
+      </div>
+      <div>
         <button>Link to Site</button>
       </div>
     </div>

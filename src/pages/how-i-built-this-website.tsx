@@ -15,7 +15,7 @@ const topImageStyle = css`
     margin-right: -1rem;
   }
 `
-const image_subtitle = css`
+const imageSubtitle = css`
   text-align: center;
   margin-bottom: 1.5rem;
   margin-top: 0.5rem;
@@ -52,7 +52,7 @@ function HowIBuilt() {
         css={topImageStyle}
         fluid={data.placeholderImage.childImageSharp.fluid}
       />
-      <p css={image_subtitle}>
+      <p css={imageSubtitle}>
         {data.markdownRemark.frontmatter.image_subtitle}
       </p>
       <h1>{data.markdownRemark.frontmatter.title}</h1>
