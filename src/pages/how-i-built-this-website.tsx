@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { css } from "@emotion/core"
-import { theme } from "../utils/themes"
+import { theme } from "../utils/css/themes"
 
 const topImageStyle = css`
   margin-left: calc(-100vw / 2 + 975px / 2);

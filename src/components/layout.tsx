@@ -7,13 +7,34 @@
 
 import * as React from "react"
 import { StaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import Footer from "./footer"
-
 import { Global, css } from "@emotion/core"
+import {
+  GothamMediumTTF,
+  GothamMediumWOFF,
+  MontserratRegularTTF,
+  MontserratRegularWOFF,
+} from "../utils/css/fonts"
 
 const globalStyles = css`
+  @font-face {
+    font-family: "GothamMedium";
+
+    src: local("Gotham Medium"), local("Gotham-Medium"),
+      url(${GothamMediumTTF}) format("ttf"),
+      url(${GothamMediumWOFF}) format("woff");
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Montserrat Regular"), local("Montserrat-Regular"),
+      url(${MontserratRegularTTF}) format("truetype"),
+      url(${MontserratRegularWOFF}) format("woff");
+  }
+
   html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -35,18 +56,14 @@ const globalStyles = css`
   h4,
   h5,
   h6 {
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI,
-      Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-      sans-serif;
+    font-family: "GothamMedium";
     font-weight: bold;
     text-rendering: optimizeLegibility;
     line-height: 1.1;
   }
   p,
   a {
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI,
-      Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-      sans-serif;
+    font-family: "Montserrat";
   }
 `
 const body = css`
