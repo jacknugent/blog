@@ -29,9 +29,9 @@ function videos() {
      {
       display: flex;
       flex-wrap: wrap;
-      @media (min-width: 900px) {
-        margin-left: calc(-100vw / 2 + 750px / 2 + 3rem);
-        margin-right: calc(-100vw / 2 + 750px / 2 + 3rem);
+      @media (min-width: 1000px) {
+        margin-left: calc(-100vw / 2 + 750px / 2 + 15vw);
+        margin-right: calc(-100vw / 2 + 750px / 2 + 15vw);
       }
     }
   `

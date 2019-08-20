@@ -1,17 +1,32 @@
 import * as React from "react"
 import { css } from "@emotion/core"
+import { useStaticQuery, graphql } from "gatsby"
 
-const Introduction = () => (
-  <div
-    css={css`
-      text-align: center;
-    `}
-  >
-    <h1>Jack Nugent</h1>
-    <p>
-      I build software for Fortune 500 Companies and have a Film Analysis
-      YouTube Channel with over 750,000 subscribers.
-    </p>
-  </div>
-)
+const Introduction = () => {
+  const introduction_text = useStaticQuery(graphql`
+    {
+      utilsYaml {
+        introduction {
+          description
+          title
+        }
+      }
+    }
+  `).utilsYaml.introduction
+
+  console.log(introduction_text)
+
+  return (
+    <div
+      css={css`
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 10rem;
+      `}
+    >
+      <h1>{introduction_text.title}</h1>
+      <p>{introduction_text.description}</p>
+    </div>
+  )
+}
 export default Introduction

@@ -1,23 +1,26 @@
 import { useStaticQuery, graphql } from "gatsby"
 import * as React from "react"
 import { css } from "@emotion/core"
-import YouTubeEmbed from "../../components/YouTubeEmbed/YouTubeEmbed"
+import Img, { FluidObject } from "gatsby-image"
 
 function LatestProject() {
-  const video = useStaticQuery(graphql`
+  const project = useStaticQuery(graphql`
     {
-      youtubeVideo {
-        videoId
-        localThumbnail {
+      projectsYaml {
+        title
+        description
+        image {
           childImageSharp {
-            fluid(maxWidth: 10000) {
+            fluid(maxHeight: 9999) {
               ...GatsbyImageSharpFluid
             }
           }
         }
       }
     }
-  `).youtubeVideo
+  `).projectsYaml
+
+  console.log(project)
 
   return (
     <div
@@ -44,12 +47,13 @@ function LatestProject() {
         >
           <h1>Latest Project</h1>
 
-          <h3>Codepen</h3>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum
-            inventore ex facere nostrum, cumque vitae veniam optio numquam animi
-            nesciunt amet quibusdam asperiores tempore mollitia accusantium
-            praesentium assumenda! Dicta, autem.
+          <h3>{project.title}</h3>
+          <p
+            css={css`
+              margin-right: 1rem;
+            `}
+          >
+            {project.description}
           </p>
         </div>
 
@@ -58,10 +62,10 @@ function LatestProject() {
             flex: 1 0 0;
           `}
         >
-          <YouTubeEmbed
-            id={video.videoId}
-            fluid_url={video.localThumbnail.childImageSharp.fluid}
-          ></YouTubeEmbed>
+          <Img
+            alt={project.title}
+            fluid={project.image.childImageSharp.fluid}
+          />
         </div>
       </div>
       <div>

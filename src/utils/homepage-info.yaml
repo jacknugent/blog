@@ -1,12 +1,13 @@
 introduction:
-  - title: Jack Nugent
-  - Description: My name is Jack Nugent. I am an awesome software developer who has done lots of things!
-experience:
-  - title: My Experience
-  - Experiences:
-    - Skills:  sagasg
-    - Job 1: asdgsadg
-    - Job 2: sdgsag
-    - University: safgsadgdsg
-
+  title: Jack Nugent
+  description: I am an awesome software developer who has done lots of things!
+experiences:
+  Skills: sagasg
+  Job 1: asdgsadg
+  Job 2: sdgsag
+  University: safgsadgdsg
+peer_testimonies:
+  - He is deepening his skills and knowledge as a front end developer at an impressive rate and is outpacing some of his more seasoned colleagues.
+  - He also stepped into unknown territory (time series) and spent extra time outside of the project learning about this type of predictive analytics and running many iterations on his own time at home.
+  - Typically I'd expect to see a significant loss in efficiency and knowledge with a newly formed team, but that really hasn't felt like an issue due to Jack's skill as a developer.
 

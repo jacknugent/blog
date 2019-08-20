@@ -4,6 +4,7 @@ import MyExperience from "../components/HomePage/MyExperience"
 import Introduction from "../components/HomePage/Introduction"
 import PeerTestimonies from "../components/HomePage/PeerTestimonies"
 import LatestProject from "../components/HomePage/LatestProject"
+import LatestVideo from "../components/HomePage/LatestVideo"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
@@ -14,7 +15,7 @@ const IndexPage = () => {
       <MyExperience></MyExperience>
       <PeerTestimonies></PeerTestimonies>
       <LatestProject></LatestProject>
-      <LatestProject></LatestProject>
+      <LatestVideo></LatestVideo>
     </Layout>
   )
 }
