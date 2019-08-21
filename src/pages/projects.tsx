@@ -29,7 +29,7 @@ const Projects = () => {
   console.log(projects)
   return (
     <Layout>
-      <SEO title="Resumé" />
+      <SEO title="Projects" />
       {projects.map((project: any, i: number) => (
         <Project
           title={project.title}

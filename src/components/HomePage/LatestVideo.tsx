@@ -75,7 +75,9 @@ function LatestVideo() {
         </div>
       </div>
       <div>
-        <button>See More Videos</button>
+        <a href="http://youtube.com/nowyouseeit" target="_blank">
+          See More Videos
+        </a>
       </div>
     </div>
   )

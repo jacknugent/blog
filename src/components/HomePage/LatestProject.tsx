@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import * as React from "react"
 import { css } from "@emotion/core"
 import Img, { FluidObject } from "gatsby-image"
@@ -69,7 +69,7 @@ function LatestProject() {
         </div>
       </div>
       <div>
-        <button>See More Projects</button>
+        <Link to="projects">See More Projects</Link>
       </div>
     </div>
   )
