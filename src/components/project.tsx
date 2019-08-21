@@ -1,7 +1,6 @@
 import * as React from "react"
 import { css } from "@emotion/core"
 import Img, { FluidObject } from "gatsby-image"
-import { Link } from "@reach/router"
 
 const Project = (props: ProjectProps) => (
   <div>
