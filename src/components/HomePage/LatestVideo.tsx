@@ -51,7 +51,7 @@ function LatestVideo() {
             flex: 1 0 0;
           `}
         >
-          <h1>Latest Video</h1>
+          <h1>My Latest Video</h1>
 
           <h3>{video.title}</h3>
           <p

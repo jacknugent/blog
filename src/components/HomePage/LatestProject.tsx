@@ -45,7 +45,7 @@ function LatestProject() {
             flex: 1 0 0;
           `}
         >
-          <h1>Latest Project</h1>
+          <h1>My Latest Project</h1>
 
           <h3>{project.title}</h3>
           <p
