@@ -27,7 +27,6 @@ const MyExperience = () => {
         experiences {
           Skills
           CapTech
-          GE
           University
           YouTube
         }

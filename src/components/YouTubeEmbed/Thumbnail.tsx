@@ -37,14 +37,14 @@ const Thumbnail = (props: ThumbnailProps) => {
     {
       greyPlay: file(relativePath: { eq: "youtube-play-grey.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 175) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       redPlay: file(relativePath: { eq: "youtube-play-red.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 175) {
             ...GatsbyImageSharpFluid
           }
         }

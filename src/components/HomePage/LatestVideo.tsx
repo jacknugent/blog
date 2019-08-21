@@ -16,7 +16,7 @@ function LatestVideo() {
         description
         localThumbnail {
           childImageSharp {
-            fluid(maxWidth: 10000) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
             }
           }

@@ -2,11 +2,10 @@ introduction:
   title: Jack Nugent
   description: A proven Full-Stack Engineer with a strangely successful hobby.
 experiences:
-  Skills: sagasg
-  CapTech: asdgsadg
-  GE: sdgsag
-  University: safgsadgdsg
-  YouTube: I have a channel!!!!s
+  Skills: "Proficient: React, Angular, Gatsby, Docker, MySQL, Python, HTML5,CSS3, Git, Bash Scripting."
+  CapTech: Used React, Angular 2+, and Wordpress to create modular user interfaces. Built performant Time Series model to accurately predict shipment quantities for convenient stores.
+  University: Majored in Computer Science at the University of Virginia.
+  YouTube: I run a YouTube channel with over 800,000 subscribers and 50 million pageviews. I analyze movies and coordinate small team of editors and designers.
 peer_testimonies:
   - He is deepening his skills and knowledge as a front end developer at an impressive rate and is outpacing some of his more seasoned colleagues.
   - He also stepped into unknown territory (time series) and spent extra time outside of the project learning about this type of predictive analytics and running many iterations on his own time at home.

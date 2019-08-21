@@ -14,7 +14,7 @@ function LatestProject() {
         description
         image {
           childImageSharp {
-            fluid(maxHeight: 9999) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
             }
           }
