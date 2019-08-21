@@ -5,7 +5,6 @@ import { css } from "@emotion/core"
 const header = css`
   margin: 0 auto;
   width: 100%;
-  padding: 1.25rem 0;
   text-align: left;
   display: flex;
 
@@ -17,11 +16,11 @@ const link = css`
   color: black;
   text-decoration: none;
   font-size: 20px;
-  margin: 0 1rem;
+  padding: 1rem;
 
   // let Flex take over
   @media (max-width: 600px) {
-    margin: 0;
+    padding: 0.5rem 0;
   }
 `
 

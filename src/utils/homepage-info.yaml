@@ -1,11 +1,12 @@
 introduction:
   title: Jack Nugent
-  description: I am an awesome software developer who has done lots of things!
+  description: A proven Full-Stack Engineer with a successful hobby.
 experiences:
   Skills: sagasg
-  Job 1: asdgsadg
-  Job 2: sdgsag
+  CapTech: asdgsadg
+  GE: sdgsag
   University: safgsadgdsg
+  YouTube: I have a channel!!!!s
 peer_testimonies:
   - He is deepening his skills and knowledge as a front end developer at an impressive rate and is outpacing some of his more seasoned colleagues.
   - He also stepped into unknown territory (time series) and spent extra time outside of the project learning about this type of predictive analytics and running many iterations on his own time at home.

@@ -75,13 +75,7 @@ function LatestVideo() {
         </div>
       </div>
       <div>
-        <button
-          css={css`
-            transform: translateY(-100%);
-          `}
-        >
-          Link to Site
-        </button>
+        <button>Link to Site</button>
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 import * as React from "react"
 import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
+import { useState } from "react"
 
 const myExperience = css`
   text-align: center;
@@ -13,14 +14,16 @@ const experienceButtons = css`
 `
 
 const MyExperience = () => {
+  const [selectedExperience, setSelectedExperience] = useState("Skills")
   const experiences_text = useStaticQuery(graphql`
     {
       utilsYaml {
         experiences {
-          University
           Skills
-          Job_1
-          Job_2
+          CapTech
+          GE
+          University
+          YouTube
         }
       }
     }
@@ -30,10 +33,11 @@ const MyExperience = () => {
     <div css={myExperience}>
       <h1>My Experience</h1>
       <div css={experienceButtons}>
-        <button>Skills</button>
-        <button>Job 1</button>
-        <button>Job 2</button>
-        <button>University</button>
+        {Object.keys(experiences_text).map((experience: any) => (
+          <button onClick={() => setSelectedExperience(experience)}>
+            {experience.replace("_", " ")}
+          </button>
+        ))}
       </div>
       <p
         css={css`
@@ -41,18 +45,25 @@ const MyExperience = () => {
           margin: 1rem 0;
         `}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ad
-        exercitationem sequi vero omnis consequatur. Vitae, recusandae earum ab
-        reiciendis ullam ipsa dolorem! Ullam atque repellat dolorum nobis libero
-        qui.
+        {experiences_text[selectedExperience]}
       </p>
       <div
         css={css`
           text-align: left;
         `}
       >
-        <button>PDF Resume</button>
-        <button>Word Resume</button>
+        <a
+          href="https://drive.google.com/file/d/1vtvmmRWb8wIdBCwpFni61Y2DA7dE8uCx/view?usp=sharing"
+          target="_blank"
+        >
+          PDF Resume
+        </a>
+        <a
+          href="https://drive.google.com/file/d/0Bw0_aAHPLyV4aEhxT0tobDlXcHg5MHZJTkRONEY3X3ZjR1ZR/view?usp=sharing"
+          target="_blank"
+        >
+          Word Resume
+        </a>
       </div>
     </div>
   )

@@ -14,8 +14,6 @@ const Introduction = () => {
     }
   `).utilsYaml.introduction
 
-  console.log(introduction_text)
-
   return (
     <div
       css={css`

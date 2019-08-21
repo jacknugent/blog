@@ -18,13 +18,6 @@ module.exports = {
         path: `${__dirname}/src/utils/stripe-gallery/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog_images`,
-        path: `${__dirname}/src/utils/markdown-pages/images`,
-      },
-    },
     { resolve: `gatsby-transformer-sharp` },
     { resolve: `gatsby-plugin-sharp` },
     {
@@ -40,13 +33,6 @@ module.exports = {
       },
     },
     { resolve: `gatsby-plugin-typescript` },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/utils/markdown-pages`,
-      },
-    },
     { resolve: `gatsby-transformer-remark` },
     { resolve: `gatsby-transformer-yaml` },
     {

@@ -31,6 +31,9 @@ const Project = (props: ProjectProps) => (
           <h1>{props.title}</h1>
           <p>{props.description}</p>
           <p>Skills: {props.skills}</p>
+          <a href={props.site_source} target="_blank">
+            {props.site_label}
+          </a>
         </div>
         <div
           css={css`
@@ -39,11 +42,6 @@ const Project = (props: ProjectProps) => (
         >
           <Img alt={props.title} fluid={props.fluid_img} />
         </div>
-      </div>
-      <div>
-        <a href={props.site_source} target="_blank">
-          {props.site_label}
-        </a>
       </div>
     </div>
   </div>
