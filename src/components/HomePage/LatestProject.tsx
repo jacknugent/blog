@@ -26,6 +26,7 @@ function LatestProject() {
   return (
     <div
       css={css`
+        margin: 3rem 0;
         @media (min-width: 900px) {
           margin-left: calc(-100vw / 2 + 750px / 2 + 3rem);
           margin-right: calc(-100vw / 2 + 750px / 2 + 3rem);
@@ -69,7 +70,12 @@ function LatestProject() {
           />
         </div>
       </div>
-      <div>
+      <div
+        css={css`
+          text-align: center;
+          margin-top: 1rem;
+        `}
+      >
         <Link to="projects">See More Projects</Link>
       </div>
     </div>

@@ -80,7 +80,12 @@ function LatestVideo() {
           ></YouTubeEmbed>
         </div>
       </div>
-      <div>
+      <div
+        css={css`
+          text-align: center;
+          margin-top: 1rem;
+        `}
+      >
         <a href="http://youtube.com/nowyouseeit" target="_blank">
           See More Videos
         </a>
