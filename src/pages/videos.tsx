@@ -66,6 +66,14 @@ function videos() {
           </div>
         ))}
       </div>
+      <button
+        css={css`
+          display: block;
+          margin: auto;
+        `}
+      >
+        See the Channel
+      </button>
     </Layout>
   )
 }

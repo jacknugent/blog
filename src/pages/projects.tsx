@@ -2,7 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
-import Project from "../components/Project"
+import Project from "../components/project"
 
 const Projects = () => {
   const projects = useStaticQuery(graphql`

@@ -69,7 +69,7 @@ function LatestProject() {
         </div>
       </div>
       <div>
-        <button>Link to Site</button>
+        <button>See More Projects</button>
       </div>
     </div>
   )

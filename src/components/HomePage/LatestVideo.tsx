@@ -75,7 +75,7 @@ function LatestVideo() {
         </div>
       </div>
       <div>
-        <button>Link to Site</button>
+        <button>See More Videos</button>
       </div>
     </div>
   )
