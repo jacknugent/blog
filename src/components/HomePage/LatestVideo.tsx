@@ -14,6 +14,7 @@ function LatestVideo() {
       youtubeVideo {
         title
         description
+        videoId
         localThumbnail {
           childImageSharp {
             fluid(maxWidth: 1000) {
@@ -24,6 +25,8 @@ function LatestVideo() {
       }
     }
   `).youtubeVideo
+
+  console.log(video)
 
   const parseDescription = (description: string) => {
     // replace the social media links at the end.
