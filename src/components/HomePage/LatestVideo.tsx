@@ -26,8 +26,6 @@ function LatestVideo() {
     }
   `).youtubeVideo
 
-  console.log(video)
-
   const parseDescription = (description: string) => {
     // replace the social media links at the end.
     description = description.replace(/Twitter.*\n.*/g, "")
