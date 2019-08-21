@@ -29,7 +29,6 @@ const Projects = () => {
     }
   `).allProjectsYaml.nodes
 
-  console.log(projects)
   return (
     <Layout>
       <SEO title="Projects" />

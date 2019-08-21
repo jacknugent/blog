@@ -39,8 +39,8 @@ const MyExperience = () => {
     <div css={myExperience}>
       <h1>My Experience</h1>
       <div css={experienceButtons}>
-        {Object.keys(experiences_text).map((experience: any) => (
-          <button onClick={() => setSelectedExperience(experience)}>
+        {Object.keys(experiences_text).map((experience: any, i: number) => (
+          <button key={i} onClick={() => setSelectedExperience(experience)}>
             {experience.replace("_", " ")}
           </button>
         ))}

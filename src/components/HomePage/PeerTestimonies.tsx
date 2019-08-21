@@ -27,8 +27,9 @@ const PeerTestimonies = () => {
       >
         Peer Testimonies
       </h1>
-      {peer_testimonies.map((x: string) => (
+      {peer_testimonies.map((x: string, i: number) => (
         <p
+          key={i}
           css={css`
             text-align: left;
           `}

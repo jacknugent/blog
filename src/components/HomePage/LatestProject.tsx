@@ -23,8 +23,6 @@ function LatestProject() {
     }
   `).projectsYaml
 
-  console.log(project)
-
   return (
     <div
       css={css`

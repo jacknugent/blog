@@ -56,11 +56,12 @@ const globalStyles = css`
   h5,
   h6 {
     font-family: "GothamMedium";
-    font-weight: bold;
+    font-weight: normal;
     text-rendering: optimizeLegibility;
     line-height: 1.1;
   }
   p,
+  label,
   a {
     font-family: "Montserrat";
   }
