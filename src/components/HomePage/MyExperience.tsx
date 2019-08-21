@@ -11,6 +11,9 @@ const myExperience = css`
 const experienceButtons = css`
   display: flex;
   justify-content: space-around;
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 `
 
 const MyExperience = () => {

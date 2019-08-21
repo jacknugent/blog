@@ -32,9 +32,6 @@ const Header = () => (
     <Link to="/projects" css={link}>
       Projects
     </Link>
-    <Link to="/videos" css={link}>
-      Videos
-    </Link>
     <Link
       to="/contact"
       css={[
