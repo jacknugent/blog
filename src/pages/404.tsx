@@ -1,5 +1,7 @@
+// framework imports - 1st party
 import * as React from "react"
 
+// app imports
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 

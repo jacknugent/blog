@@ -1,9 +1,14 @@
+// framework imports - 1st party
 import * as React from "react"
 import { useState } from "react"
+
+// lib imports - 3rd party
+import { css } from "@emotion/core"
+
+// app imports
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ImageGallery from "../components/ImageGallery"
-import { css } from "@emotion/core"
 
 function stripes() {
   const [search, setSearch] = useState("")

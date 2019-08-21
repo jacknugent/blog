@@ -1,7 +1,10 @@
-import { useStaticQuery, graphql, Link } from "gatsby"
+// framework imports - 1st party
 import * as React from "react"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import Img from "gatsby-image"
+
+// lib imports - 3rd party
 import { css } from "@emotion/core"
-import Img, { FluidObject } from "gatsby-image"
 
 function LatestProject() {
   const project = useStaticQuery(graphql`

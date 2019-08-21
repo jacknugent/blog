@@ -1,7 +1,10 @@
+// framework imports - 1st party
 import * as React from "react"
-import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+
+// lib imports - 3rd party
+import { css } from "@emotion/core"
 
 const thumbnailContainer = css`
   &:hover {

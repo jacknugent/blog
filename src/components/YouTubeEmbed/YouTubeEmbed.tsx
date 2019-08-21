@@ -1,6 +1,8 @@
+// framework imports - 1st party
 import * as React from "react"
 import { useState } from "react"
 
+// app imports
 import Thumbnail from "./Thumbnail"
 import Frame from "./Frame"
 

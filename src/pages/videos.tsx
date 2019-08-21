@@ -1,8 +1,13 @@
+// framework imports - 1st party
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+
+// lib imports - 3rd party
+import { css } from "@emotion/core"
+
+// app imports
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { css } from "@emotion/core"
 import YouTubeEmbed from "../components/YouTubeEmbed/YouTubeEmbed"
 
 function videos() {

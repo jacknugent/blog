@@ -1,7 +1,10 @@
+// framework imports - 1st party
 import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+
+// app imports
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { useStaticQuery, graphql } from "gatsby"
 import Project from "../components/project"
 
 const Projects = () => {

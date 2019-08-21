@@ -1,6 +1,9 @@
+// framework imports - 1st party
 import * as React from "react"
-import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
+
+// lib imports - 3rd party
+import { css } from "@emotion/core"
 
 const Introduction = () => {
   const introduction_text = useStaticQuery(graphql`
