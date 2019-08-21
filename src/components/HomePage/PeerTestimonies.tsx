@@ -33,14 +33,6 @@ const PeerTestimonies = () => {
           &ldquo;{x}&rdquo;
         </p>
       ))}
-      <button
-        css={css`
-          display: flex;
-          margin: auto;
-        `}
-      >
-        See More
-      </button>
     </div>
   )
 }
