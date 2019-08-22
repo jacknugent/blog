@@ -10,7 +10,6 @@ import SEO from "../components/seo"
 const Contract = () => {
   function handleSubmit(e: any) {
     e.preventDefault()
-    console.log("submitted!")
   }
 
   return (

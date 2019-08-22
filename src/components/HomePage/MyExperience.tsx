@@ -20,38 +20,39 @@ const experienceButtons = css`
 `
 
 const MyExperience = () => {
-  const [selectedExperience, setSelectedExperience] = useState("Skills")
+  const [selectedExperience, setSelectedExperience] = useState(0)
   const experiences_text = useStaticQuery(graphql`
     {
-      utilsYaml {
-        experiences {
-          Skills
-          CapTech
-          University
-          YouTube
+      allMarkdownRemark {
+        nodes {
+          frontmatter {
+            title
+          }
+          html
         }
       }
     }
-  `).utilsYaml.experiences
+  `).allMarkdownRemark.nodes
 
   return (
     <div css={myExperience}>
       <h1>My Experience</h1>
       <div css={experienceButtons}>
-        {Object.keys(experiences_text).map((experience: any, i: number) => (
-          <button key={i} onClick={() => setSelectedExperience(experience)}>
-            {experience.replace("_", " ")}
+        {Object.keys(experiences_text).map((_experience: any, i: number) => (
+          <button key={i} onClick={() => setSelectedExperience(i)}>
+            {experiences_text[i].frontmatter.title}
           </button>
         ))}
       </div>
-      <p
+      <div
         css={css`
           text-align: left;
           margin: 1rem 0;
         `}
-      >
-        {experiences_text[selectedExperience]}
-      </p>
+        dangerouslySetInnerHTML={{
+          __html: experiences_text[selectedExperience].html,
+        }}
+      ></div>
       <div
         css={css`
           text-align: left;
