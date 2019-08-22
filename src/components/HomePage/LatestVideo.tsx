@@ -86,7 +86,11 @@ function LatestVideo() {
           margin-top: 1rem;
         `}
       >
-        <a href="http://youtube.com/nowyouseeit" target="_blank">
+        <a
+          rel="noreferrer"
+          href="https://www.youtube.com/channel/UCWTFGPpNQ0Ms6afXhaWDiRw/videos"
+          target="_blank"
+        >
           See More Videos
         </a>
       </div>

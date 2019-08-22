@@ -54,6 +54,7 @@ const Thumbnail = (props: ThumbnailProps) => {
 
   return (
     <button
+      aria-label="Button to play YouTube video"
       css={css`
         position: relative;
         width: 100%;
