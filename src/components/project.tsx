@@ -3,12 +3,16 @@ import { css } from "@emotion/core"
 import Img, { FluidObject } from "gatsby-image"
 
 const Project = (props: ProjectProps) => (
-  <div>
+  <div
+    css={css`
+      margin-bottom: 2rem;
+    `}
+  >
     <div
       css={css`
         @media (min-width: 900px) {
-          margin-left: calc(-100vw / 2 + 750px / 2 + 3rem);
-          margin-right: calc(-100vw / 2 + 750px / 2 + 3rem);
+          margin-left: calc(-100vw / 2 + 750px / 2 + 10rem);
+          margin-right: calc(-100vw / 2 + 750px / 2 + 10rem);
         }
       `}
     >
@@ -30,9 +34,11 @@ const Project = (props: ProjectProps) => (
           <h1>{props.title}</h1>
           <p>{props.description}</p>
           <p>Skills: {props.skills}</p>
-          <a href={props.site_source} target="_blank">
-            {props.site_label}
-          </a>
+          {props.site_source && (
+            <a href={props.site_source} target="_blank">
+              {props.site_label}
+            </a>
+          )}
         </div>
         <div
           css={css`
@@ -49,8 +55,8 @@ const Project = (props: ProjectProps) => (
 interface ProjectProps {
   title: string
   description: string
-  site_source: string
-  site_label: string
+  site_source: ""
+  site_label: ""
   fluid_img: FluidObject
   skills: string
 }
