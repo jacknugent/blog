@@ -7,6 +7,7 @@ build_staging:
   stage: build
   script:
     - npm install
+    - npm run clean
     - npm run type-check
     - npm run lint
     - npm run build
@@ -26,6 +27,7 @@ build_site:
   stage: build
   script:
     - npm install
+    - npm run clean
     - npm run build
   cache:
     key: ${CI_COMMIT_REF_SLUG}
@@ -48,8 +50,8 @@ deploy_staging:
     name: staging
     url: http://dev.jacknugent.io
   except:
-   - master
-   - tags
+    - master
+    - tags
 
 deploy_production:
   image: python:latest
