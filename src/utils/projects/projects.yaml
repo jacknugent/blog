@@ -10,3 +10,10 @@
   description: This website was built in Gatsby, a React framework that pre-builds static pages, leading to huge performance increases. It's hosted in S3, distributed on Cloudfront, and deployed with GitLab.
   image: ./images/audit.jpg
   skills: Gatsby, React, S3, CloudFront, GitLab
+- title: Headless WordPress & Gatsby
+  slug: headless-wordpress-and-gatsby
+  description: A page that demos a small Headless WordPress example.
+  image: ./images/wordpress.jpg
+  site_label: Link to Page
+  site_source: /headless-wordpress-and-gatsby/
+  skills: Gatsby, React, S3, CloudFront, GitLab
