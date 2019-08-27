@@ -20,7 +20,7 @@ const link = css`
   font-size: 18px;
   padding: 0.75rem 1.25rem;
   margin: 1rem;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   color: ${theme.colors.blue};
   border: 1px solid ${theme.colors.blue};
   // let Flex take over
