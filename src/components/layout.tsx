@@ -61,6 +61,7 @@ const globalStyles = css`
     line-height: 1.1;
   }
   p,
+  li,
   label,
   a {
     font-family: "Montserrat";

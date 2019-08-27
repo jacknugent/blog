@@ -32,6 +32,9 @@ const experienceButton = css`
     text-align: center;
     height: 3rem;
   }
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const resumeButton = css`

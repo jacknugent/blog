@@ -26,7 +26,7 @@ const link = css`
   // let Flex take over
   @media (max-width: 600px) {
     padding: 0.5rem;
-    margin: 1rem 0;
+    margin: 0.25rem 0;
     width: 25%;
     text-align: center;
   }
