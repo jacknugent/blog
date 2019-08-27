@@ -21,12 +21,24 @@ const Introduction = () => {
     <div
       css={css`
         text-align: center;
-        margin-top: 5rem;
-        margin-bottom: 10rem;
+        min-height: calc(100vh);
+        display: flex;
       `}
     >
-      <h1>{introduction_text.title}</h1>
-      <p>{introduction_text.description}</p>
+      <div
+        css={css`
+          margin: auto;
+        `}
+      >
+        <h1
+          css={css`
+            margin-top: 0;
+          `}
+        >
+          {introduction_text.title}
+        </h1>
+        <p>{introduction_text.description}</p>
+      </div>
     </div>
   )
 }

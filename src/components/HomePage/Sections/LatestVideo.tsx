@@ -6,7 +6,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 // app imports
-import YouTubeEmbed from "../YouTubeEmbed/YouTubeEmbed"
+import YouTubeEmbed from "../../YouTubeEmbed/YouTubeEmbed"
+import { theme } from "../../../utils/css/themes"
 
 function LatestVideo() {
   const video = useStaticQuery(graphql`
@@ -37,9 +38,9 @@ function LatestVideo() {
   return (
     <div
       css={css`
-        @media (min-width: 900px) {
-          margin-left: calc(-100vw / 2 + 750px / 2 + 3rem);
-          margin-right: calc(-100vw / 2 + 750px / 2 + 3rem);
+        margin: 3rem 0;
+        @media (max-width: 600px) {
+          margin: 1rem 0;
         }
       `}
     >
@@ -72,6 +73,10 @@ function LatestVideo() {
         <div
           css={css`
             flex: 1 0 0;
+            margin: auto;
+            @media (max-width: 1200px) {
+              margin: 0;
+            }
           `}
         >
           <YouTubeEmbed
@@ -87,6 +92,13 @@ function LatestVideo() {
         `}
       >
         <a
+          css={css`
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            border: 1px solid ${theme.colors.blue};
+            color: ${theme.colors.blue};
+          `}
           rel="noreferrer"
           href="https://www.youtube.com/channel/UCWTFGPpNQ0Ms6afXhaWDiRw/videos"
           target="_blank"

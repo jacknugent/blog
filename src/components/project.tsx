@@ -1,6 +1,7 @@
 import * as React from "react"
 import { css } from "@emotion/core"
 import Img, { FluidObject } from "gatsby-image"
+import { theme } from "../utils/css/themes"
 
 const Project = (props: ProjectProps) => (
   <div
@@ -34,15 +35,35 @@ const Project = (props: ProjectProps) => (
           <h1>{props.title}</h1>
           <p>{props.description}</p>
           <p>Skills: {props.skills}</p>
-          {props.site_source && (
-            <a href={props.site_source} target="_blank">
-              {props.site_label}
-            </a>
-          )}
+          <div
+            css={css`
+              display: flex;
+              align-items: flex-end;
+              text-align: center;
+            `}
+          >
+            {props.site_source && (
+              <a
+                css={css`
+                  text-decoration: none;
+                  padding: 0.5rem;
+                  border-radius: 0.25rem;
+                  border: 1px solid ${theme.colors.blue};
+                  color: ${theme.colors.blue};
+                  width: 30%;
+                `}
+                href={props.site_source}
+                target="_blank"
+              >
+                {props.site_label}
+              </a>
+            )}
+          </div>
         </div>
         <div
           css={css`
             flex: 1 0 0;
+            margin: 1rem 0;
           `}
         >
           <Img alt={props.title} fluid={props.fluid_img} />
