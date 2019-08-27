@@ -32,7 +32,15 @@ const Project = (props: ProjectProps) => (
             margin-right: 1rem;
           `}
         >
-          <h1>{props.title}</h1>
+          <h1
+            css={css`
+              @media (max-width: 600px) {
+                text-align: center;
+              }
+            `}
+          >
+            {props.title}
+          </h1>
           <p>{props.description}</p>
           <p>Skills: {props.skills}</p>
           <div
@@ -51,9 +59,11 @@ const Project = (props: ProjectProps) => (
                   border: 1px solid ${theme.colors.blue};
                   color: ${theme.colors.blue};
                   width: 30%;
+                  @media (max-width: 600px) {
+                    width: 100%;
+                  }
                 `}
                 href={props.site_source}
-                target="_blank"
               >
                 {props.site_label}
               </a>

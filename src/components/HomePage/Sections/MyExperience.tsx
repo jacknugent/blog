@@ -27,8 +27,10 @@ const experienceButton = css`
   border-radius: 2rem;
   @media (max-width: 750px) {
     padding: 0.5rem 0.5rem;
+    margin: 0.25rem 0;
     width: 40%;
     text-align: center;
+    height: 3rem;
   }
 `
 
@@ -39,6 +41,12 @@ const resumeButton = css`
   border: 1px solid ${theme.colors.blue};
   color: ${theme.colors.blue};
   text-decoration: none;
+  @media (max-width: 600px) {
+    display: flex;
+    margin: 1rem 0;
+    text-align: center;
+    justify-content: center;
+  }
 `
 
 const MyExperience = () => {
