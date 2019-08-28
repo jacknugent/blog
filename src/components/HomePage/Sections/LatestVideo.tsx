@@ -7,7 +7,7 @@ import { css } from "@emotion/core"
 
 // app imports
 import YouTubeEmbed from "../../YouTubeEmbed/YouTubeEmbed"
-import { theme } from "../../../utils/css/themes"
+import { colors } from "../../../utils/css/themes"
 
 function LatestVideo() {
   const video = useStaticQuery(graphql`
@@ -96,8 +96,8 @@ function LatestVideo() {
             text-decoration: none;
             padding: 0.5rem;
             border-radius: 0.25rem;
-            border: 1px solid ${theme.colors.blue};
-            color: ${theme.colors.blue};
+            border: 1px solid ${colors.blue};
+            color: ${colors.blue};
           `}
           rel="noreferrer"
           href="https://www.youtube.com/channel/UCWTFGPpNQ0Ms6afXhaWDiRw/videos"

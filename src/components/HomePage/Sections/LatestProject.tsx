@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 
 // lib imports - 3rd party
 import { css } from "@emotion/core"
-import { theme } from "../../../utils/css/themes"
+import { colors } from "../../../utils/css/themes"
 
 function LatestProject() {
   const project = useStaticQuery(graphql`
@@ -81,8 +81,8 @@ function LatestProject() {
             text-decoration: none;
             padding: 0.5rem;
             border-radius: 0.25rem;
-            border: 1px solid ${theme.colors.blue};
-            color: ${theme.colors.blue};
+            border: 1px solid ${colors.blue};
+            color: ${colors.blue};
           `}
           to="projects"
         >

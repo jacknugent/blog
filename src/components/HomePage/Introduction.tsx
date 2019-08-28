@@ -28,6 +28,7 @@ const Introduction = () => {
       <div
         css={css`
           margin: auto;
+          padding-bottom: 20vh;
         `}
       >
         <h1

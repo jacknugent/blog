@@ -3,7 +3,7 @@ import * as React from "react"
 
 // lib imports - 3rd party
 import { css } from "@emotion/core"
-import { theme } from "../../utils/css/themes"
+import { colors } from "../../utils/css/themes"
 
 const latestWorksBackground = css`
   @media (min-width: 960px) {
@@ -12,7 +12,7 @@ const latestWorksBackground = css`
   }
 
   padding: 2rem 0;
-  background-color: ${theme.colors.darkGrey};
+  background-color: ${colors.darkGrey};
 
   @media (max-width: 960px) {
     background-color: white;

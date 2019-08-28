@@ -1,7 +1,7 @@
 import * as React from "react"
 import { css } from "@emotion/core"
 import Img, { FluidObject } from "gatsby-image"
-import { theme } from "../utils/css/themes"
+import { colors, button } from "../utils/css/themes"
 
 const Project = (props: ProjectProps) => (
   <div
@@ -12,8 +12,8 @@ const Project = (props: ProjectProps) => (
     <div
       css={css`
         @media (min-width: 900px) {
-          margin-left: calc(-100vw / 2 + 750px / 2 + 10rem);
-          margin-right: calc(-100vw / 2 + 750px / 2 + 10rem);
+          margin-left: calc(-100vw / 2 + 750px / 2 + 30%);
+          margin-right: calc(-100vw / 2 + 750px / 2 + 30%);
         }
       `}
     >
@@ -52,17 +52,19 @@ const Project = (props: ProjectProps) => (
           >
             {props.site_source && (
               <a
-                css={css`
-                  text-decoration: none;
-                  padding: 0.5rem;
-                  border-radius: 0.25rem;
-                  border: 1px solid ${theme.colors.blue};
-                  color: ${theme.colors.blue};
-                  width: 30%;
-                  @media (max-width: 600px) {
-                    width: 100%;
-                  }
-                `}
+                css={[
+                  button,
+                  css`
+                    width: 50%;
+                    @media (max-width: 1200px) {
+                      width: 50%;
+                      margin: auto;
+                    }
+                    @media (max-width: 600px) {
+                      width: 100%;
+                    }
+                  `,
+                ]}
                 href={props.site_source}
               >
                 {props.site_label}
@@ -73,7 +75,10 @@ const Project = (props: ProjectProps) => (
         <div
           css={css`
             flex: 1 0 0;
-            margin: 1rem 0;
+            margin: auto;
+            @media (max-width: 1200px) {
+              margin: 1rem 0;
+            }
           `}
         >
           <Img alt={props.title} fluid={props.fluid_img} />

@@ -5,12 +5,12 @@ import { useStaticQuery, graphql } from "gatsby"
 
 // lib imports - 3rd party
 import { css } from "@emotion/core"
-import { theme } from "../../../utils/css/themes"
+import { colors, button } from "../../../utils/css/themes"
 
 const experienceButtons = css`
-  background-color: ${theme.colors.lightGrey};
+  background-color: ${colors.lightGrey};
   display: table;
-  border-radius: 2rem;
+  border-radius: 1rem;
   @media (max-width: 750px) {
     display: flex;
     background-color: transparent;
@@ -24,7 +24,7 @@ const experienceButton = css`
   border: none;
   padding: 0.5rem 2rem;
   font-size: 1rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   @media (max-width: 750px) {
     padding: 0.5rem 0.5rem;
     margin: 0.25rem 0;
@@ -32,18 +32,16 @@ const experienceButton = css`
     text-align: center;
     height: 3rem;
   }
+  &:focus,
   &:hover {
     cursor: pointer;
+    background-color: ${colors.blue};
+    color: white;
   }
 `
 
 const resumeButton = css`
-  padding: 0.5rem 1rem;
   margin-right: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid ${theme.colors.blue};
-  color: ${theme.colors.blue};
-  text-decoration: none;
   @media (max-width: 600px) {
     display: flex;
     margin: 1rem 0;
@@ -84,7 +82,7 @@ const MyExperience = () => {
               experienceButton,
               css`
                 background-color: ${selectedExperience === i
-                  ? theme.colors.blue
+                  ? colors.blue
                   : "transparent"};
                 color: ${selectedExperience === i ? "white" : "black"};
               `,
@@ -100,7 +98,11 @@ const MyExperience = () => {
         css={css`
           text-align: left;
           margin: 1rem 0;
-          min-height: 100px;
+          min-height: 15vh;
+
+          @media (max-width: 600px) {
+            min-height: 25vh;
+          }
         `}
         dangerouslySetInnerHTML={{
           __html: experiences_text[selectedExperience].html,
@@ -112,7 +114,7 @@ const MyExperience = () => {
         `}
       >
         <a
-          css={resumeButton}
+          css={[button, resumeButton]}
           href="https://drive.google.com/file/d/1vtvmmRWb8wIdBCwpFni61Y2DA7dE8uCx/view?usp=sharing"
           target="_blank"
           rel="noopener"
@@ -120,7 +122,7 @@ const MyExperience = () => {
           PDF Resume
         </a>
         <a
-          css={resumeButton}
+          css={[button, resumeButton]}
           href="https://drive.google.com/file/d/0Bw0_aAHPLyV4aEhxT0tobDlXcHg5MHZJTkRONEY3X3ZjR1ZR/view?usp=sharing"
           target="_blank"
           rel="noopener"
