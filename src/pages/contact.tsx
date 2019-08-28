@@ -32,7 +32,10 @@ const Contract = () => {
     width: 100%;
     height: 1.5rem;
     font-size: 1rem;
+    border: none;
+    border-radius: 0.25rem;
     border: 1px solid black;
+    box-sizing: border-box;
   `
 
   return (
