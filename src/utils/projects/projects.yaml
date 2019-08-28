@@ -4,12 +4,14 @@
   image: ./images/wordpress.jpg
   site_label: Link to Page
   site_source: /headless-wordpress-and-gatsby/
+  type: local
   skills: Headless WordPress, Pantheon, GitLab CI
 - title: FlexBox with Pure CSS
   slug: flexbox-with-pure-css
   description: A pure CSS implementation of the Google Photos layout on CodePen. Try resizing to see how fast it works.
   site_label: Link to CodePen
   site_source: https://codepen.io/jacknugent/pen/LwPMEX
+  type: external
   image: ./images/codepen.jpg
   skills: JS, HTML, CSS, FlexBox
 - title: This Website

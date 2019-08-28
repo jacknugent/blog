@@ -16,6 +16,7 @@ const Projects = () => {
           description
           site_source
           site_label
+          type
           skills
           image {
             childImageSharp {
@@ -38,6 +39,7 @@ const Projects = () => {
           description={project.description}
           site_source={project.site_source}
           site_label={project.site_label}
+          type={project.type}
           fluid_img={project.image.childImageSharp.fluid}
           skills={project.skills}
         ></Project>

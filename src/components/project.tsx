@@ -1,7 +1,19 @@
 import * as React from "react"
 import { css } from "@emotion/core"
 import Img, { FluidObject } from "gatsby-image"
-import { colors, button } from "../utils/css/themes"
+import { button } from "../utils/css/themes"
+import { Link } from "@reach/router"
+
+const linkToPage = css`
+  width: 50%;
+  @media (max-width: 1200px) {
+    width: 50%;
+    margin: auto;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+`
 
 const Project = (props: ProjectProps) => (
   <div
@@ -50,26 +62,16 @@ const Project = (props: ProjectProps) => (
               text-align: center;
             `}
           >
-            {props.site_source && (
-              <a
-                css={[
-                  button,
-                  css`
-                    width: 50%;
-                    @media (max-width: 1200px) {
-                      width: 50%;
-                      margin: auto;
-                    }
-                    @media (max-width: 600px) {
-                      width: 100%;
-                    }
-                  `,
-                ]}
-                href={props.site_source}
-              >
-                {props.site_label}
-              </a>
-            )}
+            {props.site_source &&
+              (props.type === "local" ? (
+                <Link css={[button, linkToPage]} to={props.site_source}>
+                  {props.site_label}
+                </Link>
+              ) : (
+                <a css={[button, linkToPage]} href={props.site_source}>
+                  {props.site_label}
+                </a>
+              ))}
           </div>
         </div>
         <div
@@ -93,6 +95,7 @@ interface ProjectProps {
   description: string
   site_source: ""
   site_label: ""
+  type: string
   fluid_img: FluidObject
   skills: string
 }
