@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import * as React from "react"
 import { css } from "@emotion/core"
 import { colors, button } from "../utils/css/themes"
-import { globalHistory } from "@reach/router"
 
 const header = css`
   margin: 0 auto;
@@ -24,68 +23,39 @@ const link = css`
     width: 25%;
     text-align: center;
   }
+  &.active {
+    color: white;
+    background-color: ${colors.blue};
+  }
 `
 
-const Header = () => (
-  <header css={header}>
-    <Link
-      to="/"
-      css={[
-        button,
-        link,
-        css`
-          color: ${globalHistory.location.pathname === "/"
-            ? "white"
-            : `${colors.blue}`};
-          background-color: ${globalHistory.location.pathname === "/"
-            ? `${colors.blue}`
-            : "white"};
-        `,
-      ]}
-    >
-      Home
-    </Link>
-    <Link
-      to="/projects"
-      css={[
-        button,
-
-        link,
-        css`
-          color: ${globalHistory.location.pathname === "/projects"
-            ? "white"
-            : `${colors.blue}`};
-          background-color: ${globalHistory.location.pathname === "/projects"
-            ? `${colors.blue}`
-            : "white"};
-        `,
-      ]}
-    >
-      Projects
-    </Link>
-    <Link
-      to="/contact"
-      css={[
-        button,
-        link,
-        css`
-          color: ${globalHistory.location.pathname === "/contact"
-            ? "white"
-            : `${colors.blue}`};
-          background-color: ${globalHistory.location.pathname === "/contact"
-            ? `${colors.blue}`
-            : "white"};
-
-          margin-left: auto;
-          @media (max-width: 600px) {
-            margin-left: 0;
-          }
-        `,
-      ]}
-    >
-      Contact
-    </Link>
-  </header>
-)
+const Header = () => {
+  return (
+    <header css={header}>
+      <Link activeClassName="active" to="/" css={[button, link]}>
+        Home
+      </Link>
+      <Link activeClassName="active" to="/projects" css={[button, link]}>
+        Projects
+      </Link>
+      <Link
+        activeClassName="active"
+        to="/contact"
+        css={[
+          button,
+          link,
+          css`
+            margin-left: auto;
+            @media (max-width: 600px) {
+              margin-left: 0;
+            }
+          `,
+        ]}
+      >
+        Contact
+      </Link>
+    </header>
+  )
+}
 
 export default Header
