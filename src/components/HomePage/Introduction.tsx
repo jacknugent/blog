@@ -21,7 +21,7 @@ const Introduction = () => {
     <div
       css={css`
         text-align: center;
-        min-height: calc(100vh);
+        min-height: calc(100vh - 91px);
         display: flex;
       `}
     >

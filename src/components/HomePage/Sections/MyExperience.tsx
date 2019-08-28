@@ -8,7 +8,7 @@ import { css } from "@emotion/core"
 import { colors, button } from "../../../utils/css/themes"
 
 const experiencePage = css`
-  margin: 3rem 0;
+  margin-bottom: 3rem;
   @media (max-width: 600px) {
     margin: 1rem 0;
   }
