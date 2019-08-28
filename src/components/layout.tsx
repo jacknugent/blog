@@ -45,6 +45,7 @@ const globalStyles = css`
   }
   body {
     margin: 0;
+    touch-action: manipulation;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
