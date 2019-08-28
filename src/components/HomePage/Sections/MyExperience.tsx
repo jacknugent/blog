@@ -7,6 +7,20 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { colors, button } from "../../../utils/css/themes"
 
+const experiencePage = css`
+  margin: 3rem 0;
+  @media (max-width: 600px) {
+    margin: 1rem 0;
+  }
+
+  table {
+    width: 100%;
+    th {
+      width: 30%;
+    }
+  }
+`
+
 const experienceButtons = css`
   background-color: ${colors.lightGrey};
   display: table;
@@ -66,14 +80,7 @@ const MyExperience = () => {
   `).allMarkdownRemark.nodes
 
   return (
-    <div
-      css={css`
-        margin: 3rem 0;
-        @media (max-width: 600px) {
-          margin: 1rem 0;
-        }
-      `}
-    >
+    <div css={experiencePage}>
       <h1>My Experience</h1>
       <div css={experienceButtons}>
         {Object.keys(experiences_text).map((_experience: any, i: number) => (
@@ -97,7 +104,7 @@ const MyExperience = () => {
       <div
         css={css`
           text-align: left;
-          margin: 1rem 0;
+          margin: 1.5rem 0;
           min-height: 15vh;
 
           @media (max-width: 600px) {
