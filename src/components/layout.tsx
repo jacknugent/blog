@@ -9,7 +9,6 @@ import * as React from "react"
 import Header from "./header"
 import Footer from "./footer"
 import { Global, css } from "@emotion/core"
-import { Helmet } from "react-helmet"
 import {
   GothamMediumTTF,
   GothamMediumWOFF,
@@ -84,12 +83,6 @@ const Layout = (props: LayoutProps) => {
         flex-direction: column;
       `}
     >
-      <Helmet>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-        />
-      </Helmet>
       <Global styles={globalStyles} />
       <Header />
       <div css={body}>
