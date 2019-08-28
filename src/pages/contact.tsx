@@ -22,31 +22,73 @@ const Contract = () => {
     }
   }
 
+  const inputContainer = css`
+    width: 100%;
+    margin: 1rem 0;
+    display: inline-block;
+  `
+
+  const input = css`
+    width: 100%;
+    height: 1.5rem;
+    font-size: 1rem;
+    border: 1px solid black;
+  `
+
   return (
     <Layout>
       <SEO title="Contact" />
       <form onSubmit={e => handleSubmit(e)}>
-        <div>
-          <label htmlFor="name">Name</label>
+        <div css={inputContainer}>
+          <label
+            css={css`
+              display: block;
+            `}
+            htmlFor="name"
+          >
+            Name
+          </label>
           <input
+            css={input}
             name="name"
             id="name"
             value={name}
             onChange={e => setName(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="Email">Email</label>
+        <div css={inputContainer}>
+          <label
+            css={css`
+              display: block;
+            `}
+            htmlFor="Email"
+          >
+            Email
+          </label>
           <input
+            css={input}
             name="Email"
             id="Email"
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="Message">Message</label>
+        <div css={inputContainer}>
+          <label
+            css={css`
+              display: block;
+            `}
+            htmlFor="Message"
+          >
+            Message
+          </label>
           <textarea
+            css={[
+              input,
+              css`
+                height: 5rem;
+              `,
+            ]}
             name="Message"
             id="Message"
             value={message}
@@ -60,6 +102,7 @@ const Contract = () => {
         >
           <label htmlFor="trick">to trick spammers</label>
           <input
+            css={input}
             name="trick"
             id="trick"
             value={trick}
