@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import FacebookTimeline from "../components/WordPressPOC/FacebookTimeline"
 import TwitterTimeline from "../components/WordPressPOC/TwitterTimeline"
 import GoogleCalendar from "../components/WordPressPOC/GoogleCalendar"
+import css from "@emotion/css"
 
 const PageTemplate = props => {
   const wp = useStaticQuery(graphql`
@@ -37,8 +38,8 @@ const PageTemplate = props => {
       <span>
         <FacebookTimeline></FacebookTimeline>
         <TwitterTimeline></TwitterTimeline>
-        <GoogleCalendar></GoogleCalendar>
       </span>
+      <GoogleCalendar></GoogleCalendar>
     </Layout>
   )
 }
