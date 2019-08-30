@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 const PeerTestimonies = () => {
-  const peer_testimonies = useStaticQuery(graphql`
+  const peerTestimonies = useStaticQuery(graphql`
     {
       utilsYaml {
         peer_testimonies
@@ -33,7 +33,7 @@ const PeerTestimonies = () => {
           }
         `}
       >
-        {peer_testimonies.map((x: string, i: number) => (
+        {peerTestimonies.map((x: string, i: number) => (
           <p
             key={i}
             css={css`

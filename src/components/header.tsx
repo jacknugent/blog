@@ -35,12 +35,12 @@ const Header = () => {
       <Link activeClassName="active" to="/" css={[button, link]}>
         Home
       </Link>
-      <Link activeClassName="active" to="/projects" css={[button, link]}>
+      <Link activeClassName="active" to="/projects/" css={[button, link]}>
         Projects
       </Link>
       <Link
         activeClassName="active"
-        to="/contact"
+        to="/contact/"
         css={[
           button,
           link,

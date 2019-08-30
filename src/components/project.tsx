@@ -1,20 +1,7 @@
 import * as React from "react"
 import { css } from "@emotion/core"
 import Img, { FluidObject } from "gatsby-image"
-import { button } from "../utils/css/themes"
-import { Link } from "@reach/router"
 import ProjectLink from "./Helpers/ProjectLink"
-
-const linkToPage = css`
-  width: 50%;
-  @media (max-width: 1200px) {
-    width: 50%;
-    margin: auto;
-  }
-  @media (max-width: 600px) {
-    width: 100%;
-  }
-`
 
 const Project = (props: ProjectProps) => (
   <div

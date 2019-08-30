@@ -35,6 +35,7 @@ const Projects = () => {
       <SEO title="Projects" />
       {projects.map((project: any, i: number) => (
         <Project
+          key={i}
           title={project.title}
           description={project.description}
           site_source={project.site_source}

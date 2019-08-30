@@ -100,7 +100,7 @@ function LatestVideo() {
             border: 1px solid ${colors.blue};
             color: ${colors.blue};
           `}
-          rel="noreferrer"
+          rel="noopener noreferrer"
           href="https://www.youtube.com/channel/UCWTFGPpNQ0Ms6afXhaWDiRw/videos"
           target="_blank"
         >

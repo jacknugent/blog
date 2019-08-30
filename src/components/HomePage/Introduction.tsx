@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 const Introduction = () => {
-  const introduction_text = useStaticQuery(graphql`
+  const introductionText = useStaticQuery(graphql`
     {
       utilsYaml {
         introduction {
@@ -36,9 +36,9 @@ const Introduction = () => {
             margin-top: 0;
           `}
         >
-          {introduction_text.title}
+          {introductionText.title}
         </h1>
-        <p>{introduction_text.description}</p>
+        <p>{introductionText.description}</p>
       </div>
     </div>
   )

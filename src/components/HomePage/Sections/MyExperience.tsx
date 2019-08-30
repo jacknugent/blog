@@ -66,7 +66,7 @@ const resumeButton = css`
 
 const MyExperience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0)
-  const experiences_text = useStaticQuery(graphql`
+  const experiencesText = useStaticQuery(graphql`
     {
       allMarkdownRemark {
         nodes {
@@ -83,7 +83,7 @@ const MyExperience = () => {
     <div css={experiencePage}>
       <h1>My Experience</h1>
       <div css={experienceButtons}>
-        {Object.keys(experiences_text).map((_experience: any, i: number) => (
+        {Object.keys(experiencesText).map((_experience: any, i: number) => (
           <button
             css={[
               experienceButton,
@@ -97,7 +97,7 @@ const MyExperience = () => {
             key={i}
             onClick={() => setSelectedExperience(i)}
           >
-            {experiences_text[i].frontmatter.title}
+            {experiencesText[i].frontmatter.title}
           </button>
         ))}
       </div>
@@ -112,7 +112,7 @@ const MyExperience = () => {
           }
         `}
         dangerouslySetInnerHTML={{
-          __html: experiences_text[selectedExperience].html,
+          __html: experiencesText[selectedExperience].html,
         }}
       ></div>
       <div
@@ -124,7 +124,7 @@ const MyExperience = () => {
           css={[button, resumeButton]}
           href="https://drive.google.com/file/d/1vtvmmRWb8wIdBCwpFni61Y2DA7dE8uCx/view?usp=sharing"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           PDF Resume
         </a>
@@ -132,7 +132,7 @@ const MyExperience = () => {
           css={[button, resumeButton]}
           href="https://drive.google.com/file/d/0Bw0_aAHPLyV4aEhxT0tobDlXcHg5MHZJTkRONEY3X3ZjR1ZR/view?usp=sharing"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           Word Resume
         </a>

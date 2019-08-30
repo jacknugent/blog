@@ -1,6 +1,5 @@
 // framework imports - 1st party
 import * as React from "react"
-import { useState } from "react"
 
 // lib imports - 3rd party
 import { css } from "@emotion/core"
@@ -11,9 +10,6 @@ import SEO from "../components/seo"
 import ImageGallery from "../components/ImageGallery"
 
 function stripes() {
-  const [search, setSearch] = useState("")
-  const [filter, setFilter] = useState("All")
-
   const quote = css`
     text-align: center;
     margin-top: 10rem;
@@ -108,7 +104,7 @@ function stripes() {
         </div>
 
         <SEO title="Stripes" />
-        <ImageGallery search={search} filter={filter} />
+        <ImageGallery search={""} filter={""} />
       </Layout>
     </>
   )

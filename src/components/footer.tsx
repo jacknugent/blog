@@ -45,7 +45,13 @@ const Footer = () => {
   return (
     <footer css={footer}>
       {socialIcons.map(icon => (
-        <a css={iconStyle} key={icon.alt} href={icon.link} target="_blank">
+        <a
+          css={iconStyle}
+          key={icon.alt}
+          href={icon.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Img alt={icon.alt} fixed={icon.image.childImageSharp.fixed} />
         </a>
       ))}
