@@ -19,7 +19,7 @@ import {
 const globalStyles = css`
   @font-face {
     font-family: "GothamMedium";
-
+    font-display: auto;
     src: local("Gotham Medium"), local("Gotham-Medium"),
       url(${GothamMediumTTF}) format("ttf"),
       url(${GothamMediumWOFF}) format("woff");

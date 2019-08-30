@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import FacebookTimeline from "../components/WordPressPOC/FacebookTimeline"
 import TwitterTimeline from "../components/WordPressPOC/TwitterTimeline"
 import GoogleCalendar from "../components/WordPressPOC/GoogleCalendar"
+import SEO from "../components/seo"
 
 const PageTemplate = props => {
   const wp = useStaticQuery(graphql`
@@ -25,6 +26,7 @@ const PageTemplate = props => {
 
   return (
     <Layout>
+      <SEO title="Headless Wordpress" />
       <h1 dangerouslySetInnerHTML={{ __html: wp.wordpressPage.title }} />
       <div dangerouslySetInnerHTML={{ __html: wp.wordpressPage.content }} />
       <h1 dangerouslySetInnerHTML={{ __html: wp.wordpressPost.title }} />

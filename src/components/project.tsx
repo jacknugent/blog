@@ -1,6 +1,6 @@
 import * as React from "react"
 import { css } from "@emotion/core"
-import Img, { FluidObject } from "gatsby-image"
+import Img, { FixedObject } from "gatsby-image"
 import ProjectLink from "./Helpers/ProjectLink"
 
 const Project = (props: ProjectProps) => (
@@ -58,7 +58,7 @@ const Project = (props: ProjectProps) => (
             }
           `}
         >
-          <Img alt={props.title} fluid={props.fluid_img} />
+          <Img alt={props.title} fixed={props.fixed_img} />
         </div>
       </div>
     </div>
@@ -71,7 +71,7 @@ interface ProjectProps {
   site_source: ""
   site_label: ""
   type: string
-  fluid_img: FluidObject
+  fixed_img: FixedObject
   skills: string
 }
 
