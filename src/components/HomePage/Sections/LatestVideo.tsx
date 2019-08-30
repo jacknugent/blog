@@ -38,7 +38,8 @@ function LatestVideo() {
   return (
     <div
       css={css`
-        margin: 3rem 0;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
         @media (max-width: 600px) {
           margin: 1rem 0;
         }

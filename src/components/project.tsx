@@ -3,6 +3,7 @@ import { css } from "@emotion/core"
 import Img, { FluidObject } from "gatsby-image"
 import { button } from "../utils/css/themes"
 import { Link } from "@reach/router"
+import ProjectLink from "./Helpers/ProjectLink"
 
 const linkToPage = css`
   width: 50%;
@@ -55,24 +56,11 @@ const Project = (props: ProjectProps) => (
           </h1>
           <p>{props.description}</p>
           <p>Skills: {props.skills}</p>
-          <div
-            css={css`
-              display: flex;
-              align-items: flex-end;
-              text-align: center;
-            `}
-          >
-            {props.site_source &&
-              (props.type === "local" ? (
-                <Link css={[button, linkToPage]} to={props.site_source}>
-                  {props.site_label}
-                </Link>
-              ) : (
-                <a css={[button, linkToPage]} href={props.site_source}>
-                  {props.site_label}
-                </a>
-              ))}
-          </div>
+          <ProjectLink
+            site_source={props.site_source}
+            site_label={props.site_label}
+            type={props.type}
+          ></ProjectLink>
         </div>
         <div
           css={css`
