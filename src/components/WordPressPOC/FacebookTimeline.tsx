@@ -12,6 +12,7 @@ const FacebookTimeline = () => {
 
   useEffect(() => {
     setIframeWidth(iframeContainer.current.offsetWidth)
+    console.log(iframeWidth)
   }, [iframeContainer])
 
   return (
@@ -20,7 +21,7 @@ const FacebookTimeline = () => {
       css={css`
         width: 50%;
         display: inline-block;
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
           width: 100%;
           display: block;
         }
