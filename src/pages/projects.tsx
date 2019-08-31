@@ -20,8 +20,8 @@ const Projects = () => {
           skills
           image {
             childImageSharp {
-              fixed(width: 750) {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -41,7 +41,7 @@ const Projects = () => {
           site_source={project.site_source}
           site_label={project.site_label}
           type={project.type}
-          fixed_img={project.image.childImageSharp.fixed}
+          fluid_img={project.image.childImageSharp.fluid}
           skills={project.skills}
         ></Project>
       ))}
