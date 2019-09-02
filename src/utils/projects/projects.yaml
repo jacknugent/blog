@@ -1,3 +1,11 @@
+- title: Azure Contact Form
+  slug: azure-contact-form
+  description: Send me a message using a flexible, free, and efficient Azure Function
+  image: ./images/azure_function.png
+  site_label: Link to Page
+  site_source: /contact
+  type: local
+  skills: Azure, .NET
 - title: Headless WordPress & Gatsby
   slug: headless-wordpress-and-gatsby
   description: A page that demos a small Headless WordPress example.

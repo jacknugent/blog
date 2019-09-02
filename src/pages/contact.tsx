@@ -1,9 +1,11 @@
 // framework imports - 1st party
 import * as React from "react"
 import { useState } from "react"
+
 // lib imports - 3rd party
 
 // app imports
+import { button } from "../utils/css/themes"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import css from "@emotion/css"
@@ -13,12 +15,37 @@ const Contract = () => {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [trick, setTrick] = useState("")
-  function handleSubmit(e: any) {
+
+  const handleSubmit = (e: any) => {
     e.preventDefault()
     if (name && email && message && !trick) {
-      console.log(name)
-      console.log(email)
-      console.log(message)
+      const url =
+        "https://contactformblog.azurewebsites.net/api/ContactBlogForm"
+
+      const requestBody = {
+        Name: name,
+        Email: email,
+        Message: message,
+      }
+
+      const header = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }
+
+      fetch(url, {
+        method: "post",
+        headers: header,
+        body: JSON.stringify(requestBody),
+      }).then(
+        (data: any) => {
+          console.log(data)
+          return data.text()
+        },
+        function(error) {
+          console.log(error)
+        }
+      )
     }
   }
 
@@ -57,6 +84,7 @@ const Contract = () => {
             id="name"
             value={name}
             onChange={e => setName(e.target.value)}
+            required
           />
         </div>
         <div css={inputContainer}>
@@ -74,6 +102,8 @@ const Contract = () => {
             id="Email"
             value={email}
             onChange={e => setEmail(e.target.value)}
+            type="email"
+            required
           />
         </div>
         <div css={inputContainer}>
@@ -110,9 +140,27 @@ const Contract = () => {
             id="trick"
             value={trick}
             onChange={e => setTrick(e.target.value)}
+            required
           />
         </div>
-        <input type="submit" value="Submit" />
+        <div
+          css={css`
+            display: flex;
+            justify-content: center;
+          `}
+        >
+          <input
+            css={[
+              button,
+              css`
+                margin: 1rem 0;
+                width: 100%;
+              `,
+            ]}
+            type="submit"
+            value="Contact Me"
+          />
+        </div>
       </form>
     </Layout>
   )
