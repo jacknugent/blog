@@ -20,7 +20,7 @@ const header = css`
 const link = css`
   font-size: 18px;
   padding: 0.75rem 1.25rem;
-  margin: 1rem;
+  margin: 0.5rem;
   // let Flex take over
   @media (max-width: 600px) {
     padding: 0.5rem;
@@ -65,7 +65,9 @@ const Header = () => {
         css={[
           header,
           css`
-            box-shadow: ${isHeaderMoved ? "0 0 8px 1px black" : "none"};
+            @media (min-width: 600px) {
+              box-shadow: ${isHeaderMoved ? "0 0 4px .5px black" : "none"};
+            }
           `,
         ]}
       >

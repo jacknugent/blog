@@ -6,10 +6,13 @@ const TwitterTimeline = (props: TwitterProps) => (
   <span
     css={css`
       width: 50%;
-      display: inline-block;
+
+      display: inline-flex;
+      justify-content: center;
       @media (max-width: 800px) {
         width: 100%;
-        max-width: 100%;
+        max-width: 300px;
+        margin: auto;
         display: block;
       }
     `}

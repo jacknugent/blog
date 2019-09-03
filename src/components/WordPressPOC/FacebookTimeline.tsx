@@ -13,7 +13,11 @@ const FacebookTimeline = (props: FacebookProps) => {
     iframeWidth
 
   useEffect(() => {
-    setIframeWidth(iframeContainer.current.offsetWidth)
+    setIframeWidth(
+      iframeContainer.current.offsetWidth >= 300
+        ? 300
+        : iframeContainer.current.offsetWidth
+    )
   }, [iframeContainer])
 
   return (
@@ -28,7 +32,7 @@ const FacebookTimeline = (props: FacebookProps) => {
         }
         iframe {
           margin: auto;
-          max-width: 100%;
+          max-width: 300px;
           display: block;
         }
       `}

@@ -69,7 +69,7 @@ const globalStyles = css`
   }
 `
 const body = css`
-  padding: 5rem 0.5rem 0 0.5rem;
+  padding: 5rem 0.5rem 4rem 0.5rem;
   flex-grow: 1;
   @media (max-width: 600px) {
     padding-top: 0;
