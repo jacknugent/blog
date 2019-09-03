@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Project from "../components/project"
+import css from "@emotion/css"
 
 const Projects = () => {
   const projects = useStaticQuery(graphql`
@@ -33,18 +34,25 @@ const Projects = () => {
   return (
     <Layout>
       <SEO title="Projects" />
-      {projects.map((project: any, i: number) => (
-        <Project
-          key={i}
-          title={project.title}
-          description={project.description}
-          site_source={project.site_source}
-          site_label={project.site_label}
-          type={project.type}
-          fluid_img={project.image.childImageSharp.fluid}
-          skills={project.skills}
-        ></Project>
-      ))}
+      <div
+        css={css`
+          max-width: 900px;
+          margin: auto;
+        `}
+      >
+        {projects.map((project: any, i: number) => (
+          <Project
+            key={i}
+            title={project.title}
+            description={project.description}
+            site_source={project.site_source}
+            site_label={project.site_label}
+            type={project.type}
+            fluid_img={project.image.childImageSharp.fluid}
+            skills={project.skills}
+          ></Project>
+        ))}
+      </div>
     </Layout>
   )
 }

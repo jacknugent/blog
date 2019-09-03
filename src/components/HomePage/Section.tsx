@@ -7,8 +7,8 @@ import { colors } from "../../utils/css/themes"
 
 const latestWorksBackground = css`
   @media (min-width: 960px) {
-    margin-left: calc(-100vw / 2 - 750px / 2);
-    margin-right: calc(-100vw / 2 - 750px / 2);
+    margin-left: calc(-0.5rem);
+    margin-right: calc(-0.5rem);
   }
 
   padding: 2rem 0;
@@ -21,8 +21,9 @@ const latestWorksBackground = css`
 `
 
 const latestWorks = css`
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
+  box-sizing: border-box;
   background-color: white;
   border-radius: 40px;
   padding: 2rem 4rem;
