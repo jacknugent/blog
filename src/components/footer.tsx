@@ -95,7 +95,7 @@ const Footer = () => {
           footer,
           css`
             @media (min-width: 600px) {
-              box-shadow: ${isPageBottom ? "none" : "0 0 4px .5px black"};
+              box-shadow: ${isPageBottom ? "none" : "0 1px 4px .5px black"};
             }
           `,
         ]}

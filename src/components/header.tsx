@@ -66,7 +66,7 @@ const Header = () => {
           header,
           css`
             @media (min-width: 600px) {
-              box-shadow: ${isHeaderMoved ? "0 0 4px .5px black" : "none"};
+              box-shadow: ${isHeaderMoved ? "0 -1px 4px .5px black" : "none"};
             }
           `,
         ]}

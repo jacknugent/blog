@@ -27,7 +27,7 @@ const latestWorks = css`
   background-color: white;
   border-radius: 40px;
   padding: 2rem 4rem;
-  box-shadow: 0 0 10px 6px black;
+  box-shadow: 0 0 10px 2px black;
 
   @media (max-width: 960px) {
     box-shadow: none;
