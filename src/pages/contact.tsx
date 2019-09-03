@@ -16,6 +16,8 @@ const Contract = () => {
   const [message, setMessage] = useState("")
   const [trick, setTrick] = useState("")
 
+  const [sent, setSent] = useState(false)
+
   const handleSubmit = (e: any) => {
     e.preventDefault()
     if (name && email && message && !trick) {
@@ -40,6 +42,13 @@ const Contract = () => {
       }).then(
         (data: any) => {
           console.log(data)
+
+          setName("")
+          setEmail("")
+          setMessage("")
+
+          setSent(true)
+
           return data.text()
         },
         function(error) {
@@ -154,19 +163,30 @@ const Contract = () => {
               justify-content: center;
             `}
           >
-            <input
+            <button
               css={[
                 button,
                 css`
-                  margin: 1rem 0;
+                  margin: 0.5rem 0;
                   width: 100%;
                 `,
               ]}
               type="submit"
               value="Contact Me"
-            />
+            >
+              Contact Me
+            </button>
           </div>
         </form>
+        <h2
+          css={css`
+            display: ${sent ? "block" : "none"};
+            text-align: center;
+            margin: 0.5rem;
+          `}
+        >
+          Sent!
+        </h2>
       </div>
     </Layout>
   )
