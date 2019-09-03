@@ -146,7 +146,6 @@ const Contract = () => {
               id="trick"
               value={trick}
               onChange={e => setTrick(e.target.value)}
-              required
             />
           </div>
           <div
