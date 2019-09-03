@@ -134,7 +134,7 @@ const Contract = () => {
               css={[
                 input,
                 css`
-                  height: 5rem;
+                  height: 4rem;
                 `,
               ]}
               name="Message"
