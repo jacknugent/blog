@@ -69,9 +69,11 @@ const globalStyles = css`
   }
 `
 const body = css`
-  padding: 0px 0.5rem 1.45rem;
-  padding-top: 0;
+  padding: 5rem 0.5rem 0 0.5rem;
   flex-grow: 1;
+  @media (max-width: 600px) {
+    padding-top: 0;
+  }
 `
 const Layout = (props: LayoutProps) => {
   return (

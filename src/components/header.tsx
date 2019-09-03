@@ -2,13 +2,18 @@ import { Link } from "gatsby"
 import * as React from "react"
 import { css } from "@emotion/core"
 import { colors, button } from "../utils/css/themes"
+import { useEffect, useState } from "react"
 
 const header = css`
   margin: 0 auto;
   width: 100%;
   text-align: left;
   display: flex;
+  position: fixed;
+  background-color: white;
+  transition: 0.3s;
   @media (max-width: 600px) {
+    position: relative;
     justify-content: space-around;
   }
 `
@@ -30,30 +35,63 @@ const link = css`
 `
 
 const Header = () => {
+  const [isHeaderMoved, setIsHeaderMoved] = useState()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        if (!isHeaderMoved) {
+          setIsHeaderMoved(true)
+        }
+      } else if (isHeaderMoved) {
+        setIsHeaderMoved(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [isHeaderMoved])
+
   return (
-    <header css={header}>
-      <Link activeClassName="active" to="/" css={[button, link]}>
-        Home
-      </Link>
-      <Link activeClassName="active" to="/projects/" css={[button, link]}>
-        Projects
-      </Link>
-      <Link
-        activeClassName="active"
-        to="/contact/"
+    <header
+      css={css`
+        position: relative;
+        z-index: 3;
+      `}
+    >
+      <div
         css={[
-          button,
-          link,
+          header,
           css`
-            margin-left: auto;
-            @media (max-width: 600px) {
-              margin-left: 0;
-            }
+            box-shadow: ${isHeaderMoved ? "0 0 8px 1px black" : "none"};
           `,
         ]}
       >
-        Contact
-      </Link>
+        <Link activeClassName="active" to="/" css={[button, link]}>
+          Home
+        </Link>
+        <Link activeClassName="active" to="/projects/" css={[button, link]}>
+          Projects
+        </Link>
+        <Link
+          activeClassName="active"
+          to="/contact/"
+          css={[
+            button,
+            link,
+            css`
+              margin-left: auto;
+              @media (max-width: 600px) {
+                margin-left: 0;
+              }
+            `,
+          ]}
+        >
+          Contact
+        </Link>
+      </div>
     </header>
   )
 }

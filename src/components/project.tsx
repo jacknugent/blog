@@ -51,6 +51,7 @@ const Project = (props: ProjectProps) => (
         </div>
         <div
           css={css`
+            z-index: -1;
             flex: 1 0 0;
             margin: auto;
             @media (max-width: 1200px) {
