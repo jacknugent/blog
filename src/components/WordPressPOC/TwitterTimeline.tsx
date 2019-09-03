@@ -2,7 +2,7 @@ import * as React from "react"
 import { TwitterTimelineEmbed } from "react-twitter-embed"
 import css from "@emotion/css"
 
-const TwitterTimeline = () => (
+const TwitterTimeline = (props: TwitterProps) => (
   <span
     css={css`
       width: 50%;
@@ -16,10 +16,14 @@ const TwitterTimeline = () => (
   >
     <TwitterTimelineEmbed
       sourceType="profile"
-      screenName="jacknugent27"
+      screenName={props.page}
       options={{ height: 500 }}
     />
   </span>
 )
+
+interface TwitterProps {
+  page: "twitter"
+}
 
 export default TwitterTimeline

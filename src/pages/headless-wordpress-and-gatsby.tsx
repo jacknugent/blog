@@ -31,12 +31,12 @@ const PageTemplate = props => {
       <div dangerouslySetInnerHTML={{ __html: wp.wordpressPage.content }} />
       <h1 dangerouslySetInnerHTML={{ __html: wp.wordpressPost.title }} />
       <div dangerouslySetInnerHTML={{ __html: wp.wordpressPost.content }} />
-      <p>{wp.wordpressPost.acf.twitter}</p>
-      <p>{wp.wordpressPost.acf.facebook}</p>
 
       <span>
-        <FacebookTimeline></FacebookTimeline>
-        <TwitterTimeline></TwitterTimeline>
+        <FacebookTimeline
+          page={wp.wordpressPost.acf.facebook}
+        ></FacebookTimeline>
+        <TwitterTimeline page={wp.wordpressPost.acf.twitter}></TwitterTimeline>
       </span>
       <GoogleCalendar></GoogleCalendar>
     </Layout>

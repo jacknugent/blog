@@ -2,12 +2,14 @@ import * as React from "react"
 import css from "@emotion/css"
 import { useRef, useState, useEffect } from "react"
 
-const FacebookTimeline = () => {
+const FacebookTimeline = (props: FacebookProps) => {
   const iframeContainer = useRef(null)
   const [iframeWidth, setIframeWidth] = useState()
 
   var iFrameSrc =
-    "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=475838662997369&height=500&width=" +
+    "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F" +
+    props.page +
+    "&tabs=timeline&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=475838662997369&height=500&width=" +
     iframeWidth
 
   useEffect(() => {
@@ -47,6 +49,10 @@ const FacebookTimeline = () => {
       </div>
     </span>
   )
+}
+
+interface FacebookProps {
+  page: "facebook"
 }
 
 export default FacebookTimeline
