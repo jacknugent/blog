@@ -51,7 +51,7 @@ const Contract = () => {
 
   const inputContainer = css`
     width: 100%;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     display: inline-block;
   `
 
