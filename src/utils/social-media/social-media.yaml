@@ -2,7 +2,7 @@ icons:
   - title: Twitter
     image: ./icons/twitter.png
     alt: "go to my twitter"
-    link: twitter.com/jacknugent27
+    link: https://www.twitter.com/jacknugent27
   - title: LinkedIn
     image: ./icons/linkedin.png
     alt: "go to my LinkedIn profile"

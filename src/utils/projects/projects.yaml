@@ -3,7 +3,7 @@
   description: Send me a message using a flexible, free, and efficient Azure Function
   image: ./images/azure_function.png
   site_label: Link to Page
-  site_source: /contact
+  site_source: /contact/
   type: local
   skills: Azure, .NET
 - title: Headless WordPress & Gatsby

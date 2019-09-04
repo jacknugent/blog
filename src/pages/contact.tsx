@@ -32,7 +32,7 @@ const block = css`
   display: block;
 `
 
-const bounce = keyframes`
+const dots = keyframes`
 from, 0%, 20% {
   color: rgba(0,0,0,0);
   text-shadow:
@@ -118,12 +118,7 @@ const Contract = () => {
       >
         <form onSubmit={e => handleSubmit(e)}>
           <div css={inputContainer}>
-            <label
-              css={css`
-                display: block;
-              `}
-              htmlFor="name"
-            >
+            <label css={block} htmlFor="name">
               Name
             </label>
             <input
@@ -210,7 +205,7 @@ const Contract = () => {
               margin: 0.5rem;
               &:after {
                 content: ".";
-                animation: ${bounce} 1s steps(5, end) infinite;
+                animation: ${dots} 1s steps(5, end) infinite;
               }
             `}
           >
