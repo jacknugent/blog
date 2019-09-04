@@ -19,7 +19,8 @@ const inputContainer = css`
 
 const input = css`
   width: 100%;
-  height: 1.5rem;
+  height: 1.75rem;
+  padding-left: 0.25rem;
   font-size: 1rem;
   border: none;
   border-radius: 0.25rem;
@@ -81,7 +82,7 @@ const Contract = () => {
         Accept: "application/json",
         "Content-Type": "application/json",
       }
-
+      setSent(false)
       setSending(true)
       fetch(url, {
         method: "post",

@@ -39,15 +39,8 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 0) {
-        if (!isHeaderMoved) {
-          setIsHeaderMoved(true)
-        }
-      } else if (isHeaderMoved) {
-        setIsHeaderMoved(false)
-      }
+      setIsHeaderMoved(window.pageYOffset > 0)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => {
       window.removeEventListener("scroll", handleScroll)

@@ -29,7 +29,7 @@ const iconStyle = css`
 `
 
 const Footer = () => {
-  const [isPageBottom, setIsPageBottom] = useState()
+  const [isPageBottom, setIsPageBottom] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,14 +44,7 @@ const Footer = () => {
         document.body.clientHeight,
         document.documentElement.clientHeight
       )
-
-      if (window_height + scroll_height >= total_height) {
-        if (!isPageBottom) {
-          setIsPageBottom(true)
-        }
-      } else if (isPageBottom) {
-        setIsPageBottom(false)
-      }
+      setIsPageBottom(window_height + scroll_height >= total_height)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -59,6 +52,22 @@ const Footer = () => {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [isPageBottom])
+
+  useEffect(() => {
+    const window_height = window.innerHeight
+    const scroll_height = window.pageYOffset
+
+    const total_height = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.body.clientHeight,
+      document.documentElement.clientHeight
+    )
+
+    setIsPageBottom(window_height + scroll_height >= total_height)
+  }, [])
 
   const socialIcons = useStaticQuery(graphql`
     {
