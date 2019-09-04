@@ -5,10 +5,56 @@ import { useState } from "react"
 // lib imports - 3rd party
 
 // app imports
-import { button } from "../utils/css/themes"
+import { colors, button } from "../utils/css/themes"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import css from "@emotion/css"
+import { keyframes } from "@emotion/core"
+
+const inputContainer = css`
+  width: 100%;
+  margin: 0.5rem 0;
+  display: inline-block;
+`
+
+const input = css`
+  width: 100%;
+  height: 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  border: 1px solid black;
+  box-sizing: border-box;
+`
+
+const block = css`
+  display: block;
+`
+
+const bounce = keyframes`
+from, 0%, 20% {
+  color: rgba(0,0,0,0);
+  text-shadow:
+    .25em 0 0 rgba(0,0,0,0),
+    .5em 0 0 rgba(0,0,0,0);
+  }
+40% {
+  color: black;
+  text-shadow:
+    .25em 0 0 rgba(0,0,0,0),
+    .5em 0 0 rgba(0,0,0,0);
+  }
+60% {
+  text-shadow:
+    .25em 0 0 black,
+    .5em 0 0 rgba(0,0,0,0);
+  }
+80%, 100% {
+  text-shadow:
+    .25em 0 0 black,
+    .5em 0 0 black;
+  }
+`
 
 const Contract = () => {
   const [name, setName] = useState("")
@@ -17,6 +63,7 @@ const Contract = () => {
   const [trick, setTrick] = useState("")
 
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
@@ -35,44 +82,29 @@ const Contract = () => {
         "Content-Type": "application/json",
       }
 
+      setSending(true)
       fetch(url, {
         method: "post",
         headers: header,
         body: JSON.stringify(requestBody),
       }).then(
         (data: any) => {
-          console.log(data)
-
           setName("")
           setEmail("")
           setMessage("")
 
+          setSending(false)
           setSent(true)
 
           return data.text()
         },
         function(error) {
+          setSending(false)
           console.log(error)
         }
       )
     }
   }
-
-  const inputContainer = css`
-    width: 100%;
-    margin: 0.5rem 0;
-    display: inline-block;
-  `
-
-  const input = css`
-    width: 100%;
-    height: 1.5rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.25rem;
-    border: 1px solid black;
-    box-sizing: border-box;
-  `
 
   return (
     <Layout>
@@ -103,12 +135,7 @@ const Contract = () => {
             />
           </div>
           <div css={inputContainer}>
-            <label
-              css={css`
-                display: block;
-              `}
-              htmlFor="Email"
-            >
+            <label css={block} htmlFor="Email">
               Email
             </label>
             <input
@@ -122,12 +149,7 @@ const Contract = () => {
             />
           </div>
           <div css={inputContainer}>
-            <label
-              css={css`
-                display: block;
-              `}
-              htmlFor="Message"
-            >
+            <label css={block} htmlFor="Message">
               Message
             </label>
             <textarea
@@ -169,6 +191,8 @@ const Contract = () => {
                 css`
                   margin: 0.5rem 0;
                   width: 100%;
+                  background-color: ${name && email && message && colors.blue};
+                  color: ${name && email && message && "white"};
                 `,
               ]}
               type="submit"
@@ -178,15 +202,30 @@ const Contract = () => {
             </button>
           </div>
         </form>
-        <h2
-          css={css`
-            display: ${sent ? "block" : "none"};
-            text-align: center;
-            margin: 0.5rem;
-          `}
-        >
-          Sent!
-        </h2>
+        {sending && (
+          <h2
+            css={css`
+              text-align: center;
+              margin: 0.5rem;
+              &:after {
+                content: ".";
+                animation: ${bounce} 1s steps(5, end) infinite;
+              }
+            `}
+          >
+            Sending
+          </h2>
+        )}
+        {sent && (
+          <h2
+            css={css`
+              text-align: center;
+              margin: 0.5rem;
+            `}
+          >
+            Sent!
+          </h2>
+        )}
       </div>
     </Layout>
   )
