@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 // lib imports - 3rd party
 import { css } from "@emotion/core"
 import { colors, button } from "../../../utils/css/themes"
+import Resume from "../../../utils/resume.pdf"
 
 const experiencePage = css`
   margin-bottom: 3rem;
@@ -120,21 +121,8 @@ const MyExperience = () => {
           text-align: left;
         `}
       >
-        <a
-          css={[button, resumeButton]}
-          href="https://drive.google.com/file/d/1vtvmmRWb8wIdBCwpFni61Y2DA7dE8uCx/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          PDF Resume
-        </a>
-        <a
-          css={[button, resumeButton]}
-          href="https://drive.google.com/file/d/0Bw0_aAHPLyV4aEhxT0tobDlXcHg5MHZJTkRONEY3X3ZjR1ZR/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Word Resume
+        <a css={[button, resumeButton]} href={Resume} target="_blank">
+          View My Resume
         </a>
       </div>
     </div>
