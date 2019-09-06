@@ -68,7 +68,7 @@ const MyExperience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0)
   const experiencesText = useStaticQuery(graphql`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___order }) {
         nodes {
           frontmatter {
             title
