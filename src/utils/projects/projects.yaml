@@ -1,4 +1,4 @@
-- title: Azure Contact Form
+- title: Azure Function Contact Form
   slug: azure-contact-form
   description: Send me a message using a flexible, free, and efficient Azure Function
   image: ./images/azure_function.png
