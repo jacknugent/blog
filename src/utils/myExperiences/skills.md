@@ -33,4 +33,4 @@ I don't care about particular tools. I care about using the right tool to solve 
 ### What to learn next...
 
 - Vue.js
-- Another Back-End framework (either using E xpress.js or Django)
+- Another Back-End framework (either using Express.js or Django)
