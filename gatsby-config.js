@@ -49,6 +49,13 @@ module.exports = {
         maxVideos: 100, // Defaults to 50
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+      },
+    },
     { resolve: `gatsby-plugin-offline` },
     {
       resolve: "gatsby-plugin-robots-txt",
