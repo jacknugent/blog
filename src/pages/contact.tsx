@@ -63,14 +63,14 @@ const Contract = () => {
   const [message, setMessage] = useState("")
   const [trick, setTrick] = useState("")
 
-  const [sent, setSent] = useState(false)
+  const [sent, setSent] = useState(null)
   const [sending, setSending] = useState(false)
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
     if (name && email && message && !trick) {
       const url =
-        "https://contactformblog.azurewebsites.net/api/ContactBlogForm"
+        "https://jacknugentcontactform.azurewebsites.net/api/JackNugentContactForm"
 
       const requestBody = {
         Name: name,
