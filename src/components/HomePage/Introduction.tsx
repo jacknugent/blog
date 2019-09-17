@@ -81,7 +81,7 @@ const Description = styled.p`
   width: 50%;
   margin: 5rem auto 5rem auto;
   text-align: justify;
-  text-align-last: center;
+  text-align-last: left;
   font-size: 1rem;
   line-height: 1;
   @media (max-width: 960px) {
