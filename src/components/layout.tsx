@@ -12,6 +12,10 @@ import { Global, css } from "@emotion/core"
 import {
   GothamMediumTTF,
   GothamMediumWOFF,
+  GothamBoldTTF,
+  GothamBoldWOFF,
+  GothamUltraTTF,
+  GothamUltraWOFF,
   MontserratRegularTTF,
   MontserratRegularWOFF,
 } from "../utils/css/fonts"
@@ -23,6 +27,20 @@ const globalStyles = css`
     src: local("Gotham Medium"), local("Gotham-Medium"),
       url(${GothamMediumTTF}) format("ttf"),
       url(${GothamMediumWOFF}) format("woff");
+  }
+  @font-face {
+    font-family: "GothamUltra";
+    font-display: auto;
+    src: local("Gotham Ultra"), local("Gotham-Ultra"),
+      url(${GothamUltraTTF}) format("ttf"),
+      url(${GothamUltraWOFF}) format("woff");
+  }
+
+  @font-face {
+    font-family: "GothamBold";
+    font-display: auto;
+    src: local("Gotham Bold"), local("Gotham-Bold"),
+      url(${GothamBoldTTF}) format("ttf"), url(${GothamBoldWOFF}) format("woff");
   }
 
   @font-face {
@@ -50,7 +68,12 @@ const globalStyles = css`
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
   }
-  h1,
+  h1 {
+    font-family: "GothamBold";
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+    line-height: 1.1;
+  }
   h2,
   h3,
   h4,
