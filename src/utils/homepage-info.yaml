@@ -1,6 +1,7 @@
 introduction:
   title: Jack Nugent
-  description: A proven Full-Stack Engineer with a strangely successful hobby.
+  tagline: A proven Full-Stack Engineer with a strangely successful hobby.
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 peer_testimonies:
   - He is deepening his skills and knowledge as a front end developer at an impressive rate and is outpacing some of his more seasoned colleagues.
   - He also stepped into unknown territory (time series) and spent extra time outside of the project learning about this type of predictive analytics...

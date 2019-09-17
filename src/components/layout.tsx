@@ -89,6 +89,7 @@ const globalStyles = css`
   label,
   a {
     font-family: "Montserrat";
+    text-rendering: optimizeLegibility;
   }
 `
 const body = css`
