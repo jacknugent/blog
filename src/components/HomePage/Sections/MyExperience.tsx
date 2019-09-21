@@ -7,6 +7,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { colors, button } from "../../../utils/css/themes"
 import Resume from "../../../utils/resume.pdf"
+import styled from "@emotion/styled"
 
 const experiencePage = css`
   margin-bottom: 3rem;
@@ -26,10 +27,22 @@ const experienceButtons = css`
   background-color: ${colors.lightGrey};
   display: table;
   border-radius: 1rem;
+  overflow-x: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  &::-webkit-scrollbar {
+    /* WebKit */
+    width: 0;
+    height: 0;
+  }
+
+  @media (max-width: 600px) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
   @media (max-width: 750px) {
     display: flex;
-    background-color: transparent;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     justify-content: space-between;
   }
 `
@@ -40,13 +53,7 @@ const experienceButton = css`
   padding: 0.5rem 2rem;
   font-size: 1rem;
   border-radius: 1rem;
-  @media (max-width: 750px) {
-    padding: 0.5rem 0.5rem;
-    margin: 0.25rem 0;
-    width: 40%;
-    text-align: center;
-    height: 3rem;
-  }
+
   &:focus,
   &:hover {
     cursor: pointer;
@@ -64,6 +71,8 @@ const resumeButton = css`
     justify-content: center;
   }
 `
+
+const ButtonWrapper = styled.div``
 
 const MyExperience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0)
@@ -83,25 +92,28 @@ const MyExperience = () => {
   return (
     <div css={experiencePage}>
       <h1>My Experience</h1>
-      <div css={experienceButtons}>
-        {Object.keys(experiencesText).map((_experience: any, i: number) => (
-          <button
-            css={[
-              experienceButton,
-              css`
-                background-color: ${selectedExperience === i
-                  ? colors.blue
-                  : "transparent"};
-                color: ${selectedExperience === i ? "white" : "black"};
-              `,
-            ]}
-            key={i}
-            onClick={() => setSelectedExperience(i)}
-          >
-            {experiencesText[i].frontmatter.title}
-          </button>
-        ))}
-      </div>
+      <ButtonWrapper>
+        <div css={experienceButtons}>
+          {Object.keys(experiencesText).map((_experience: any, i: number) => (
+            <button
+              css={[
+                experienceButton,
+                css`
+                  background-color: ${selectedExperience === i
+                    ? colors.blue
+                    : "transparent"};
+                  color: ${selectedExperience === i ? "white" : "black"};
+                `,
+              ]}
+              key={i}
+              onClick={() => setSelectedExperience(i)}
+            >
+              {experiencesText[i].frontmatter.title}
+            </button>
+          ))}
+        </div>
+      </ButtonWrapper>
+
       <div
         css={css`
           text-align: left;

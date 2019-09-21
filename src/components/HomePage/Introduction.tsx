@@ -86,6 +86,11 @@ const Description = styled.p`
   line-height: 1;
   @media (max-width: 960px) {
     width: 90%;
+    text-align: left;
+    text-align-last: left;
+
+    margin-top: 3rem;
+    margin-bottom: 1rem;
   }
 `
 
