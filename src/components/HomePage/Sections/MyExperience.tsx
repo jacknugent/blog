@@ -1,6 +1,6 @@
 // framework imports - 1st party
 import * as React from "react"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 // lib imports - 3rd party
@@ -23,7 +23,7 @@ const experiencePage = css`
   }
 `
 
-const experienceButtons = css`
+const ExperienceChoices = styled.div`
   background-color: ${colors.lightGrey};
   display: table;
   border-radius: 1rem;
@@ -36,10 +36,6 @@ const experienceButtons = css`
     height: 0;
   }
 
-  @media (max-width: 600px) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
   @media (max-width: 750px) {
     display: flex;
     flex-wrap: no-wrap;
@@ -47,13 +43,15 @@ const experienceButtons = css`
   }
 `
 
-const experienceButton = css`
+const ExperienceButton = styled.button`
   background-color: transparent;
   border: none;
   padding: 0.5rem 2rem;
   font-size: 1rem;
   border-radius: 1rem;
-
+  @media (max-width: 600px) {
+    padding: 0.75rem 2rem;
+  }
   &:focus,
   &:hover {
     cursor: pointer;
@@ -71,11 +69,65 @@ const resumeButton = css`
     justify-content: center;
   }
 `
-
-const ButtonWrapper = styled.div``
-
+const SeeMoreButton = styled.button`
+  margin: 1rem auto 2rem auto;
+  display: flex;
+  background-color: none;
+  border: none;
+  font-size: 18px;
+  color: ${colors.blue};
+  text-decoration: underline;
+`
+const DescriptionContainer = styled.div``
+const Description = styled.div`
+  text-align: left;
+  margin: 0;
+  min-height: 15vh;
+  overflow: hidden;
+  @media (max-width: 600px) {
+    min-height: 25vh;
+  }
+`
 const MyExperience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0)
+  const [fullDescription, setFullDescription] = useState(false)
+  const [contentHeight, setContentHeight] = useState(null)
+  const contentRef = useRef(null)
+  const maxDescriptionHeight = 300
+
+  // on screen resize
+  // update height of content
+  // to allow smooth height transition on click
+  const contentResize = () => {
+    setContentHeight(contentRef.current.scrollHeight)
+  }
+
+  const SeeMore = () => {
+    if (contentHeight < maxDescriptionHeight) {
+      return null
+    } else if (fullDescription) {
+      return (
+        <SeeMoreButton onClick={() => setFullDescription(false)}>
+          See Less -
+        </SeeMoreButton>
+      )
+    } else {
+      return (
+        <SeeMoreButton onClick={() => setFullDescription(true)}>
+          See More +
+        </SeeMoreButton>
+      )
+    }
+  }
+  // listen for screen resize
+  useEffect(() => {
+    setContentHeight(contentRef.current.scrollHeight)
+    window.addEventListener("resize", contentResize)
+    return () => {
+      window.removeEventListener("resize", contentResize)
+    }
+  })
+
   const experiencesText = useStaticQuery(graphql`
     {
       allMarkdownRemark(sort: { fields: frontmatter___order }) {
@@ -92,51 +144,45 @@ const MyExperience = () => {
   return (
     <div css={experiencePage}>
       <h1>My Experience</h1>
-      <ButtonWrapper>
-        <div css={experienceButtons}>
-          {Object.keys(experiencesText).map((_experience: any, i: number) => (
-            <button
-              css={[
-                experienceButton,
-                css`
-                  background-color: ${selectedExperience === i
-                    ? colors.blue
-                    : "transparent"};
-                  color: ${selectedExperience === i ? "white" : "black"};
-                `,
-              ]}
-              key={i}
-              onClick={() => setSelectedExperience(i)}
-            >
-              {experiencesText[i].frontmatter.title}
-            </button>
-          ))}
-        </div>
-      </ButtonWrapper>
+      <ExperienceChoices>
+        {Object.keys(experiencesText).map((_experience: any, i: number) => (
+          <ExperienceButton
+            css={css`
+              background-color: ${selectedExperience === i
+                ? colors.blue
+                : "transparent"};
+              color: ${selectedExperience === i ? "white" : "black"};
+            `}
+            key={i}
+            onClick={() => {
+              setSelectedExperience(i)
+              setFullDescription(false)
+            }}
+          >
+            {experiencesText[i].frontmatter.title}
+          </ExperienceButton>
+        ))}
+      </ExperienceChoices>
 
-      <div
-        css={css`
-          text-align: left;
-          margin: 1.5rem 0;
-          min-height: 15vh;
+      <DescriptionContainer>
+        <Description
+          css={css`
+            height: ${fullDescription
+              ? contentHeight + "px"
+              : maxDescriptionHeight + "px"};
+            transition: all 1s;
+          `}
+          ref={contentRef}
+          dangerouslySetInnerHTML={{
+            __html: experiencesText[selectedExperience].html,
+          }}
+        ></Description>
+        {SeeMore()}
+      </DescriptionContainer>
 
-          @media (max-width: 600px) {
-            min-height: 25vh;
-          }
-        `}
-        dangerouslySetInnerHTML={{
-          __html: experiencesText[selectedExperience].html,
-        }}
-      ></div>
-      <div
-        css={css`
-          text-align: left;
-        `}
-      >
-        <a css={[button, resumeButton]} href={Resume} target="_blank">
-          View My Resume
-        </a>
-      </div>
+      <a css={[button, resumeButton]} href={Resume} target="_blank">
+        View My Resume
+      </a>
     </div>
   )
 }
