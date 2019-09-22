@@ -77,6 +77,9 @@ const SeeMoreButton = styled.button`
   font-size: 18px;
   color: ${colors.blue};
   text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
 `
 const DescriptionContainer = styled.div``
 const Description = styled.div`
@@ -90,10 +93,10 @@ const Description = styled.div`
 `
 const MyExperience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0)
-  const [fullDescription, setFullDescription] = useState(false)
   const [contentHeight, setContentHeight] = useState(null)
+  const initialMaxHeight = 300
+  const [descriptionHeight, setDescriptionHeight] = useState(initialMaxHeight)
   const contentRef = useRef(null)
-  const maxDescriptionHeight = 300
 
   // on screen resize
   // update height of content
@@ -103,20 +106,23 @@ const MyExperience = () => {
   }
 
   const SeeMore = () => {
-    if (contentHeight < maxDescriptionHeight) {
-      return null
-    } else if (fullDescription) {
+    if (descriptionHeight > initialMaxHeight) {
       return (
-        <SeeMoreButton onClick={() => setFullDescription(false)}>
+        <SeeMoreButton onClick={() => setDescriptionHeight(300)}>
           See Less -
         </SeeMoreButton>
       )
-    } else {
+    }
+    // if the content is larger than what we can see
+    else if (contentHeight > initialMaxHeight) {
       return (
-        <SeeMoreButton onClick={() => setFullDescription(true)}>
+        <SeeMoreButton onClick={() => setDescriptionHeight(contentHeight)}>
           See More +
         </SeeMoreButton>
       )
+      // if content is expanded
+    } else {
+      return null
     }
   }
   // listen for screen resize
@@ -156,7 +162,9 @@ const MyExperience = () => {
             key={i}
             onClick={() => {
               setSelectedExperience(i)
-              setFullDescription(false)
+              contentResize()
+              setDescriptionHeight(initialMaxHeight)
+              SeeMore()
             }}
           >
             {experiencesText[i].frontmatter.title}
@@ -167,10 +175,11 @@ const MyExperience = () => {
       <DescriptionContainer>
         <Description
           css={css`
-            height: ${fullDescription
-              ? contentHeight + "px"
-              : maxDescriptionHeight + "px"};
-            transition: all 1s;
+            height: ${descriptionHeight + "px"};
+
+            transition: ${descriptionHeight > initialMaxHeight
+              ? "all 1s ease-out 0s"
+              : "none"};
           `}
           ref={contentRef}
           dangerouslySetInnerHTML={{
