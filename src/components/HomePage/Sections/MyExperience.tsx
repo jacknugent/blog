@@ -9,7 +9,7 @@ import { colors, button } from "../../../utils/css/themes"
 import Resume from "../../../utils/resume.pdf"
 import styled from "@emotion/styled"
 
-const experiencePage = css`
+const ExperiencePage = styled.div`
   margin-bottom: 3rem;
   @media (max-width: 600px) {
     margin: 1rem 0;
@@ -61,7 +61,7 @@ const ExperienceButton = styled.button`
   }
 `
 
-const resumeButton = css`
+const ResumeButton = styled.a`
   margin-right: 1rem;
   @media (max-width: 600px) {
     display: flex;
@@ -92,6 +92,7 @@ const Description = styled.div`
     min-height: 25vh;
   }
 `
+
 const MyExperience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0)
   const [contentHeight, setContentHeight] = useState(null)
@@ -149,7 +150,7 @@ const MyExperience = () => {
   `).allMarkdownRemark.nodes
 
   return (
-    <div css={experiencePage}>
+    <ExperiencePage>
       <h1>My Experience</h1>
       <ExperienceChoices>
         {Object.keys(experiencesText).map((_experience: any, i: number) => (
@@ -177,7 +178,6 @@ const MyExperience = () => {
         <Description
           css={css`
             height: ${descriptionHeight + "px"};
-
             transition: ${descriptionHeight > initialMaxHeight
               ? "all 1s ease-out 0s"
               : "none"};
@@ -189,11 +189,10 @@ const MyExperience = () => {
         ></Description>
         {SeeMore()}
       </DescriptionContainer>
-
-      <a css={[button, resumeButton]} href={Resume} target="_blank">
+      <ResumeButton css={button} href={Resume} target="_blank">
         View My Resume
-      </a>
-    </div>
+      </ResumeButton>
+    </ExperiencePage>
   )
 }
 export default MyExperience

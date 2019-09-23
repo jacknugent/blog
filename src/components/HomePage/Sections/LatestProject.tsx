@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 
 // lib imports - 3rd party
 import { css } from "@emotion/core"
-import { colors } from "../../../utils/css/themes"
+import { colors, button } from "../../../utils/css/themes"
 import styled from "@emotion/styled"
 
 const linkTitle = css`
@@ -53,11 +53,14 @@ const LinkContainer = styled.div`
   margin-top: 1rem;
 `
 const LinkButton = css`
-  text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  border: 1px solid ${colors.blue};
-  color: ${colors.blue};
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 0.5rem 0;
+  width: 25%;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const marginRight = css`
@@ -123,7 +126,7 @@ function LatestProject() {
         </ImageContainer>
       </Project>
       <LinkContainer>
-        <Link css={LinkButton} to="projects">
+        <Link css={[button, LinkButton]} to="projects">
           See More Projects
         </Link>
       </LinkContainer>

@@ -7,7 +7,8 @@ import { css } from "@emotion/core"
 
 // app imports
 import YouTubeEmbed from "../../YouTubeEmbed/YouTubeEmbed"
-import { colors } from "../../../utils/css/themes"
+import { button } from "../../../utils/css/themes"
+import styled from "@emotion/styled"
 
 function LatestVideo() {
   const video = useStaticQuery(graphql`
@@ -32,28 +33,47 @@ function LatestVideo() {
     description = description.replace(/Twitter.*\n.*/g, "")
 
     // replace the ad at the beginning
-    return description.replace(/.*https:[/.a-z0-9]*/g, "")
+    return description.match(/\n(.*)(?=\n)/g)
   }
 
+  const Container = styled.div`
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    @media (max-width: 600px) {
+      margin: 1rem 0;
+    }
+  `
+
+  const VideoText = styled.div`
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+  `
+  const LinkContainer = styled.div`
+    text-align: center;
+    margin-top: 1rem;
+  `
+
+  const YoutubeLink = styled.a`
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 0.5rem 0;
+    width: 25%;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  `
+
+  const YouTubeTitle = styled.h3`
+    font-size: 1.5rem;
+    font-weight: 300;
+  `
   return (
-    <div
-      css={css`
-        margin-top: 3rem;
-        margin-bottom: 1rem;
-        @media (max-width: 600px) {
-          margin: 1rem 0;
-        }
-      `}
-    >
-      <div
-        css={css`
-          display: flex;
-          flex-direction: row;
-          @media (max-width: 1200px) {
-            flex-direction: column;
-          }
-        `}
-      >
+    <Container>
+      <VideoText>
         <div
           css={css`
             flex: 1 0 0;
@@ -61,7 +81,7 @@ function LatestVideo() {
         >
           <h1>My Latest Video</h1>
 
-          <h3>{video.title}</h3>
+          <YouTubeTitle>{video.title}</YouTubeTitle>
           <p
             css={css`
               margin-right: 1rem;
@@ -85,29 +105,18 @@ function LatestVideo() {
             fluid_url={video.localThumbnail.childImageSharp.fluid}
           ></YouTubeEmbed>
         </div>
-      </div>
-      <div
-        css={css`
-          text-align: center;
-          margin-top: 1rem;
-        `}
-      >
-        <a
-          css={css`
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 0.25rem;
-            border: 1px solid ${colors.blue};
-            color: ${colors.blue};
-          `}
+      </VideoText>
+      <LinkContainer>
+        <YoutubeLink
+          css={button}
           rel="noopener noreferrer"
           href="https://www.youtube.com/channel/UCWTFGPpNQ0Ms6afXhaWDiRw/videos"
           target="_blank"
         >
           See More Videos
-        </a>
-      </div>
-    </div>
+        </YoutubeLink>
+      </LinkContainer>
+    </Container>
   )
 }
 export default LatestVideo
