@@ -1,8 +1,12 @@
 import * as React from "react"
 import { css } from "@emotion/core"
 import Img, { FluidObject } from "gatsby-image"
-import ProjectLink from "./Helpers/ProjectLink"
+import { Link } from "gatsby"
 
+const linkTitle = css`
+  font-size: 2rem;
+  font-weight: bold;
+`
 const Project = (props: ProjectProps) => (
   <div
     css={css`
@@ -39,19 +43,22 @@ const Project = (props: ProjectProps) => (
               }
             `}
           >
-            {props.title}
+            {props.site_source &&
+              (props.type === "local" ? (
+                <Link css={linkTitle} to={props.site_source}>
+                  {props.title}
+                </Link>
+              ) : (
+                <a css={linkTitle} href={props.site_source}>
+                  {props.title}
+                </a>
+              ))}
           </h1>
           <p>{props.description}</p>
           <p>Skills: {props.skills}</p>
-          <ProjectLink
-            site_source={props.site_source}
-            site_label={props.site_label}
-            type={props.type}
-          ></ProjectLink>
         </div>
         <div
           css={css`
-            z-index: -1;
             flex: 1 0 0;
             margin: auto;
             @media (max-width: 1200px) {
@@ -59,7 +66,16 @@ const Project = (props: ProjectProps) => (
             }
           `}
         >
-          <Img alt={props.title} fluid={props.fluid_img} />
+          {props.site_source &&
+            (props.type === "local" ? (
+              <Link to={props.site_source}>
+                <Img alt={props.title} fluid={props.fluid_img} />
+              </Link>
+            ) : (
+              <a href={props.site_source}>
+                <Img alt={props.title} fluid={props.fluid_img} />
+              </a>
+            ))}
         </div>
       </div>
     </div>

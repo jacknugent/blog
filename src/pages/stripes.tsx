@@ -94,19 +94,16 @@ function stripes() {
   `
 
   return (
-    <>
-      <Layout>
-        <div css={quote}>
-          <h1 css={headerQuote}>
-            <q>Stripes attract attention.</q>
-          </h1>
-          <p css={nameQuote}>- Paul Rand, Creator of the IBM Logo</p>
-        </div>
-
-        <SEO title="Stripes" />
-        <ImageGallery search={""} filter={""} />
-      </Layout>
-    </>
+    <Layout>
+      <div css={quote}>
+        <h1 css={headerQuote}>
+          <q>Stripes attract attention.</q>
+        </h1>
+        <p css={nameQuote}>- Paul Rand, Creator of the IBM Logo</p>
+      </div>
+      <SEO title="Stripes" />
+      <ImageGallery search={""} filter={""} />
+    </Layout>
   )
 }
 

@@ -10,6 +10,8 @@ const IntroductionContainer = styled.div`
   text-align: center;
   min-height: 60vh;
   display: flex;
+  box-shadow: 0 10px 15px -15px black;
+  position: relative;
 `
 
 const MainInfo = styled.div`
@@ -24,7 +26,7 @@ const MainInfo = styled.div`
 
 const Positioned = styled.div`
   margin: 5rem auto;
-  max-width: 900px;
+  max-width: 1100px;
 
   @media (max-width: 960px) {
     margin: 0 auto;

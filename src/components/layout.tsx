@@ -90,10 +90,11 @@ const globalStyles = css`
   a {
     font-family: "Montserrat";
     text-rendering: optimizeLegibility;
+    font-size: 0.9rem;
   }
 `
 const body = css`
-  padding: 5rem 0.5rem 5rem 0.5rem;
+  padding: 5rem 0 5rem 0;
   flex-grow: 1;
   @media (max-width: 600px) {
     padding-top: 0;

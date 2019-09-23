@@ -12,7 +12,7 @@ const latestWorksBackground = css`
   }
 
   padding: 2rem 0;
-  background-color: ${colors.darkGrey};
+  background-color: ${colors.lightGrey};
 
   @media (max-width: 960px) {
     background-color: white;
@@ -21,14 +21,13 @@ const latestWorksBackground = css`
 `
 
 const latestWorks = css`
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
   box-sizing: border-box;
   background-color: white;
   border-radius: 40px;
   padding: 2rem 4rem;
-  box-shadow: 0 0 10px 2px black;
-
+  box-shadow: 0 0 15px -4px black;
   @media (max-width: 960px) {
     box-shadow: none;
     padding: 0.5rem;

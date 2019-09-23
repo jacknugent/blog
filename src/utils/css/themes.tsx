@@ -2,9 +2,9 @@ import { css } from "@emotion/core"
 
 export const colors = {
   red: "#FF6040",
-  grey: "#A69B95",
   blue: "#3C64BE",
   lightGrey: "#EDEDED",
+  mediumGrey: "#D0D0D0",
   darkGrey: "#404040",
 }
 
@@ -15,7 +15,7 @@ export const button = css`
   text-decoration: none;
   border: 1px solid ${colors.blue};
   color: ${colors.blue};
-
+  transition: background-color 0.25s;
   &:focus,
   &:hover {
     cursor: pointer;

@@ -8,6 +8,10 @@ import { css } from "@emotion/core"
 import { colors } from "../../../utils/css/themes"
 import ProjectLink from "../../Helpers/ProjectLink"
 
+const linkTitle = css`
+  font-size: 1.5rem;
+`
+
 function LatestProject() {
   const project = useStaticQuery(graphql`
     {
@@ -53,7 +57,18 @@ function LatestProject() {
         >
           <h1>My Latest Project</h1>
 
-          <h3>{project.title}</h3>
+          <h3>
+            {project.site_source &&
+              (project.type === "local" ? (
+                <Link css={linkTitle} to={project.site_source}>
+                  {project.title}
+                </Link>
+              ) : (
+                <a css={linkTitle} href={project.site_source}>
+                  {project.title}
+                </a>
+              ))}
+          </h3>
           <p
             css={css`
               margin-right: 1rem;
@@ -61,11 +76,6 @@ function LatestProject() {
           >
             {project.description}
           </p>
-          <ProjectLink
-            site_source={project.site_source}
-            site_label={project.site_label}
-            type={project.type}
-          ></ProjectLink>
         </div>
 
         <div
@@ -74,10 +84,22 @@ function LatestProject() {
             margin: 1rem 0;
           `}
         >
-          <Img
-            alt={project.title}
-            fluid={project.image.childImageSharp.fluid}
-          />
+          {project.site_source &&
+            (project.type === "local" ? (
+              <Link to={project.site_source}>
+                <Img
+                  alt={project.title}
+                  fluid={project.image.childImageSharp.fluid}
+                />
+              </Link>
+            ) : (
+              <a href={project.site_source}>
+                <Img
+                  alt={project.title}
+                  fluid={project.image.childImageSharp.fluid}
+                />
+              </a>
+            ))}
         </div>
       </div>
       <div

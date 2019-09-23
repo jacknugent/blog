@@ -159,6 +159,7 @@ const Contract = () => {
               id="Message"
               value={message}
               onChange={e => setMessage(e.target.value)}
+              required
             />
           </div>
           <div

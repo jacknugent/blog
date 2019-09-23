@@ -44,7 +44,6 @@ const ExperienceChoices = styled.div`
 `
 
 const ExperienceButton = styled.button`
-  background-color: transparent;
   border: none;
   padding: 0.5rem 2rem;
   font-size: 1rem;
@@ -52,11 +51,13 @@ const ExperienceButton = styled.button`
   @media (max-width: 600px) {
     padding: 0.75rem 2rem;
   }
+  transition: background-color 0.25s;
+  transition: color 0.25s;
+
   &:focus,
   &:hover {
     cursor: pointer;
-    background-color: ${colors.blue};
-    color: white;
+    background-color: ${colors.mediumGrey};
   }
 `
 
@@ -155,7 +156,7 @@ const MyExperience = () => {
           <ExperienceButton
             css={css`
               background-color: ${selectedExperience === i
-                ? colors.blue
+                ? colors.blue + " !important "
                 : "transparent"};
               color: ${selectedExperience === i ? "white" : "black"};
             `}
