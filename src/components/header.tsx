@@ -30,7 +30,11 @@ const link = css`
   }
   &.active {
     color: white;
-    background-color: ${colors.blue};
+    background-color: ${colors.blue} !important;
+  }
+  &:hover {
+    color: white;
+    background-color: ${colors.darkBlue};
   }
 `
 

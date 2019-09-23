@@ -24,6 +24,7 @@
   skills: JS, HTML, CSS, FlexBox
 - title: This Website
   slug: this-website
+  site_source: /
   description: This website was built in Gatsby, a React framework that pre-builds static pages, leading to huge performance increases. It's hosted in S3, distributed on Cloudfront, and deployed with GitLab.
   image: ./images/audit.jpg
   skills: Gatsby, React, S3, CloudFront, GitLab CI
