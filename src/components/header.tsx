@@ -20,7 +20,7 @@ const header = css`
 const link = css`
   font-size: 18px;
   padding: 0.75rem 1.25rem;
-  margin: 0.5rem;
+  margin: 1rem;
   // let Flex take over
   @media (max-width: 600px) {
     padding: 0.5rem;

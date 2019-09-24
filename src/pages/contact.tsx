@@ -63,7 +63,7 @@ const Contract = () => {
   const [message, setMessage] = useState("")
   const [trick, setTrick] = useState("")
 
-  const [sent, setSent] = useState(null)
+  const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
 
   const handleSubmit = (e: any) => {
@@ -93,7 +93,6 @@ const Contract = () => {
           setName("")
           setEmail("")
           setMessage("")
-
           setSending(false)
           setSent(true)
 
@@ -153,6 +152,7 @@ const Contract = () => {
                 input,
                 css`
                   height: 4rem;
+                  box-shadow: none;
                 `,
               ]}
               name="Message"
@@ -214,14 +214,14 @@ const Contract = () => {
           </h2>
         )}
         {sent && (
-          <h2
+          <p
             css={css`
               text-align: center;
               margin: 0.5rem;
             `}
           >
-            Sent!
-          </h2>
+            Thanks for reaching out! We will be in touch.
+          </p>
         )}
       </div>
     </Layout>

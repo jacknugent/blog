@@ -73,7 +73,7 @@ const ResumeButton = styled.a`
 const SeeMoreButton = styled.button`
   margin: 1rem auto 2rem auto;
   display: flex;
-  background-color: none;
+  background-color: transparent;
   border: none;
   font-size: 18px;
   color: ${colors.blue};

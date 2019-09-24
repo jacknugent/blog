@@ -63,6 +63,7 @@ function LatestVideo() {
     padding: 0.5rem 0;
     width: 25%;
     @media (max-width: 600px) {
+      box-sizing: border-box;
       width: 100%;
     }
   `

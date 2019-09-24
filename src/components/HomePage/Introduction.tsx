@@ -84,14 +84,11 @@ const Tagline = styled.p`
 const Description = styled.p`
   width: 50%;
   margin: 5rem auto 5rem auto;
-  text-align: justify;
-  text-align-last: left;
+  text-align: center;
   font-size: 1rem;
   line-height: 1;
   @media (max-width: 960px) {
     width: 90%;
-    text-align: left;
-    text-align-last: left;
 
     margin-top: 3rem;
     margin-bottom: 1rem;

@@ -30,6 +30,17 @@ function SEO(props: SEOProps) {
     <Helmet
       title={props.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      script={[
+        {
+          type: "application/ld+json",
+          innerHTML: `{
+          '@context': 'https://jacknugent.io',
+          'url': 'https://jacknugent.io',
+          '@type': 'WebSite',
+          'name': 'JackNugentBlog'
+        }`,
+        },
+      ]}
       meta={[
         {
           name: `description`,
