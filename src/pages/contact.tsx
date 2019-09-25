@@ -10,6 +10,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import css from "@emotion/css"
 import { keyframes } from "@emotion/core"
+import styled from "@emotion/styled"
+
+const Title = styled.h1`
+  text-align: center;
+`
 
 const inputContainer = css`
   width: 100%;
@@ -115,6 +120,7 @@ const Contract = () => {
           margin: auto;
         `}
       >
+        <Title>Contact Me!</Title>
         <form onSubmit={e => handleSubmit(e)}>
           <div css={inputContainer}>
             <label css={block} htmlFor="name">
@@ -131,7 +137,7 @@ const Contract = () => {
           </div>
           <div css={inputContainer}>
             <label css={block} htmlFor="Email">
-              Email
+              Your Email
             </label>
             <input
               css={input}
@@ -195,7 +201,7 @@ const Contract = () => {
               type="submit"
               value="Contact Me"
             >
-              Contact Me
+              Contact
             </button>
           </div>
         </form>
