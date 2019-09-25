@@ -55,7 +55,7 @@ const Header = () => {
     <header
       css={css`
         position: relative;
-        z-index: 3;
+        z-index: 4;
       `}
     >
       <div
