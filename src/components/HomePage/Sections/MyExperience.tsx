@@ -92,6 +92,12 @@ const Description = styled.div`
     min-height: 25vh;
   }
 `
+const scrollToRef = (ref: React.MutableRefObject<any>) =>
+  window.scrollTo({
+    top: ref.current.offsetTop - 100,
+    left: 0,
+    behavior: "smooth",
+  }) // General scroll to element function
 
 const MyExperience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0)
@@ -99,6 +105,8 @@ const MyExperience = () => {
   const initialMaxHeight = 300
   const [descriptionHeight, setDescriptionHeight] = useState(initialMaxHeight)
   const contentRef = useRef(null)
+  const scrollToObject = useRef(null)
+  const executeScroll = () => scrollToRef(scrollToObject)
 
   // on screen resize
   // update height of content
@@ -110,7 +118,12 @@ const MyExperience = () => {
   const SeeMore = () => {
     if (descriptionHeight > initialMaxHeight) {
       return (
-        <SeeMoreButton onClick={() => setDescriptionHeight(300)}>
+        <SeeMoreButton
+          onClick={() => {
+            setDescriptionHeight(300)
+            executeScroll()
+          }}
+        >
           See Less -
         </SeeMoreButton>
       )
@@ -150,7 +163,7 @@ const MyExperience = () => {
   `).allMarkdownRemark.nodes
 
   return (
-    <ExperiencePage>
+    <ExperiencePage ref={scrollToObject}>
       <h1>My Experience</h1>
       <ExperienceChoices>
         {Object.keys(experiencesText).map((_experience: any, i: number) => (
