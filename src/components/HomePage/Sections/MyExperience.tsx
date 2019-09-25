@@ -102,7 +102,7 @@ const scrollToRef = (ref: React.MutableRefObject<any>) =>
 const MyExperience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0)
   const [contentHeight, setContentHeight] = useState(null)
-  const initialMaxHeight = 300
+  const initialMaxHeight = 270
   const [descriptionHeight, setDescriptionHeight] = useState(initialMaxHeight)
   const contentRef = useRef(null)
   const scrollToObject = useRef(null)
