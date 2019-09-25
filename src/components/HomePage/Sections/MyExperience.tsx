@@ -116,11 +116,12 @@ const MyExperience = () => {
   }
 
   const SeeMore = () => {
+    console.log(descriptionHeight)
     if (descriptionHeight > initialMaxHeight) {
       return (
         <SeeMoreButton
           onClick={() => {
-            setDescriptionHeight(300)
+            setDescriptionHeight(initialMaxHeight)
             executeScroll()
           }}
         >
