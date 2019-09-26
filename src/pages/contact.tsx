@@ -226,7 +226,7 @@ const Contract = () => {
               margin: 0.5rem;
             `}
           >
-            Thanks for reaching out! We will be in touch.
+            Thanks for reaching out! I will get back to you.
           </p>
         )}
       </div>
