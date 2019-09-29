@@ -28,7 +28,7 @@ const MainInfo = styled.div`
 `
 
 const Positioned = styled.div`
-  margin: 5rem auto;
+  margin: 3.25rem auto;
   max-width: 1100px;
   @media (max-width: 960px) {
     margin: 0 auto;

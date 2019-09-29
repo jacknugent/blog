@@ -8,6 +8,7 @@ export const colors = {
   mediumGrey: "#D0D0D0",
   darkGrey: "#404040",
   darkBlue: "#264487",
+  orange: "#FF6040",
 }
 
 export const button = css`
