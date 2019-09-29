@@ -105,7 +105,6 @@ const Contract = () => {
         },
         function(error) {
           setSending(false)
-          console.log(error)
         }
       )
     }

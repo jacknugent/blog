@@ -39,7 +39,7 @@ const ExperienceChoices = styled.div`
     width: 0;
     height: 0;
   }
-  div:first-child {
+  div:first-of-type {
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
   }
@@ -127,7 +127,6 @@ const MyExperience = () => {
   }
 
   const SeeMore = () => {
-    console.log(descriptionHeight)
     if (descriptionHeight > initialMaxHeight) {
       return (
         <SeeMoreButton
@@ -179,7 +178,7 @@ const MyExperience = () => {
       <h1>My Experience</h1>
       <ExperienceChoices>
         {Object.keys(experiencesText).map((_experience: any, i: number) => (
-          <ButtonContainer>
+          <ButtonContainer key={i}>
             <ExperienceButton
               css={css`
                 background-color: ${selectedExperience === i
@@ -187,7 +186,6 @@ const MyExperience = () => {
                   : "transparent"};
                 color: ${selectedExperience === i ? "white" : "black"};
               `}
-              key={i}
               onClick={() => {
                 setSelectedExperience(i)
                 contentResize()
