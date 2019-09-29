@@ -101,6 +101,7 @@ const body = css`
   }
   @media (max-width: 600px) {
     padding-top: 0;
+    padding-bottom: 0;
   }
 `
 const Layout = (props: LayoutProps) => {

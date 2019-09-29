@@ -34,6 +34,7 @@ const FooterMain = styled.div`
     background-color: white;
   }
   @media (max-width: 600px) {
+    padding: 1rem 0;
     justify-content: space-around;
     position: relative;
   }
