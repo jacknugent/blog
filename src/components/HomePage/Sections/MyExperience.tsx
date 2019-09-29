@@ -11,8 +11,10 @@ import styled from "@emotion/styled"
 
 const ExperiencePage = styled.div`
   margin-bottom: 3rem;
+
+  // negative margin for slider
   @media (max-width: 600px) {
-    margin: 1rem 0;
+    margin: 1rem 0 1rem 0;
   }
 
   table {
@@ -23,10 +25,12 @@ const ExperiencePage = styled.div`
   }
 `
 
-const ExperienceChoices = styled.div`
+const ButtonContainer = styled.div`
   background-color: ${colors.lightGrey};
-  display: table;
-  border-radius: 1rem;
+`
+
+const ExperienceChoices = styled.div`
+  display: flex;
   overflow-x: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
@@ -35,11 +39,18 @@ const ExperienceChoices = styled.div`
     width: 0;
     height: 0;
   }
+  div:first-child {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  div:last-child {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
 
   @media (max-width: 750px) {
-    display: flex;
-    flex-wrap: no-wrap;
-    justify-content: space-between;
+    margin-right: -1rem;
   }
 `
 
@@ -168,23 +179,25 @@ const MyExperience = () => {
       <h1>My Experience</h1>
       <ExperienceChoices>
         {Object.keys(experiencesText).map((_experience: any, i: number) => (
-          <ExperienceButton
-            css={css`
-              background-color: ${selectedExperience === i
-                ? colors.blue + " !important "
-                : "transparent"};
-              color: ${selectedExperience === i ? "white" : "black"};
-            `}
-            key={i}
-            onClick={() => {
-              setSelectedExperience(i)
-              contentResize()
-              setDescriptionHeight(initialMaxHeight)
-              SeeMore()
-            }}
-          >
-            {experiencesText[i].frontmatter.title}
-          </ExperienceButton>
+          <ButtonContainer>
+            <ExperienceButton
+              css={css`
+                background-color: ${selectedExperience === i
+                  ? colors.blue + " !important "
+                  : "transparent"};
+                color: ${selectedExperience === i ? "white" : "black"};
+              `}
+              key={i}
+              onClick={() => {
+                setSelectedExperience(i)
+                contentResize()
+                setDescriptionHeight(initialMaxHeight)
+                SeeMore()
+              }}
+            >
+              {experiencesText[i].frontmatter.title}
+            </ExperienceButton>
+          </ButtonContainer>
         ))}
       </ExperienceChoices>
 
