@@ -85,6 +85,7 @@ const SeeMoreButton = styled.button`
   margin: 1rem auto 2rem auto;
   display: flex;
   background-color: transparent;
+  position: relative;
   border: none;
   font-size: 18px;
   color: ${colors.blue};
@@ -93,12 +94,15 @@ const SeeMoreButton = styled.button`
     cursor: pointer;
   }
 `
-const DescriptionContainer = styled.div``
+const DescriptionContainer = styled.div`
+  position: relative;
+`
 const Description = styled.div`
   text-align: left;
   margin: 0;
   min-height: 15vh;
   overflow: hidden;
+  position: relative;
   @media (max-width: 600px) {
     min-height: 25vh;
   }
@@ -185,6 +189,8 @@ const MyExperience = () => {
                   ? colors.blue + " !important "
                   : "transparent"};
                 color: ${selectedExperience === i ? "white" : "black"};
+                &:after {
+                }
               `}
               onClick={() => {
                 setSelectedExperience(i)
@@ -206,6 +212,34 @@ const MyExperience = () => {
             transition: ${descriptionHeight > initialMaxHeight
               ? "all 1s ease-out 0s"
               : "none"};
+            &:after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              height: ${descriptionHeight > initialMaxHeight ? "0px" : "50px"};
+              background: -webkit-linear-gradient(
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 1) 100%
+              );
+              background-image: -moz-linear-gradient(
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 1) 100%
+              );
+              background-image: -o-linear-gradient(
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 1) 100%
+              );
+              background-image: linear-gradient(
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 1) 100%
+              );
+              background-image: -ms-linear-gradient(
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 1) 100%
+              );
+              transition: height 0.5s;
+            }
           `}
           ref={contentRef}
           dangerouslySetInnerHTML={{
