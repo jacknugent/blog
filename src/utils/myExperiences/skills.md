@@ -22,7 +22,7 @@ I don't care about particular tools. I care about using the right tool to solve 
 ### APIs & Back-End
 
 - Experience consuming both REST APIs and GraphQL
-- Created APIs using .NET Core
+- Created APIs using .NET Core and Express.js
 - Proficient in Headless CMS solutions using Drupal and WordPress.
 
 ### Big Data
