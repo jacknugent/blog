@@ -213,6 +213,7 @@ const MyExperience = () => {
               ? "all 1s ease-out 0s"
               : "none"};
             &:after {
+              display: ${contentHeight > initialMaxHeight ? "block" : "none"};
               content: "";
               position: absolute;
               bottom: 0;
