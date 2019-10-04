@@ -65,6 +65,10 @@ function SEO(props: SEOProps) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: logo,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -79,6 +83,10 @@ function SEO(props: SEOProps) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          property: `twitter:image`,
+          content: logo,
         },
       ].concat(props.meta)}
     >
