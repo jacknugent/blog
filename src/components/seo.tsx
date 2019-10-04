@@ -45,15 +45,15 @@ function SEO(props: SEOProps) {
     >
       <html lang={props.lang} />
       <title>{props.title}</title>
-      <meta name="description" content={props.description} />
+      <meta name="description" content={metaDescription} />
       {logo && <meta name="image" content={logo} />}
       <meta property="og:title" content={props.title} />
       <meta property="og:type" content="article" />
-      <meta property="og:description" content={props.description} />
+      <meta property="og:description" content={metaDescription} />
       {logo && <meta property="og:image" content={logo} />}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={props.title} />
-      <meta name="twitter:description" content={props.description} />
+      <meta name="twitter:description" content={metaDescription} />
       {logo && <meta name="twitter:image" content={logo} />}
     </Helmet>
   )
