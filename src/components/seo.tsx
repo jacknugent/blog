@@ -8,6 +8,7 @@
 import * as React from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import logo from "../utils/blog-icon.png"
 
 function SEO(props: SEOProps) {
   const { site } = useStaticQuery(
@@ -46,6 +47,7 @@ function SEO(props: SEOProps) {
           name: `description`,
           content: metaDescription,
         },
+        { name: "image", content: logo },
         {
           name: `viewport`,
           content: `width=device-width, initial-scale=1.0`,
