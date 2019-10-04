@@ -42,55 +42,19 @@ function SEO(props: SEOProps) {
         }`,
         },
       ]}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        { name: "image", content: logo },
-        {
-          name: `viewport`,
-          content: `width=device-width, initial-scale=1.0`,
-        },
-        {
-          property: `og:title`,
-          content: props.title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:image`,
-          content: logo,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: props.title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          property: `twitter:image`,
-          content: logo,
-        },
-      ].concat(props.meta)}
     >
       <html lang={props.lang} />
+      <title>{props.title}</title>
+      <meta name="description" content={props.description} />
+      {logo && <meta name="image" content={logo} />}
+      <meta property="og:title" content={props.title} />
+      <meta property="og:type" content="article" />
+      <meta property="og:description" content={props.description} />
+      {logo && <meta property="og:image" content={logo} />}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={props.title} />
+      <meta name="twitter:description" content={props.description} />
+      {logo && <meta name="twitter:image" content={logo} />}
     </Helmet>
   )
 }
