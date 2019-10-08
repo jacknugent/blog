@@ -27,6 +27,8 @@ function SEO(props: SEOProps) {
 
   const metaDescription = props.description || site.siteMetadata.description
 
+  const imageLink =
+    "https://jacknugent.io/static/724474e6acf4bb2e0e0cc9596679f985/59139/blog-icon.png?bust=cache"
   return (
     <Helmet
       title={props.title}
@@ -46,15 +48,15 @@ function SEO(props: SEOProps) {
       <html lang={props.lang} />
       <title>{props.title}</title>
       <meta name="description" content={metaDescription} />
-      {logo && <meta name="image" content={logo} />}
+      {logo && <meta name="image" content={imageLink} />}
       <meta property="og:title" content={props.title} />
       <meta property="og:type" content="article" />
       <meta property="og:description" content={metaDescription} />
-      {logo && <meta property="og:image" content={logo} />}
+      {logo && <meta property="og:image" content={imageLink} />}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={props.title} />
       <meta name="twitter:description" content={metaDescription} />
-      {logo && <meta name="twitter:image" content={logo} />}
+      {logo && <meta name="twitter:image" content={imageLink} />}
     </Helmet>
   )
 }
