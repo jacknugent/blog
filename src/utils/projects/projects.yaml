@@ -1,30 +1,24 @@
+- title: See Kids Dream Website
+  description: Rewrote a website using Gatsby and Headless WordPress. Currently showcased on offical GatsbyJS site.
+  site_source: https://www.gatsbyjs.org/showcase/seekidsdream.org
+  type: external
+  image: ./images/see_kids_dream.png
+  date (MM/DD/YY): 1/01/20
 - title: Azure Function Contact Form
-  slug: azure-contact-form
   description: Send me a message using a flexible, free, and efficient Azure Function
   image: ./images/azure_function.png
-  site_label: Link to Page
   site_source: /contact/
   type: local
-  skills: Azure, .NET
-- title: Headless WordPress & Gatsby
-  slug: headless-wordpress-and-gatsby
-  description: A page that demos a small Headless WordPress example.
-  image: ./images/wordpress.jpg
-  site_label: Link to Page
-  site_source: /headless-wordpress-and-gatsby/
-  type: local
-  skills: Headless WordPress, Pantheon, GitLab CI
+  date (MM/DD/YY): 10/01/19
 - title: FlexBox with Pure CSS
-  slug: flexbox-with-pure-css
   description: A pure CSS implementation of the Google Photos layout on CodePen. Try resizing to see how fast it works.
-  site_label: Link to CodePen
   site_source: https://codepen.io/jacknugent/pen/LwPMEX
   type: external
   image: ./images/codepen.jpg
-  skills: JS, HTML, CSS, FlexBox
+  date (MM/DD/YY): 09/01/19
 - title: This Website
-  slug: this-website
   site_source: https://github.com/jacknugent/blog
   description: This website was built in Gatsby, a React framework that pre-builds static pages, leading to huge performance increases. It's hosted in S3, distributed on Cloudfront, and deployed with GitLab.
   image: ./images/audit.jpg
-  skills: Gatsby, React, S3, CloudFront, GitLab CI
+  type: external
+  date (MM/DD/YY): 08/01/19

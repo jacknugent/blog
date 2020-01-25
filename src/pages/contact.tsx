@@ -6,8 +6,8 @@ import { useState } from "react"
 
 // app imports
 import { colors, button } from "../utils/css/themes"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 import css from "@emotion/css"
 import { keyframes } from "@emotion/core"
 import styled from "@emotion/styled"

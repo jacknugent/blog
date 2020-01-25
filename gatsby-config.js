@@ -11,13 +11,6 @@ module.exports = {
   plugins: [
     { resolve: `gatsby-plugin-react-helmet` },
     { resolve: `gatsby-plugin-emotion` },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/utils/stripe-gallery/images`,
-      },
-    },
     { resolve: `gatsby-transformer-sharp` },
     { resolve: `gatsby-plugin-sharp` },
     {
@@ -46,7 +39,7 @@ module.exports = {
       options: {
         channelId: "UCWTFGPpNQ0Ms6afXhaWDiRw",
         apiKey: process.env.GATSBY_YOUTUBE_API,
-        maxVideos: 100, // Defaults to 50
+        maxVideos: 1000, // Defaults to 50
       },
     },
     {
@@ -62,22 +55,6 @@ module.exports = {
         host: "https://jacknugent.io",
         sitemap: "https://jacknugent.io/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
-
-    {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-        baseUrl: `dev-poc-see-kids-dream.pantheonsite.io`,
-        // WP.com sites set to true, WP.org set to false
-        hostingWPCOM: false,
-        // The protocol. This can be http or https.
-        protocol: "http",
-        // Use 'Advanced Custom Fields' Wordpress plugin
-        useACF: true,
-        auth: {},
-        // Set to true to debug endpoints on 'gatsby build'
-        verboseOutput: false,
       },
     },
   ],

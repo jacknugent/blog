@@ -6,8 +6,8 @@
  */
 
 import * as React from "react"
-import Header from "./header"
-import Footer from "./footer"
+import Header from "./Header"
+import Footer from "./Footer"
 import { Global, css } from "@emotion/core"
 import {
   GothamMediumTTF,
@@ -19,6 +19,7 @@ import {
   MontserratRegularTTF,
   MontserratRegularWOFF,
 } from "../utils/css/fonts"
+import styled from "@emotion/styled"
 
 const globalStyles = css`
   @font-face {
@@ -93,7 +94,7 @@ const globalStyles = css`
     font-size: 0.9rem;
   }
 `
-const body = css`
+const Body = styled.div`
   padding: 5rem 0.5rem 0 0.5rem;
   flex-grow: 1;
   @media (max-width: 1300px) {
@@ -104,22 +105,22 @@ const body = css`
     padding-bottom: 0;
   }
 `
+
+const SiteContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
 const Layout = (props: LayoutProps) => {
   return (
-    <div
-      css={css`
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      `}
-    >
+    <SiteContainer>
       <Global styles={globalStyles} />
       <Header />
-      <div css={body}>
+      <Body>
         <main>{props.children}</main>
-      </div>
+      </Body>
       <Footer />
-    </div>
+    </SiteContainer>
   )
 }
 interface LayoutProps {
