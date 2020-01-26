@@ -106,7 +106,8 @@ const Projects = () => {
               description={project.description.match(/[^\n]+/g)[1]}
               preview={build_preview(
                 "youtube",
-                project.localThumbnail.childImageSharp.fluid,
+                project.localThumbnail &&
+                  project.localThumbnail.childImageSharp.fluid,
                 project.videoId
               )}
             ></Project>
