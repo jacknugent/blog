@@ -3,8 +3,8 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 // app imports
-import Layout from "../components/Layout"
-import SEO from "../components/Seo"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Project from "../components/Helpers/Project"
 import YouTubeEmbed from "../components/Helpers/YouTubeEmbed/YouTubeEmbed"
 import styled from "@emotion/styled"

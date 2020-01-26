@@ -2,12 +2,12 @@
 import * as React from "react"
 
 // app imports
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import MyExperience from "../components/HomePage/Sections/MyExperience"
 import Introduction from "../components/HomePage/Introduction"
 
 // app imports
-import SEO from "../components/Seo"
+import SEO from "../components/seo"
 import PeerTestimonies from "../components/HomePage/PeerTestimonies"
 import LatestProject from "../components/HomePage/LatestProject"
 import css from "@emotion/css"
