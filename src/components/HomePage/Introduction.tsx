@@ -6,6 +6,7 @@ import { colors, button } from "../../utils/css/themes"
 import Resume from "../../utils/Jack T Nugent Resume.pdf"
 // lib imports - 3rd party
 import styled from "@emotion/styled"
+import video from "../../utils/Logo.Video.mp4"
 
 const IntroductionContainer = styled.div`
   text-align: center;
@@ -42,22 +43,6 @@ const Positioned = styled.div`
   max-width: 1100px;
   @media (max-width: 960px) {
     margin: 0 auto;
-  }
-`
-
-const ImgContainer = styled.div`
-  width: 200px;
-  margin: 0 2rem;
-  border-radius: 10rem;
-  overflow: hidden;
-  flex-grow: 1;
-  flex: 1 1 15%;
-  @media (max-width: 960px) {
-    order: -1;
-    flex: none;
-    width: 35%;
-    max-width: 200px;
-    margin: 2rem 0;
   }
 `
 
@@ -105,6 +90,37 @@ const Description = styled.p`
   }
 `
 
+const VideoContainer = styled.div`
+  margin: 0 2rem;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  flex-grow: 1;
+  flex: 1 1 15%;
+  @media (max-width: 960px) {
+    order: -1;
+    flex: none;
+    margin: 2rem 0;
+  }
+`
+
+const Video = styled.video`
+  margin: 0 2rem;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  flex-grow: 1;
+  flex: 1 1 15%;
+  @media (max-width: 960px) {
+    order: -1;
+    flex: none;
+    margin: 2rem 0;
+    height: 250px;
+    width: 250px;
+  }
+`
+
 const Introduction = () => {
   const introductionData = useStaticQuery(graphql`
     {
@@ -130,12 +146,10 @@ const Introduction = () => {
       <Positioned>
         <MainInfo>
           <Title>{introductionData.utilsYaml.introduction.title}</Title>
-          <ImgContainer>
-            <Img
-              alt={"site logo"}
-              fluid={introductionData.file.childImageSharp.fluid}
-            />
-          </ImgContainer>
+          <Video id="background-video" muted autoPlay playsInline>
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </Video>
           <Tagline>{introductionData.utilsYaml.introduction.tagline}</Tagline>
         </MainInfo>
         <Description>
