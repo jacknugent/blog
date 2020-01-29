@@ -1,12 +1,12 @@
 // framework imports - 1st party
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { colors, button } from "../../utils/css/themes"
-import Resume from "../../utils/Jack T Nugent Resume.pdf"
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { colors, button } from "../../utils/css/themes";
+import Resume from "../../utils/Jack T Nugent Resume.pdf";
 // lib imports - 3rd party
-import styled from "@emotion/styled"
-import video from "../../utils/Logo.Video.mp4"
+import styled from "@emotion/styled";
+import video from "../../utils/Logo.Video.mp4";
 
 const IntroductionContainer = styled.div`
   text-align: center;
@@ -17,7 +17,7 @@ const IntroductionContainer = styled.div`
     box-shadow: none;
   }
   position: relative;
-`
+`;
 const ResumeButton = styled.a`
   margin-right: 1rem;
   @media (max-width: 600px) {
@@ -26,7 +26,7 @@ const ResumeButton = styled.a`
     text-align: center;
     justify-content: center;
   }
-`
+`;
 
 const MainInfo = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ const MainInfo = styled.div`
   @media (max-width: 960px) {
     display: inline-flex;
   }
-`
+`;
 
 const Positioned = styled.div`
   margin: 3.25rem auto;
@@ -44,7 +44,7 @@ const Positioned = styled.div`
   @media (max-width: 960px) {
     margin: 0 auto;
   }
-`
+`;
 
 const Title = styled.h1`
   font-family: "GothamUltra";
@@ -59,7 +59,7 @@ const Title = styled.h1`
     text-align: center;
     font-size: 12vw;
   }
-`
+`;
 
 const Tagline = styled.p`
   margin: auto 0;
@@ -74,7 +74,7 @@ const Tagline = styled.p`
     text-align: center;
     margin: 1rem 0;
   }
-`
+`;
 
 const Description = styled.p`
   width: 50%;
@@ -88,39 +88,22 @@ const Description = styled.p`
     margin-top: 3rem;
     margin-bottom: 1rem;
   }
-`
-
-const VideoContainer = styled.div`
+`;
+const ImgContainer = styled.div`
+  width: 200px;
   margin: 0 2rem;
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
+  border-radius: 10rem;
   overflow: hidden;
   flex-grow: 1;
   flex: 1 1 15%;
   @media (max-width: 960px) {
     order: -1;
     flex: none;
+    width: 35%;
+    max-width: 200px;
     margin: 2rem 0;
   }
-`
-
-const Video = styled.video`
-  margin: 0 2rem;
-  border-radius: 50%;
-  height: 250px;
-  width: 250px;
-  flex-grow: 1;
-  filter: saturate(1.7);
-  flex: 1 1 15%;
-  @media (max-width: 960px) {
-    order: -1;
-    flex: none;
-    margin: 2rem 0;
-    height: 250px;
-    width: 250px;
-  }
-`
+`;
 
 const Introduction = () => {
   const introductionData = useStaticQuery(graphql`
@@ -140,24 +123,19 @@ const Introduction = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <IntroductionContainer>
       <Positioned>
         <MainInfo>
           <Title>{introductionData.utilsYaml.introduction.title}</Title>
-          <Video id="background-video" muted autoPlay playsInline>
-            <source src={video} type="video/mp4" />
-            {/* My pathetic workaround to this issue: https://forums.aws.amazon.com/thread.jspa?threadID=106870 */}
-            <source
-              src={
-                "http://jacknugent.io.s3-website-us-east-1.amazonaws.com/static/Logo.Video-668638eaaeac04cced77e465c15a563d.mp4"
-              }
-              type="video/mp4"
+          <ImgContainer>
+            <Img
+              alt={"site logo"}
+              fluid={introductionData.file.childImageSharp.fluid}
             />
-            Your browser does not support the video tag.
-          </Video>
+          </ImgContainer>
           <Tagline>{introductionData.utilsYaml.introduction.tagline}</Tagline>
         </MainInfo>
         <Description>
@@ -168,6 +146,6 @@ const Introduction = () => {
         </ResumeButton>
       </Positioned>
     </IntroductionContainer>
-  )
-}
-export default Introduction
+  );
+};
+export default Introduction;

@@ -1,30 +1,30 @@
 // framework imports - 1st party
-import * as React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import * as React from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import Img from "gatsby-image";
 
 // lib imports - 3rd party
-import { css } from "@emotion/core"
-import { colors, button } from "../../utils/css/themes"
-import styled from "@emotion/styled"
+import { css } from "@emotion/core";
+import { colors, button } from "../../utils/css/themes";
+import styled from "@emotion/styled";
 
 const linkTitle = css`
   font-size: 1.5rem;
-`
+`;
 
 const ProjectContainer = styled.div`
   margin: 3rem 0;
   @media (max-width: 600px) {
     margin: 1rem 0;
   }
-`
+`;
 const Project = styled.div`
   display: flex;
   flex-direction: row;
   @media (max-width: 1200px) {
     flex-direction: column;
   }
-`
+`;
 
 const Header = styled.h3`
   a {
@@ -37,21 +37,21 @@ const Header = styled.h3`
       color: ${colors.blue};
     }
   }
-`
+`;
 
 const Text = styled.div`
   flex: 1 0 0;
-`
+`;
 
 const ImageContainer = styled.div`
   flex: 1 0 0;
   margin: 1rem 0;
-`
+`;
 
 const LinkContainer = styled.div`
   text-align: center;
   margin-top: 1rem;
-`
+`;
 const LinkButton = css`
   display: flex;
   justify-content: center;
@@ -61,11 +61,11 @@ const LinkButton = css`
   @media (max-width: 600px) {
     width: 100%;
   }
-`
+`;
 
 const marginRight = css`
   margin-right: 1rem;
-`
+`;
 
 function LatestProject() {
   const project = useStaticQuery(graphql`
@@ -84,7 +84,7 @@ function LatestProject() {
         }
       }
     }
-  `).projectsYaml
+  `).projectsYaml;
 
   return (
     <ProjectContainer>
@@ -111,14 +111,14 @@ function LatestProject() {
               <Link to={project.site_source}>
                 <Img
                   alt={project.title}
-                  fluid={project.image.childImageSharp.fluid}
+                  fluid={project.image && project.image.childImageSharp.fluid}
                 />
               </Link>
             ) : (
               <a href={project.site_source}>
                 <Img
                   alt={project.title}
-                  fluid={project.image.childImageSharp.fluid}
+                  fluid={project.image && project.image.childImageSharp.fluid}
                 />
               </a>
             ))}
@@ -130,6 +130,6 @@ function LatestProject() {
         </Link>
       </LinkContainer>
     </ProjectContainer>
-  )
+  );
 }
-export default LatestProject
+export default LatestProject;

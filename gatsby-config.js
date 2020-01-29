@@ -1,12 +1,12 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+  path: `.env.${process.env.NODE_ENV}`
+});
 
 module.exports = {
   siteMetadata: {
     title: `Jack Nugent`,
     description: `I am a Software Engineer and Content Creator. I consult for Fortune 500 Companies and have a YouTube Channel with over 800,000 subscribers and 20 Million Views.`,
-    author: `@jacknugent`,
+    author: `@jacknugent`
   },
   plugins: [
     { resolve: `gatsby-plugin-react-helmet` },
@@ -22,8 +22,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/utils/blog-icon.png`, // This path is relative to the root of the site.
-      },
+        icon: `./src/utils/blog-icon.png` // This path is relative to the root of the site.
+      }
     },
     { resolve: `gatsby-plugin-typescript` },
     { resolve: `gatsby-transformer-remark` },
@@ -31,22 +31,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/utils/`,
-      },
+        path: `./src/utils/`
+      }
     },
     {
       resolve: `gatsby-source-youtube`,
       options: {
         channelId: "UCWTFGPpNQ0Ms6afXhaWDiRw",
         apiKey: process.env.GATSBY_YOUTUBE_API,
-        maxVideos: 1000, // Defaults to 50
-      },
+        maxVideos: 1000 // Defaults to 50
+      }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      },
+        trackingId: process.env.GOOGLE_ANALYTICS_ID
+      }
     },
     { resolve: `gatsby-plugin-offline` },
     {
@@ -54,8 +54,8 @@ module.exports = {
       options: {
         host: "https://jacknugent.io",
         sitemap: "https://jacknugent.io/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
-  ],
-}
+        policy: [{ userAgent: "*", allow: "/" }]
+      }
+    }
+  ]
+};

@@ -41,15 +41,8 @@
   },
   "devDependencies": {
     "@types/node": "^12.0.2",
-    "@typescript-eslint/eslint-plugin": "^1.10.2",
-    "@typescript-eslint/parser": "^1.10.2",
     "babel-preset-gatsby": "^0.1.11",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.13.0",
     "identity-obj-proxy": "^3.0.0",
-    "prettier": "^1.17.1",
     "typescript": "^3.5.2"
   },
   "keywords": [
@@ -60,11 +53,9 @@
     "clean": "gatsby clean",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "type-check": "tsc --noEmit",
-    "lint": "eslint **/*.tsx"
+    "type-check": "tsc --noEmit"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
