@@ -149,6 +149,13 @@ const Introduction = () => {
           <Title>{introductionData.utilsYaml.introduction.title}</Title>
           <Video id="background-video" muted autoPlay playsInline>
             <source src={video} type="video/mp4" />
+            {/* My pathetic workaround to this issue: https://forums.aws.amazon.com/thread.jspa?threadID=106870 */}
+            <source
+              src={
+                "http://jacknugent.io.s3-website-us-east-1.amazonaws.com/static/Logo.Video-668638eaaeac04cced77e465c15a563d.mp4"
+              }
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </Video>
           <Tagline>{introductionData.utilsYaml.introduction.tagline}</Tagline>
