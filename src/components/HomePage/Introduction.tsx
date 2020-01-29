@@ -111,6 +111,7 @@ const Video = styled.video`
   height: 250px;
   width: 250px;
   flex-grow: 1;
+  filter: saturate(1.7);
   flex: 1 1 15%;
   @media (max-width: 960px) {
     order: -1;
