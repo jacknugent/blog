@@ -3,7 +3,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { colors, button } from "../../utils/css/themes"
-import Resume from "../../utils/resume.pdf"
+import Resume from "../../utils/Jack T Nugent Resume.pdf"
 // lib imports - 3rd party
 import styled from "@emotion/styled"
 
