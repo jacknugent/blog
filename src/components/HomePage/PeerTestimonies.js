@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby";
 
 // lib imports - 3rd party
 import { css } from "@emotion/core";
-import styled from "@emotion/styled";
 
 const PeerTestimonies = () => {
   const peerTestimonies = useStaticQuery(graphql`
@@ -34,10 +33,11 @@ const PeerTestimonies = () => {
           }
         `}
       >
-        {peerTestimonies.map((x: string, i: number) => (
+        {peerTestimonies.map((x, i) => (
           <p
             key={i}
             css={css`
+              width: 33%;
               text-align: left;
               flex-grow: 1;
               margin: 0 0.5rem;

@@ -10,7 +10,7 @@ import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import logo from "../utils/media/images/blog-icon.png";
 
-function SEO(props: SEOProps) {
+const SEO = props => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -59,29 +59,6 @@ function SEO(props: SEOProps) {
       {logo && <meta name="twitter:image" content={imageLink} />}
     </Helmet>
   );
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``
 };
-
-interface SEOProps {
-  description?: string;
-  lang?: string;
-  meta?: MetaWithProperty[] | MetaWithName[];
-  title: string;
-}
-
-interface MetaWithProperty {
-  property: string;
-  content: string;
-}
-
-interface MetaWithName {
-  name: string;
-  content: string;
-}
 
 export default SEO;

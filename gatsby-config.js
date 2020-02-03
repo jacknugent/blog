@@ -25,7 +25,6 @@ module.exports = {
         icon: `./src/utils/media/images/blog-icon.png` // This path is relative to the root of the site.
       }
     },
-    { resolve: `gatsby-plugin-typescript` },
     { resolve: `gatsby-transformer-remark` },
     { resolve: `gatsby-transformer-yaml` },
     {

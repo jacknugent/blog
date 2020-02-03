@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import * as React from "react"
-import Header from "./header"
-import Footer from "./footer"
-import { Global, css } from "@emotion/core"
+import * as React from "react";
+import Header from "./header";
+import Footer from "./footer";
+import { Global, css } from "@emotion/core";
 import {
   GothamMediumTTF,
   GothamMediumWOFF,
@@ -17,9 +17,9 @@ import {
   GothamUltraTTF,
   GothamUltraWOFF,
   MontserratRegularTTF,
-  MontserratRegularWOFF,
-} from "../utils/css/fonts"
-import styled from "@emotion/styled"
+  MontserratRegularWOFF
+} from "../utils/css/fonts";
+import styled from "@emotion/styled";
 
 const globalStyles = css`
   @font-face {
@@ -93,7 +93,7 @@ const globalStyles = css`
     text-rendering: optimizeLegibility;
     font-size: 0.9rem;
   }
-`
+`;
 const Body = styled.div`
   padding: 5rem 0.5rem 0 0.5rem;
   flex-grow: 1;
@@ -104,14 +104,14 @@ const Body = styled.div`
     padding-top: 0;
     padding-bottom: 0;
   }
-`
+`;
 
 const SiteContainer = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-`
-const Layout = (props: LayoutProps) => {
+`;
+const Layout = props => {
   return (
     <SiteContainer>
       <Global styles={globalStyles} />
@@ -121,10 +121,7 @@ const Layout = (props: LayoutProps) => {
       </Body>
       <Footer />
     </SiteContainer>
-  )
-}
-interface LayoutProps {
-  children: any
-}
+  );
+};
 
-export default Layout
+export default Layout;

@@ -1,14 +1,14 @@
 // framework imports - 1st party
-import * as React from "react"
+import * as React from "react";
 
 // lib imports - 3rd party
-import { css } from "@emotion/core"
+import { css } from "@emotion/core";
 
 const iframeContainer = css`
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
-`
+`;
 const iframe = css`
   top: 0;
   left: 0;
@@ -19,14 +19,14 @@ const iframe = css`
   z-index: 0;
   background-color: black;
   background-size: calc(5vw + 40px), cover;
-`
+`;
 
-const Frame = (props: HTMLFrameProps) => {
-  console.log(props)
+const Frame = props => {
   return (
     <div css={iframeContainer}>
       <iframe
         css={iframe}
+        title={"youtube video from Now You See It"}
         src={
           "https://www.youtube.com/embed/" +
           props.videoId +
@@ -35,11 +35,7 @@ const Frame = (props: HTMLFrameProps) => {
         allowFullScreen
       />
     </div>
-  )
-}
+  );
+};
 
-interface HTMLFrameProps {
-  videoId: string
-}
-
-export default Frame
+export default Frame;

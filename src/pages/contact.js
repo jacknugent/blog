@@ -1,26 +1,26 @@
 // framework imports - 1st party
-import * as React from "react"
-import { useState } from "react"
+import * as React from "react";
+import { useState } from "react";
 
 // lib imports - 3rd party
 
 // app imports
-import { colors, button } from "../utils/css/themes"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import css from "@emotion/css"
-import { keyframes } from "@emotion/core"
-import styled from "@emotion/styled"
+import { colors, button } from "../utils/css/themes";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import css from "@emotion/css";
+import { keyframes } from "@emotion/core";
+import styled from "@emotion/styled";
 
 const Title = styled.h1`
   text-align: center;
-`
+`;
 
 const inputContainer = css`
   width: 100%;
   margin: 0.5rem 0;
   display: inline-block;
-`
+`;
 
 const input = css`
   width: 100%;
@@ -31,11 +31,11 @@ const input = css`
   border-radius: 0.25rem;
   border: 1px solid black;
   box-sizing: border-box;
-`
+`;
 
 const block = css`
   display: block;
-`
+`;
 
 const dots = keyframes`
 from, 0%, 20% {
@@ -60,55 +60,55 @@ from, 0%, 20% {
     .25em 0 0 black,
     .5em 0 0 black;
   }
-`
+`;
 
 const Contract = () => {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
-  const [trick, setTrick] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [trick, setTrick] = useState("");
 
-  const [sent, setSent] = useState(false)
-  const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault()
+  const handleSubmit = e => {
+    e.preventDefault();
     if (name && email && message && !trick) {
       const url =
-        "https://jacknugentcontactform.azurewebsites.net/api/JackNugentContactForm"
+        "https://jacknugentcontactform.azurewebsites.net/api/JackNugentContactForm";
 
       const requestBody = {
         Name: name,
         Email: email,
-        Message: message,
-      }
+        Message: message
+      };
 
       const header = {
         Accept: "application/json",
-        "Content-Type": "application/json",
-      }
-      setSent(false)
-      setSending(true)
+        "Content-Type": "application/json"
+      };
+      setSent(false);
+      setSending(true);
       fetch(url, {
         method: "post",
         headers: header,
-        body: JSON.stringify(requestBody),
+        body: JSON.stringify(requestBody)
       }).then(
-        (data: any) => {
-          setName("")
-          setEmail("")
-          setMessage("")
-          setSending(false)
-          setSent(true)
+        data => {
+          setName("");
+          setEmail("");
+          setMessage("");
+          setSending(false);
+          setSent(true);
 
-          return data.text()
+          return data.text();
         },
         function(error) {
-          setSending(false)
+          setSending(false);
         }
-      )
+      );
     }
-  }
+  };
 
   return (
     <Layout>
@@ -158,7 +158,7 @@ const Contract = () => {
                 css`
                   height: 4rem;
                   box-shadow: none;
-                `,
+                `
               ]}
               name="Message"
               id="Message"
@@ -195,7 +195,7 @@ const Contract = () => {
                   width: 100%;
                   background-color: ${name && email && message && colors.blue};
                   color: ${name && email && message && "white"};
-                `,
+                `
               ]}
               type="submit"
               value="Contact Me"
@@ -230,7 +230,7 @@ const Contract = () => {
         )}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Contract
+export default Contract;
