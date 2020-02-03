@@ -125,7 +125,11 @@ function LatestProject() {
         </ImageContainer>
       </Project>
       <LinkContainer>
-        <Link css={[button, LinkButton]} to="projects">
+        <Link
+          activeClassName="active"
+          css={[button, LinkButton]}
+          to="projects/"
+        >
           See More Projects
         </Link>
       </LinkContainer>

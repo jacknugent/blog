@@ -1,9 +1,9 @@
-import * as React from "react"
-import { css } from "@emotion/core"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { useState, useEffect } from "react"
-import styled from "@emotion/styled"
+import * as React from "react";
+import { css } from "@emotion/core";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { useState, useEffect } from "react";
+import styled from "@emotion/styled";
 
 const FooterContainer = styled.footer`
   position: sticky;
@@ -14,7 +14,7 @@ const FooterContainer = styled.footer`
   @media (max-width: 1300px) {
     position: relative;
   }
-`
+`;
 const FooterMain = styled.div`
   padding: 0.5rem 0;
   display: flex;
@@ -38,7 +38,7 @@ const FooterMain = styled.div`
     justify-content: space-around;
     position: relative;
   }
-`
+`;
 
 const iconStyle = css`
   margin: 0.5rem 1.5rem;
@@ -46,15 +46,15 @@ const iconStyle = css`
   @media (max-width: 600px) {
     margin: 0;
   }
-`
+`;
 
 const Footer = () => {
-  const [isPageBottom, setIsPageBottom] = useState(true)
+  const [isPageBottom, setIsPageBottom] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      const window_height = window.innerHeight
-      const scroll_height = window.pageYOffset
+      const window_height = window.innerHeight;
+      const scroll_height = window.pageYOffset;
 
       const total_height = Math.max(
         document.body.scrollHeight,
@@ -63,29 +63,15 @@ const Footer = () => {
         document.documentElement.offsetHeight,
         document.body.clientHeight,
         document.documentElement.clientHeight
-      )
-      setIsPageBottom(window_height + scroll_height >= total_height)
-    }
+      );
+      setIsPageBottom(window_height + scroll_height >= total_height);
+    };
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [isPageBottom])
-
-  useEffect(() => {
-    const window_height = window.innerHeight
-    const scroll_height = window.pageYOffset
-    const total_height = Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight,
-      document.body.clientHeight,
-      document.documentElement.clientHeight
-    )
-    setIsPageBottom(window_height + scroll_height >= total_height)
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isPageBottom]);
 
   const socialIcons = useStaticQuery(graphql`
     {
@@ -108,7 +94,7 @@ const Footer = () => {
         }
       }
     }
-  `).allSocialMediaYaml.edges[0].node.icons
+  `).allSocialMediaYaml.edges[0].node.icons;
 
   return (
     <FooterContainer>
@@ -136,6 +122,6 @@ const Footer = () => {
         ))}
       </FooterMain>
     </FooterContainer>
-  )
-}
-export default Footer
+  );
+};
+export default Footer;

@@ -22,7 +22,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `./src/utils/blog-icon.png` // This path is relative to the root of the site.
+        icon: `./src/utils/media/images/blog-icon.png` // This path is relative to the root of the site.
       }
     },
     { resolve: `gatsby-plugin-typescript` },
@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/utils/`
+        path: `./src/utils`
       }
     },
     {

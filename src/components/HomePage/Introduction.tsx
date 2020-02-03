@@ -3,10 +3,9 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { colors, button } from "../../utils/css/themes";
-import Resume from "../../utils/Jack T Nugent Resume.pdf";
+import Resume from "../../utils/media/Jack T Nugent Resume.pdf";
 // lib imports - 3rd party
 import styled from "@emotion/styled";
-import video from "../../utils/Logo.Video.mp4";
 
 const IntroductionContainer = styled.div`
   text-align: center;
@@ -108,14 +107,14 @@ const ImgContainer = styled.div`
 const Introduction = () => {
   const introductionData = useStaticQuery(graphql`
     {
-      utilsYaml {
+      homepageYaml {
         introduction {
           tagline
           description
           title
         }
       }
-      file(relativePath: { eq: "blog-icon.png" }) {
+      file(name: { eq: "blog-icon" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -129,17 +128,19 @@ const Introduction = () => {
     <IntroductionContainer>
       <Positioned>
         <MainInfo>
-          <Title>{introductionData.utilsYaml.introduction.title}</Title>
+          <Title>{introductionData.homepageYaml.introduction.title}</Title>
           <ImgContainer>
             <Img
               alt={"site logo"}
               fluid={introductionData.file.childImageSharp.fluid}
             />
           </ImgContainer>
-          <Tagline>{introductionData.utilsYaml.introduction.tagline}</Tagline>
+          <Tagline>
+            {introductionData.homepageYaml.introduction.tagline}
+          </Tagline>
         </MainInfo>
         <Description>
-          {introductionData.utilsYaml.introduction.description}
+          {introductionData.homepageYaml.introduction.description}
         </Description>
         <ResumeButton css={button} href={Resume} target="_blank">
           View My Resume

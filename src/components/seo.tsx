@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import * as React from "react"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-import logo from "../utils/blog-icon.png"
+import * as React from "react";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
+import logo from "../utils/media/images/blog-icon.png";
 
 function SEO(props: SEOProps) {
   const { site } = useStaticQuery(
@@ -23,12 +23,12 @@ function SEO(props: SEOProps) {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = props.description || site.siteMetadata.description
+  const metaDescription = props.description || site.siteMetadata.description;
 
   const imageLink =
-    "https://jacknugent.io/static/724474e6acf4bb2e0e0cc9596679f985/59139/blog-icon.png?bust=cache"
+    "https://jacknugent.io/static/724474e6acf4bb2e0e0cc9596679f985/59139/blog-icon.png?bust=cache";
   return (
     <Helmet
       title={props.title}
@@ -41,8 +41,8 @@ function SEO(props: SEOProps) {
           'url': 'https://jacknugent.io',
           '@type': 'WebSite',
           'name': 'JackNugentBlog'
-        }`,
-        },
+        }`
+        }
       ]}
     >
       <html lang={props.lang} />
@@ -58,30 +58,30 @@ function SEO(props: SEOProps) {
       <meta name="twitter:description" content={metaDescription} />
       {logo && <meta name="twitter:image" content={imageLink} />}
     </Helmet>
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``,
-}
+  description: ``
+};
 
 interface SEOProps {
-  description?: string
-  lang?: string
-  meta?: MetaWithProperty[] | MetaWithName[]
-  title: string
+  description?: string;
+  lang?: string;
+  meta?: MetaWithProperty[] | MetaWithName[];
+  title: string;
 }
 
 interface MetaWithProperty {
-  property: string
-  content: string
+  property: string;
+  content: string;
 }
 
 interface MetaWithName {
-  name: string
-  content: string
+  name: string;
+  content: string;
 }
 
-export default SEO
+export default SEO;

@@ -1,16 +1,16 @@
 // framework imports - 1st party
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 // lib imports - 3rd party
-import { css } from "@emotion/core"
+import { css } from "@emotion/core";
 
 const thumbnailContainer = css`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
 const youtubeIcon = css`
   width: 15%;
@@ -20,7 +20,7 @@ const youtubeIcon = css`
   .css-${thumbnailContainer.name}:hover & {
     visibility: hidden;
   }
-`
+`;
 
 const loadingThumbnail = css`
   position: absolute !important;
@@ -30,19 +30,19 @@ const loadingThumbnail = css`
   right: 0;
   height: 100%;
   width: 100%;
-`
+`;
 
 const Thumbnail = (props: ThumbnailProps) => {
   const playButtons = useStaticQuery(graphql`
     {
-      greyPlay: file(relativePath: { eq: "youtube-play-grey.png" }) {
+      greyPlay: file(name: { eq: "youtube-play-grey" }) {
         childImageSharp {
           fluid(maxWidth: 175) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      redPlay: file(relativePath: { eq: "youtube-play-red.png" }) {
+      redPlay: file(name: { eq: "youtube-play-red" }) {
         childImageSharp {
           fluid(maxWidth: 175) {
             ...GatsbyImageSharpFluid
@@ -50,7 +50,7 @@ const Thumbnail = (props: ThumbnailProps) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <button
@@ -77,7 +77,7 @@ const Thumbnail = (props: ThumbnailProps) => {
               &:hover {
                 visibility: hidden;
               }
-            `,
+            `
           ]}
           fluid={playButtons.greyPlay.childImageSharp.fluid}
         ></Img>
@@ -86,7 +86,7 @@ const Thumbnail = (props: ThumbnailProps) => {
             loadingThumbnail,
             css`
               z-index: 1;
-            `,
+            `
           ]}
           fluid={props.fluid}
         />
@@ -101,16 +101,16 @@ const Thumbnail = (props: ThumbnailProps) => {
               z-index: 4;
               cursor: pointer;
             }
-          `,
+          `
         ]}
         fluid={playButtons.redPlay.childImageSharp.fluid}
       ></Img>
     </button>
-  )
-}
+  );
+};
 
 interface ThumbnailProps {
-  fluid: any
+  fluid: any;
 }
 
-export default Thumbnail
+export default Thumbnail;

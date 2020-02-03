@@ -1,19 +1,19 @@
 // framework imports - 1st party
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
 // lib imports - 3rd party
-import { css } from "@emotion/core"
-import styled from "@emotion/styled"
+import { css } from "@emotion/core";
+import styled from "@emotion/styled";
 
 const PeerTestimonies = () => {
   const peerTestimonies = useStaticQuery(graphql`
     {
-      utilsYaml {
+      homepageYaml {
         peer_testimonies
       }
     }
-  `).utilsYaml.peer_testimonies
+  `).homepageYaml.peer_testimonies;
 
   return (
     <div
@@ -52,6 +52,6 @@ const PeerTestimonies = () => {
         ))}
       </div>
     </div>
-  )
-}
-export default PeerTestimonies
+  );
+};
+export default PeerTestimonies;

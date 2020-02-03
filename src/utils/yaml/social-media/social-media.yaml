@@ -1,13 +1,13 @@
 icons:
   - title: Twitter
-    image: ./icons/twitter.png
+    image: ../../media/images/social_media_icons/twitter.png
     alt: "go to my twitter"
     link: https://www.twitter.com/jacknugent27
   - title: LinkedIn
-    image: ./icons/linkedin.png
+    image: ../../media/images/social_media_icons/linkedin.png
     alt: "go to my LinkedIn profile"
     link: https://www.linkedin.com/in/jack-nugent-34ba98ba
   - title: Github
-    image: ./icons/github.png
+    image: ../../media/images/social_media_icons/github.png
     alt: "go to my GitHub"
     link: https://github.com/jacknugent
