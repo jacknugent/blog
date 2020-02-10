@@ -1,5 +1,5 @@
-import { css } from "@emotion/core"
-import styled from "@emotion/styled"
+import { css } from "@emotion/core";
+import styled from "@emotion/styled";
 
 export const colors = {
   red: "#FF6040",
@@ -9,8 +9,8 @@ export const colors = {
   mediumGrey: "#D0D0D0",
   darkGrey: "#404040",
   darkBlue: "#264487",
-  orange: "#FF6040",
-}
+  orange: "#FF6040"
+};
 
 export const button = css`
   padding: 0.5rem 1rem;
@@ -25,7 +25,7 @@ export const button = css`
     cursor: pointer;
     background-color: ${colors.lightBlue};
   }
-`
+`;
 
 export const Button = styled.a`
   padding: 0.5rem 1rem;
@@ -40,4 +40,8 @@ export const Button = styled.a`
     cursor: pointer;
     background-color: ${colors.lightBlue};
   }
-`
+  &.active {
+    color: white;
+    background-color: ${colors.blue} !important;
+  }
+`;
