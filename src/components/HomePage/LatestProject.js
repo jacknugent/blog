@@ -52,16 +52,6 @@ const LinkContainer = styled.div`
   text-align: center;
   margin-top: 1rem;
 `;
-const LinkButton = css`
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  padding: 0.5rem 0;
-  width: 25%;
-  @media (max-width: 600px) {
-    width: 100%;
-  }
-`;
 
 const marginRight = css`
   margin-right: 1rem;
@@ -125,11 +115,7 @@ function LatestProject() {
         </ImageContainer>
       </Project>
       <LinkContainer>
-        <Link
-          activeClassName="active"
-          css={[button, LinkButton]}
-          to="projects/"
-        >
+        <Link css={button} to="projects/">
           See More Projects
         </Link>
       </LinkContainer>

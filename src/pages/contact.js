@@ -191,8 +191,6 @@ const Contract = () => {
               css={[
                 button,
                 css`
-                  margin: 0.5rem 0;
-                  width: 100%;
                   background-color: ${name && email && message && colors.blue};
                   color: ${name && email && message && "white"};
                 `

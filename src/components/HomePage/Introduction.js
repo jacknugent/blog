@@ -17,15 +17,6 @@ const IntroductionContainer = styled.div`
   }
   position: relative;
 `;
-const ResumeButton = styled.a`
-  margin-right: 1rem;
-  @media (max-width: 600px) {
-    display: flex;
-    margin: 1rem 0;
-    text-align: center;
-    justify-content: center;
-  }
-`;
 
 const MainInfo = styled.div`
   display: flex;
@@ -142,9 +133,9 @@ const Introduction = () => {
         <Description>
           {introductionData.homepageYaml.introduction.description}
         </Description>
-        <ResumeButton css={button} href={Resume} target="_blank">
+        <a css={button} href={Resume} target="_blank">
           View My Resume
-        </ResumeButton>
+        </a>
       </Positioned>
     </IntroductionContainer>
   );

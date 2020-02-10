@@ -29,7 +29,7 @@ const PeerTestimonies = () => {
           display: flex;
           flex-wrap: no-wrap;
           @media (max-width: 750px) {
-            flex-wrap: wrap;
+            flex-direction: column;
           }
         `}
       >
@@ -44,6 +44,7 @@ const PeerTestimonies = () => {
               justify-content: space-around;
               @media (max-width: 750px) {
                 margin: 0.5rem 0;
+                width: 100%;
               }
             `}
           >
