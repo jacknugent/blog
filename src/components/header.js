@@ -11,6 +11,10 @@ const HeaderContainer = styled.header`
 `;
 const LinkContainer = styled.div`
   display: flex;
+  margin: 0 1rem;
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 `;
 
 const Header = () => {

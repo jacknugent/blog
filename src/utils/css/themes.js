@@ -24,14 +24,12 @@ export const button = css`
   &:hover {
     cursor: pointer;
     background-color: ${colors.lightBlue};
-    transform: scale(1.025);
   }
   &.active {
     color: white;
     background-color: ${colors.blue} !important;
-    transform: scale(1.025);
   }
   @media (max-width: 600px) {
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem;
   }
 `;
