@@ -33,3 +33,8 @@ export const button = css`
     padding: 0.75rem;
   }
 `;
+
+export const screenSize = {
+  mobile: "600px",
+  tablet: "900px"
+};

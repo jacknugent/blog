@@ -38,7 +38,7 @@ const Projects = () => {
           publishedAt
           localThumbnail {
             childImageSharp {
-              fluid(maxWidth: 10000) {
+              fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid
               }
             }
