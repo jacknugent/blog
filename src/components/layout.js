@@ -94,17 +94,6 @@ const globalStyles = css`
     font-size: 0.9rem;
   }
 `;
-const Body = styled.div`
-  padding: 5rem 0.5rem 0 0.5rem;
-  flex-grow: 1;
-  @media (max-width: 1300px) {
-    padding-bottom: 4rem;
-  }
-  @media (max-width: 600px) {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-`;
 
 const SiteContainer = styled.div`
   min-height: 100vh;
@@ -112,14 +101,25 @@ const SiteContainer = styled.div`
   flex-direction: column;
 `;
 const Layout = props => {
+  const Body = styled.div`
+    padding: ${props.hideNav ? "0;" : "5rem 0.5rem 0 0.5rem;"}
+    flex-grow: 1;
+    @media (max-width: 1300px) {
+      padding-bottom: 4rem;
+    }
+    @media (max-width: 600px) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  `;
   return (
     <SiteContainer>
       <Global styles={globalStyles} />
-      <Header />
+      {!props.hideNav && <Header />}
       <Body>
         <main>{props.children}</main>
       </Body>
-      <Footer />
+      {!props.hideFooter && <Footer></Footer>}
     </SiteContainer>
   );
 };

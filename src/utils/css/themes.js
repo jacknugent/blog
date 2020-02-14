@@ -1,7 +1,7 @@
 import { css } from "@emotion/core";
 
 export const colors = {
-  red: "#FF6040",
+  red: "#c4302b",
   blue: "#3C64BE",
   lightBlue: "#EDF2FF",
   lightGrey: "#EDEDED",

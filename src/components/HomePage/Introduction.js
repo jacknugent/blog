@@ -133,7 +133,7 @@ const Introduction = () => {
         <Description>
           {introductionData.homepageYaml.introduction.description}
         </Description>
-        <a css={button} href={Resume} target="_blank">
+        <a css={button} href={Resume} target="_blank" rel="noopener noreferrer">
           View My Resume
         </a>
       </Positioned>

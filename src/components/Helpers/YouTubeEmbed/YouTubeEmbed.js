@@ -10,11 +10,16 @@ const YouTubeEmbed = props => {
   const [isVideo, setIsVideo] = useState(false);
 
   return (
-    <div onClick={() => setIsVideo(true)}>
+    <div>
       {isVideo ? (
         <Frame videoId={props.id}></Frame>
       ) : (
-        props.fluid_url && <Thumbnail fluid={props.fluid_url} />
+        props.fluid_url && (
+          <Thumbnail
+            setVideo={() => setIsVideo(true)}
+            fluid={props.fluid_url}
+          />
+        )
       )}
     </div>
   );

@@ -5,6 +5,19 @@ import Img from "gatsby-image";
 
 // lib imports - 3rd party
 import { css } from "@emotion/core";
+import styled from "@emotion/styled";
+
+const ButtonThumbnail = styled.button`
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  border: none;
+  display: -webkit-box;
+`;
 
 const thumbnailContainer = css`
   &:hover {
@@ -53,19 +66,9 @@ const Thumbnail = props => {
   `);
 
   return (
-    <button
+    <ButtonThumbnail
       aria-label="Button to play YouTube video"
-      css={css`
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-        margin: 0;
-        border: none;
-        display: -webkit-box;
-      `}
+      onClick={() => props.setVideo()}
     >
       <section css={thumbnailContainer}>
         <Img
@@ -105,7 +108,7 @@ const Thumbnail = props => {
         ]}
         fluid={playButtons.redPlay.childImageSharp.fluid}
       ></Img>
-    </button>
+    </ButtonThumbnail>
   );
 };
 
