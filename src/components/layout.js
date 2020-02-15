@@ -93,6 +93,11 @@ const globalStyles = css`
     text-rendering: optimizeLegibility;
     font-size: 0.9rem;
   }
+  button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 
 const SiteContainer = styled.div`
