@@ -21,11 +21,9 @@ export const button = css`
   color: ${colors.blue};
   transition: background-color 0.25s, transform 0.25s;
   &:focus,
-  &:hover {
-    cursor: pointer;
-    background-color: ${colors.lightBlue};
-  }
+  &:hover,
   &.active {
+    cursor: pointer;
     color: white;
     background-color: ${colors.blue} !important;
   }

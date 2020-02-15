@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import * as AWS from "aws-sdk";
 import uuidv4 from "uuid/v4";
 // app imports
-import { colors } from "../utils/css/themes";
+import { colors, button } from "../utils/css/themes";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import YouTubeEmbed from "../components/Helpers/YouTubeEmbed/YouTubeEmbed";
@@ -24,7 +24,8 @@ const YoutubeMash = () => {
   });
 
   const docClient = new AWS.DynamoDB.DocumentClient();
-
+  console.log(process.env.DYNAMO_DB_ID);
+  console.log(process.env.DYNAMO_DB_KEY);
   const youtube_videos = useStaticQuery(graphql`
     {
       videos: allYoutubeVideo {
@@ -66,7 +67,7 @@ const YoutubeMash = () => {
     padding: 0 1rem;
     text-align: center;
     @media (max-width: ${screenSize.tablet}) {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       margin-bottom: 0;
     }
   `;
@@ -85,6 +86,7 @@ const YoutubeMash = () => {
     @media (max-width: ${screenSize.tablet}) {
       width: calc(100% - 2rem);
       max-width: 600px;
+      padding: 0.25rem;
       margin: auto;
     }
   `;
@@ -107,6 +109,9 @@ const YoutubeMash = () => {
     text-align: center;
     justify-content: center;
     padding: 1rem;
+    @media (max-width: ${screenSize.tablet}) {
+      margin-top: 0.25rem;
+    }
   `;
 
   const ButtonTitle = styled.h3`
@@ -167,7 +172,10 @@ const YoutubeMash = () => {
                 fluid_url={videoOne.localThumbnail.childImageSharp.fluid}
               ></YouTubeEmbed>
 
-              <SelectButtons onClick={e => saveWinner(e, videoOne, videoTwo)}>
+              <SelectButtons
+                css={button}
+                onClick={e => saveWinner(e, videoOne, videoTwo)}
+              >
                 <ButtonTitle>{videoOne && videoOne.title}</ButtonTitle>
               </SelectButtons>
             </YouTubeContainer>
@@ -180,7 +188,10 @@ const YoutubeMash = () => {
                 fluid_url={videoTwo.localThumbnail.childImageSharp.fluid}
               ></YouTubeEmbed>
 
-              <SelectButtons onClick={e => saveWinner(e, videoTwo, videoOne)}>
+              <SelectButtons
+                css={button}
+                onClick={e => saveWinner(e, videoTwo, videoOne)}
+              >
                 <ButtonTitle>{videoTwo && videoTwo.title}</ButtonTitle>
               </SelectButtons>
             </YouTubeContainer>
