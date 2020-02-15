@@ -125,6 +125,9 @@ const YoutubeMash = () => {
     }
     setVideoOne(videos[random_item_one]);
     setVideoTwo(videos[random_item_two]);
+
+    console.log(process.env.DYNAMO_DB_ID);
+    console.log(process.env.DYNAMO_DB_KEY);
   };
 
   useEffect(() => {
