@@ -57,6 +57,7 @@ deploy_production:
   image: python:latest
   stage: deploy
   script:
+    - echo $DYNAMO_DB_ID
     - pip install awscli
     - aws s3 sync public/ s3://jacknugent.io/ --delete --cache-control max-age=31557600,public
     - aws cloudfront create-invalidation --distribution-id E2PCC8Q8LHLJMY --paths '/*' && aws cloudfront create-invalidation --distribution-id E1AB7TWPAABPC1 --paths '/*'

@@ -24,8 +24,7 @@ const YoutubeMash = () => {
   });
 
   const docClient = new AWS.DynamoDB.DocumentClient();
-  console.log(process.env.DYNAMO_DB_ID);
-  console.log(process.env.DYNAMO_DB_KEY);
+
   const youtube_videos = useStaticQuery(graphql`
     {
       videos: allYoutubeVideo {
@@ -162,7 +161,8 @@ const YoutubeMash = () => {
       <PageTitle>YoutubeMash</PageTitle>
       <ContentContainer>
         <PageDescription>
-          Which Now You See It video is better? Click to choose.
+          Which Now You See It video is better? Click the button to pass your
+          judgement.
         </PageDescription>
         <Videos>
           {videoOne && (
