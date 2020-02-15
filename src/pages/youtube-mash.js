@@ -46,7 +46,7 @@ const YoutubeMash = () => {
   const PageTitle = styled.h1`
     display: flex;
     justify-content: center;
-    background-color: ${colors.red};
+    background-color: ${colors.orange};
     color: white;
     margin: 0;
     padding: 1rem 0;
