@@ -41,6 +41,9 @@ build_site:
     - tags
 
 deploy_staging:
+  variables:
+    DYNAMO_DB_ID: $DYNAMO_DB_ID
+    DYNAMO_DB_KEY: $DYNAMO_DB_KEY
   image: python:latest
   stage: deploy
   script:
@@ -54,6 +57,9 @@ deploy_staging:
     - tags
 
 deploy_production:
+  variables:
+    DYNAMO_DB_ID: $DYNAMO_DB_ID
+    DYNAMO_DB_KEY: $DYNAMO_DB_KEY
   image: python:latest
   stage: deploy
   script:
