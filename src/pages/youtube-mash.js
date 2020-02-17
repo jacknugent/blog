@@ -118,9 +118,6 @@ const YoutubeMash = () => {
     }
     setVideoOne(videos[random_item_one]);
     setVideoTwo(videos[random_item_two]);
-
-    console.log(process.env.GATSBY_DYNAMO_DB_ID);
-    console.log(process.env.GATSBY_DYNAMO_DB_KEY);
   };
 
   const docClient = new AWS.DynamoDB.DocumentClient();
@@ -132,8 +129,15 @@ const YoutubeMash = () => {
       accessKeyId: [process.env.GATSBY_DYNAMO_DB_ID],
       secretAccessKey: [process.env.GATSBY_DYNAMO_DB_KEY]
     });
-    getVideos(youtube_videos);
+
+    console.log(process.env.GATSBY_DYNAMO_DB_ID);
+    console.log(process.env.GATSBY_DYNAMO_DB_KEY);
   }, []);
+
+  useEffect(() => {
+    getVideos(youtube_videos);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [youtube_videos]);
 
   const saveWinner = (e, winner, loser) => {
     e.preventDefault();
