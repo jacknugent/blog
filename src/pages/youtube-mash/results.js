@@ -64,14 +64,23 @@ const Results = () => {
       loser.elo = new_loser_elo;
     });
 
-    initial_rankings.sort((a, b) => (a.elo < b.elo ? 1 : -1));
+    initial_rankings.sort((a, b) => b.elo - a.elo);
 
     setRankings(initial_rankings);
   }, [matches]);
 
   return rankings.map((ranking, i) => (
     <div key={i}>
-      {ranking.title}: {ranking.elo}
+      <a
+        href={
+          "https://www.youtube.com/embed/" +
+          ranking.videoId +
+          "?rel=0&autoplay=1&mute=0"
+        }
+      >
+        {ranking.title}:{" "}
+      </a>
+      {ranking.elo}
     </div>
   ));
 };

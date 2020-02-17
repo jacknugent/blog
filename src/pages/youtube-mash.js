@@ -3,6 +3,7 @@ import * as React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { useState, useEffect } from "react";
 import * as AWS from "aws-sdk";
+import { css } from "@emotion/core";
 import uuidv4 from "uuid/v4";
 // app imports
 import { colors, button } from "../utils/css/themes";
@@ -108,6 +109,12 @@ const YoutubeMash = () => {
     margin: 0;
   `;
 
+  const ViewResults = css`
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  `;
+
   const randVideoID = videos => Math.floor(Math.random() * videos.length);
 
   const getVideos = videos => {
@@ -186,7 +193,7 @@ const YoutubeMash = () => {
               </SelectButtons>
             </YouTubeContainer>
           )}
-          <Or>Or</Or>
+          {videoOne && videoTwo && <Or>Or</Or>}
           {videoTwo && (
             <YouTubeContainer>
               <YouTubeEmbed
@@ -203,7 +210,9 @@ const YoutubeMash = () => {
             </YouTubeContainer>
           )}
         </Videos>
-        <Link to="/youtube-mash/results">View Results</Link>
+        <Link css={ViewResults} to="/youtube-mash/results">
+          View Results
+        </Link>
       </ContentContainer>
     </Layout>
   );
