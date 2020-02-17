@@ -19,8 +19,8 @@ const YoutubeMash = () => {
   AWS.config.update({
     region: "us-east-1",
     endpoint: "dynamodb.us-east-1.amazonaws.com",
-    accessKeyId: [process.env.GATSBY_GATSBY_DYNAMO_DB_ID],
-    secretAccessKey: [process.env.GATSBY_GATSBY_DYNAMO_DB_KEY]
+    accessKeyId: [process.env.GATSBY_DYNAMO_DB_ID],
+    secretAccessKey: [process.env.GATSBY_DYNAMO_DB_KEY]
   });
 
   const docClient = new AWS.DynamoDB.DocumentClient();
