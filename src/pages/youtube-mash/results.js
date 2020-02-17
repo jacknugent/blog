@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Results = () => {
   const data = useStaticQuery(graphql`
     {
-      matchups: allVideoRanking(sort: { fields: timestamp, order: ASC }) {
+      matchups: allVideoRanking {
         nodes {
           winner
           loser

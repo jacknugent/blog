@@ -1,6 +1,6 @@
 // framework imports - 1st party
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import { useState, useEffect } from "react";
 import * as AWS from "aws-sdk";
 import uuidv4 from "uuid/v4";
@@ -203,6 +203,7 @@ const YoutubeMash = () => {
             </YouTubeContainer>
           )}
         </Videos>
+        <Link to="/youtube-mash/results">View Results</Link>
       </ContentContainer>
     </Layout>
   );
