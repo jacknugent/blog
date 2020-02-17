@@ -35,7 +35,7 @@ const Title = props => {
     <HeaderContainer>
       <ImageContainer
         height={75.6}
-        src="http://facebook-image-leak.s3-website-us-east-1.amazonaws.com/nowyouseeit.png"
+        src="https://facebook-image-leak.s3.amazonaws.com/nowyouseeit.png"
       ></ImageContainer>
       <TitleContainer>{props.children}</TitleContainer>
     </HeaderContainer>
