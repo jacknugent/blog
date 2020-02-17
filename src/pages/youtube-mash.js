@@ -131,7 +131,7 @@ const YoutubeMash = () => {
       accessKeyId: [dynamo_id],
       secretAccessKey: [dynamo_key]
     });
-  }, []);
+  }, [dynamo_id, dynamo_key]);
 
   useEffect(() => {
     getVideos(youtube_videos);
@@ -145,7 +145,7 @@ const YoutubeMash = () => {
       id: uuidv4(),
       winner: winner.videoId,
       loser: loser.videoId,
-      timestamp: Date()
+      timestamp: Date.now()
     };
     let params = {
       TableName: "nysi-votes",
