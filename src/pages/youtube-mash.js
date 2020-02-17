@@ -121,18 +121,16 @@ const YoutubeMash = () => {
   };
 
   const docClient = new AWS.DynamoDB.DocumentClient();
-  console.log(process.env.GATSBY_DYNAMO_DB_ID);
-  console.log(process.env.GATSBY_DYNAMO_DB_KEY);
+
+  const dynamo_id = process.env.GATSBY_DYNAMO_DB_ID;
+  const dynamo_key = process.env.GATSBY_DYNAMO_DB_KEY;
   useEffect(() => {
     AWS.config.update({
       region: "us-east-1",
       endpoint: "dynamodb.us-east-1.amazonaws.com",
-      accessKeyId: [process.env.GATSBY_DYNAMO_DB_ID],
-      secretAccessKey: [process.env.GATSBY_DYNAMO_DB_KEY]
+      accessKeyId: [dynamo_id],
+      secretAccessKey: [dynamo_key]
     });
-
-    console.log(process.env.GATSBY_DYNAMO_DB_ID);
-    console.log(process.env.GATSBY_DYNAMO_DB_KEY);
   }, []);
 
   useEffect(() => {
@@ -147,7 +145,7 @@ const YoutubeMash = () => {
       id: uuidv4(),
       winner: winner.videoId,
       loser: loser.videoId,
-      timestamp: Date.now()
+      timestamp: Date()
     };
     let params = {
       TableName: "nysi-votes",
