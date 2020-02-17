@@ -16,15 +16,6 @@ const YoutubeMash = () => {
   const [videoOne, setVideoOne] = useState(null);
   const [videoTwo, setVideoTwo] = useState(null);
 
-  AWS.config.update({
-    region: "us-east-1",
-    endpoint: "dynamodb.us-east-1.amazonaws.com",
-    accessKeyId: [process.env.GATSBY_DYNAMO_DB_ID],
-    secretAccessKey: [process.env.GATSBY_DYNAMO_DB_KEY]
-  });
-
-  const docClient = new AWS.DynamoDB.DocumentClient();
-
   const youtube_videos = useStaticQuery(graphql`
     {
       videos: allYoutubeVideo {
@@ -132,9 +123,17 @@ const YoutubeMash = () => {
     console.log(process.env.GATSBY_DYNAMO_DB_KEY);
   };
 
+  const docClient = new AWS.DynamoDB.DocumentClient();
+
   useEffect(() => {
+    AWS.config.update({
+      region: "us-east-1",
+      endpoint: "dynamodb.us-east-1.amazonaws.com",
+      accessKeyId: [process.env.GATSBY_DYNAMO_DB_ID],
+      secretAccessKey: [process.env.GATSBY_DYNAMO_DB_KEY]
+    });
     getVideos(youtube_videos);
-  }, [youtube_videos]);
+  }, []);
 
   const saveWinner = (e, winner, loser) => {
     e.preventDefault();
@@ -149,7 +148,6 @@ const YoutubeMash = () => {
       TableName: "nysi-votes",
       Item: Item
     };
-    console.log("submitting...");
 
     docClient.put(params, (err, data) => {
       if (err) {
