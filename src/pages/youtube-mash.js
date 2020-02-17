@@ -169,8 +169,8 @@ const YoutubeMash = () => {
       <PageTitle>YoutubeMash</PageTitle>
       <ContentContainer>
         <PageDescription>
-          Which Now You See It video is better? Click the button to pass your
-          judgement.
+          Which Now You See It video is better? Watch the video, then, click the
+          title to pass your judgement.
         </PageDescription>
         <Videos>
           {videoOne && (
