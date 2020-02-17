@@ -51,8 +51,8 @@ module.exports = {
       resolve: "gatsby-source-dynamodb",
       options: {
         typeName: "VideoRanking",
-        accessKeyId: process.env.DYNAMO_DB_ID,
-        secretAccessKey: process.env.DYNAMO_DB_KEY,
+        accessKeyId: process.env.GATSBY_DYNAMO_DB_ID,
+        secretAccessKey: process.env.GATSBY_DYNAMO_DB_KEY,
         region: "us-east-1",
         params: {
           TableName: "nysi-votes"

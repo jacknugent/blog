@@ -19,8 +19,8 @@ const YoutubeMash = () => {
   AWS.config.update({
     region: "us-east-1",
     endpoint: "dynamodb.us-east-1.amazonaws.com",
-    accessKeyId: [process.env.DYNAMO_DB_ID],
-    secretAccessKey: [process.env.DYNAMO_DB_KEY]
+    accessKeyId: [process.env.GATSBY_GATSBY_DYNAMO_DB_ID],
+    secretAccessKey: [process.env.GATSBY_GATSBY_DYNAMO_DB_KEY]
   });
 
   const docClient = new AWS.DynamoDB.DocumentClient();
@@ -117,17 +117,19 @@ const YoutubeMash = () => {
     margin: 0;
   `;
 
+  const randVideoID = videos => Math.floor(Math.random() * videos.length);
+
   const getVideos = videos => {
-    const random_item_one = Math.floor(Math.random() * videos.length);
-    var random_item_two = Math.floor(Math.random() * videos.length);
+    const random_item_one = randVideoID(videos);
+    var random_item_two = randVideoID(videos);
     while (random_item_two === random_item_one) {
-      random_item_two = Math.floor(Math.random() * videos.length);
+      random_item_two = randVideoID(videos);
     }
     setVideoOne(videos[random_item_one]);
     setVideoTwo(videos[random_item_two]);
 
-    console.log(process.env.DYNAMO_DB_ID);
-    console.log(process.env.DYNAMO_DB_KEY);
+    console.log(process.env.GATSBY_DYNAMO_DB_ID);
+    console.log(process.env.GATSBY_DYNAMO_DB_KEY);
   };
 
   useEffect(() => {
