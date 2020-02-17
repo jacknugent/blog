@@ -1,15 +1,16 @@
 // framework imports - 1st party
 import * as React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import { useState, useEffect } from "react";
 import * as AWS from "aws-sdk";
-import { css } from "@emotion/core";
 import uuidv4 from "uuid/v4";
 // app imports
-import { colors, button } from "../utils/css/themes";
+import { button } from "../utils/css/themes";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import YouTubeEmbed from "../components/Helpers/YouTubeEmbed/YouTubeEmbed";
+import Title from "../components/Helpers/YouTubeMash/Title";
+import Footer from "../components/Helpers/YouTubeMash/Footer";
 import styled from "@emotion/styled";
 import { screenSize } from "../utils/css/themes";
 
@@ -35,21 +36,11 @@ const YoutubeMash = () => {
     }
   `).videos.nodes;
 
-  const PageTitle = styled.h1`
-    display: flex;
-    justify-content: center;
-    background-color: ${colors.orange};
-    color: white;
-    margin: 0;
-    padding: 1rem 0;
-    @media (max-width: ${screenSize.tablet}) {
-      padding: 0.5rem 0;
-    }
-  `;
-
-  const ContentContainer = styled.div`
+  const MainContainer = styled.div`
     max-width: 1200px;
     margin: auto;
+    min-height: auto;
+    flex: 1 0 auto;
   `;
 
   const PageDescription = styled.h3`
@@ -103,16 +94,13 @@ const YoutubeMash = () => {
     @media (max-width: ${screenSize.tablet}) {
       margin-top: 0.25rem;
     }
+    @media (max-width: ${screenSize.mobile}) {
+      padding: 0.5rem !important;
+    }
   `;
 
   const ButtonTitle = styled.h3`
     margin: 0;
-  `;
-
-  const ViewResults = css`
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
   `;
 
   const randVideoID = videos => Math.floor(Math.random() * videos.length);
@@ -171,11 +159,10 @@ const YoutubeMash = () => {
   return (
     <Layout hideNav={true} hideFooter={true}>
       <SEO title="Projects" />
-      <PageTitle>YoutubeMash</PageTitle>
-      <ContentContainer>
+      <Title>YouTube Mash</Title>
+      <MainContainer>
         <PageDescription>
-          Which Now You See It video is better? Watch the video, then, click the
-          title to pass your judgement.
+          Which video is better? Click the title to pass your judgement.
         </PageDescription>
         <Videos>
           {videoOne && (
@@ -210,10 +197,8 @@ const YoutubeMash = () => {
             </YouTubeContainer>
           )}
         </Videos>
-        <Link css={ViewResults} to="/youtube-mash/results">
-          View Results
-        </Link>
-      </ContentContainer>
+      </MainContainer>
+      <Footer></Footer>
     </Layout>
   );
 };
