@@ -33,10 +33,10 @@ const Title = props => {
 
   return (
     <HeaderContainer>
-      <ImageContainer
+      {/* <ImageContainer
         height={75.6}
         src="https://facebook-image-leak.s3.amazonaws.com/nowyouseeit.png"
-      ></ImageContainer>
+      ></ImageContainer> */}
       <TitleContainer>{props.children}</TitleContainer>
     </HeaderContainer>
   );
