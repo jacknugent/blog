@@ -121,7 +121,8 @@ const YoutubeMash = () => {
   };
 
   const docClient = new AWS.DynamoDB.DocumentClient();
-
+  console.log(process.env.GATSBY_DYNAMO_DB_ID);
+  console.log(process.env.GATSBY_DYNAMO_DB_KEY);
   useEffect(() => {
     AWS.config.update({
       region: "us-east-1",
