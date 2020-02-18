@@ -2,7 +2,6 @@
 import * as React from "react";
 import { colors, screenSize } from "../../../utils/css/themes";
 import styled from "@emotion/styled";
-import logo from "../../../utils/media/images/blog-icon.png";
 
 const Title = props => {
   const HeaderContainer = styled.div`
@@ -36,7 +35,10 @@ const Title = props => {
 
   return (
     <HeaderContainer>
-      <ImageContainer height={75.6} src={logo}></ImageContainer>
+      <ImageContainer
+        height={75.6}
+        src={"/icons/icon-144x144.png"}
+      ></ImageContainer>
       <TitleContainer>{props.children}</TitleContainer>
     </HeaderContainer>
   );
