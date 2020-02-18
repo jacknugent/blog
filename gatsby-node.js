@@ -1,10 +1,8 @@
 const path = require(`path`);
 const slash = require(`slash`);
 
-/// Creating all Service Hub Offerings
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  // query content for WordPress posts
   const result = await graphql(`
     query {
       matchups: allVideoRanking {

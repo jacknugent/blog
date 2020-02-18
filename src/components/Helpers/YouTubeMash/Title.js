@@ -14,7 +14,7 @@ const Title = props => {
     justify-content: center;
     padding: 1rem 0;
     @media (max-width: ${screenSize.mobile}) {
-      padding-left: 80px;
+      // padding-left: 80px;
       margin-bottom: 0.5rem;
     }
   `;
