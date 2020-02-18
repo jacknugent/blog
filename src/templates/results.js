@@ -35,7 +35,7 @@ const Results = props => {
       <PageContainer>
         <ResultRow>
           <strong>Video</strong>
-          <strong>Rating</strong>
+          <strong>ELO Rating</strong>
         </ResultRow>
         {props.pageContext.rankings.map((ranking, i) => (
           <ResultRow key={i}>

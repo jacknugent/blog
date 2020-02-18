@@ -2,6 +2,7 @@
 import * as React from "react";
 import { colors, screenSize } from "../../../utils/css/themes";
 import styled from "@emotion/styled";
+import logo from "../../../utils/media/images/blog-icon.png";
 
 const Title = props => {
   const HeaderContainer = styled.div`
@@ -14,7 +15,9 @@ const Title = props => {
     justify-content: center;
     padding: 1rem 0;
     @media (max-width: ${screenSize.mobile}) {
-      // padding-left: 80px;
+      justify-content: flex-end;
+      padding-left: 80px;
+      padding-right: 1rem;
       margin-bottom: 0.5rem;
     }
   `;
@@ -33,10 +36,7 @@ const Title = props => {
 
   return (
     <HeaderContainer>
-      {/* <ImageContainer
-        height={75.6}
-        src="https://facebook-image-leak.s3.amazonaws.com/nowyouseeit.png"
-      ></ImageContainer> */}
+      <ImageContainer height={75.6} src={logo}></ImageContainer>
       <TitleContainer>{props.children}</TitleContainer>
     </HeaderContainer>
   );
