@@ -20,7 +20,6 @@ export const button = css`
   border: 1px solid ${colors.blue};
   color: ${colors.blue};
   transition: background-color 0.25s, transform 0.25s;
-  &:focus,
   &:hover,
   &.active {
     cursor: pointer;
