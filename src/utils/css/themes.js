@@ -17,6 +17,7 @@ export const button = css`
   display: inline-block;
   border-radius: 0.5rem;
   text-decoration: none;
+  background-color: white;
   border: 1px solid ${colors.blue};
   color: ${colors.blue};
   transition: background-color 0.25s, transform 0.25s;
@@ -24,10 +25,14 @@ export const button = css`
   &.active {
     cursor: pointer;
     color: white;
-    background-color: ${colors.blue} !important;
+    background-color: ${colors.blue};
   }
   @media (max-width: 600px) {
     padding: 0.75rem;
+    &:hover {
+      background-color: ${colors.lightGrey};
+      color: ${colors.blue};
+    }
   }
 `;
 
