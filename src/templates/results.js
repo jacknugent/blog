@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import styled from "@emotion/styled";
 import Title from "../components/Helpers/YouTubeMash/Title";
-import Footer from "../components/Helpers/YouTubeMash/Footer";
+import MashFooter from "../components/Helpers/YouTubeMash/MashFooter";
 
 const PageContainer = styled.div`
   max-width: 800px;
@@ -20,9 +20,6 @@ const ResultRow = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0.25rem 0;
-  :first-child {
-    padding-right: 0.25rem;
-  }
 `;
 
 const YoutubeLink = styled.a`
@@ -30,10 +27,11 @@ const YoutubeLink = styled.a`
 `;
 const Results = props => {
   return (
-    <Layout hideNav={true} hideFooter={true}>
-      <SEO title="Projects" />
-
-      <Title>Video Rankings</Title>
+    <Layout
+      header={<Title>Video Rankings</Title>}
+      footer={<MashFooter></MashFooter>}
+    >
+      <SEO title="Video Rankings" />
       <PageContainer>
         <ResultRow>
           <strong>Video</strong>
@@ -50,7 +48,6 @@ const Results = props => {
           </ResultRow>
         ))}
       </PageContainer>
-      <Footer></Footer>
     </Layout>
   );
 };

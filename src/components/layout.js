@@ -107,10 +107,10 @@ const SiteContainer = styled.div`
 `;
 const Layout = props => {
   const Body = styled.div`
-    padding: ${props.hideNav ? "0;" : "5rem 0.5rem 0 0.5rem;"}
+    padding: ${props.header ? "0;" : "5rem 0.5rem 0 0.5rem;"}
     flex-grow: 1;
     @media (max-width: 1300px) {
-      padding-bottom: 4rem;
+      padding-bottom: ${props.header ? "0" : "4rem"};
     }
     @media (max-width: 600px) {
       padding-top: 0;
@@ -120,11 +120,11 @@ const Layout = props => {
   return (
     <SiteContainer>
       <Global styles={globalStyles} />
-      {!props.hideNav && <Header />}
+      {props.header ? props.header : <Header />}
       <Body>
         <main>{props.children}</main>
       </Body>
-      {!props.hideFooter && <Footer></Footer>}
+      {props.footer ? props.footer : <Footer></Footer>}
     </SiteContainer>
   );
 };

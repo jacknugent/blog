@@ -10,9 +10,9 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import YouTubeEmbed from "../components/Helpers/YouTubeEmbed/YouTubeEmbed";
 import Title from "../components/Helpers/YouTubeMash/Title";
-import Footer from "../components/Helpers/YouTubeMash/Footer";
 import styled from "@emotion/styled";
 import { screenSize } from "../utils/css/themes";
+import MashFooter from "../components/Helpers/YouTubeMash/MashFooter";
 
 const YoutubeMash = () => {
   const [videoOne, setVideoOne] = useState(null);
@@ -157,9 +157,11 @@ const YoutubeMash = () => {
   };
 
   return (
-    <Layout hideNav={true} hideFooter={true}>
-      <SEO title="Projects" />
-      <Title>YouTube Mash</Title>
+    <Layout
+      header={<Title>YouTube Mash</Title>}
+      footer={<MashFooter></MashFooter>}
+    >
+      <SEO title="YouTube Mash" />
       <MainContainer>
         <PageDescription>
           Which video is better? Click the title to pass your judgement.
@@ -198,7 +200,6 @@ const YoutubeMash = () => {
           )}
         </Videos>
       </MainContainer>
-      <Footer></Footer>
     </Layout>
   );
 };

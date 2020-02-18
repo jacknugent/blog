@@ -68,9 +68,13 @@ const Header = () => {
             }
           `}
         >
-          <Link activeClassName="active" to="/contact/" css={button}>
+          <a
+            activeClassName="active"
+            href="mailto:jacknugent27@gmail.com"
+            css={button}
+          >
             Contact
-          </Link>
+          </a>
         </LinkContainer>
       </Header>
     </HeaderContainer>

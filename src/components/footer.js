@@ -49,7 +49,7 @@ const iconStyle = css`
 `;
 
 const Footer = () => {
-  const [isPageBottom, setIsPageBottom] = useState(true);
+  const [isPageBottom, setIsPageBottom] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
