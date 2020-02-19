@@ -23,18 +23,14 @@ import styled from "@emotion/styled";
 
 const globalStyles = css`
   @font-face {
-    font-family: "GothamMedium", apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
+    font-family: "GothamMedium";
     font-display: auto;
     src: local("Gotham Medium"), local("Gotham-Medium"),
       url(${GothamMediumTTF}) format("ttf"),
       url(${GothamMediumWOFF}) format("woff");
   }
   @font-face {
-    font-family: "GothamUltra", apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
+    font-family: "GothamUltra";
     font-display: auto;
     src: local("Gotham Ultra"), local("Gotham-Ultra"),
       url(${GothamUltraTTF}) format("ttf"),
@@ -42,18 +38,14 @@ const globalStyles = css`
   }
 
   @font-face {
-    font-family: "GothamBold", apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
+    font-family: "GothamBold";
     font-display: auto;
     src: local("Gotham Bold"), local("Gotham-Bold"),
       url(${GothamBoldTTF}) format("ttf"), url(${GothamBoldWOFF}) format("woff");
   }
 
   @font-face {
-    font-family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: normal;
     src: local("Montserrat Regular"), local("Montserrat-Regular"),
