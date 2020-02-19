@@ -23,6 +23,7 @@ const Icons = () => {
 
   return (
     <>
+      <h1>Index of /icons</h1>
       <Links href={"/icons/icon-144x144.png"}>NYSI Logo</Links>
       {youtube_videos.map((video, i) => (
         <Links key={i} href={video.localThumbnail.publicURL}>

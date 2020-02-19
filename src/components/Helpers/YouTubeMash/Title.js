@@ -36,7 +36,7 @@ const Title = props => {
   return (
     <HeaderContainer>
       <ImageContainer
-        height={75.6}
+        height={74}
         src={"/icons/icon-144x144.png"}
       ></ImageContainer>
       <TitleContainer>{props.children}</TitleContainer>
