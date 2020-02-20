@@ -5,18 +5,21 @@ import { useState, useEffect } from "react";
 import * as AWS from "aws-sdk";
 import uuidv4 from "uuid/v4";
 // app imports
-import { button } from "../utils/css/themes";
+import { button, colors } from "../utils/css/themes";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { css } from "@emotion/core";
 import YouTubeEmbed from "../components/Helpers/YouTubeEmbed/YouTubeEmbed";
 import Title from "../components/Helpers/YouTubeMash/Title";
 import styled from "@emotion/styled";
 import { screenSize } from "../utils/css/themes";
 import MashFooter from "../components/Helpers/YouTubeMash/MashFooter";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const YoutubeMash = () => {
   const [videoOne, setVideoOne] = useState(null);
   const [videoTwo, setVideoTwo] = useState(null);
+  const [isSpinner, setIsSpinner] = useState(false);
 
   const youtube_videos = useStaticQuery(graphql`
     {
@@ -75,12 +78,38 @@ const YoutubeMash = () => {
 
   const Or = styled.p`
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 50%;
     padding: 0 1rem;
     text-transform: uppercase;
     @media (max-width: ${screenSize.tablet}) {
       margin: 0;
+      width: 50%;
+    }
+  `;
+
+  const CenterContainer = styled.div`
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    flex-direction: column;
+
+    // for the loading spinner
+    div {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+    @media (max-width: ${screenSize.tablet}) {
+      flex-direction: row;
+      margin: auto;
+      max-width: 600px;
+      padding: 0 1rem;
+      div {
+        margin-bottom: 0;
+      }
     }
   `;
 
@@ -147,11 +176,14 @@ const YoutubeMash = () => {
       Item: Item
     };
 
+    setIsSpinner(true);
     docClient.put(params, (err, data) => {
       if (err) {
         console.log(err);
+        setIsSpinner(false);
       } else {
         getVideos(youtube_videos);
+        setIsSpinner(false);
       }
     });
   };
@@ -182,7 +214,12 @@ const YoutubeMash = () => {
               </SelectButtons>
             </YouTubeContainer>
           )}
-          {videoOne && videoTwo && <Or>Or</Or>}
+          {videoOne && videoTwo && (
+            <CenterContainer>
+              <Or>Or</Or>
+              <PulseLoader size={10} color={colors.blue} loading={isSpinner} />
+            </CenterContainer>
+          )}
           {videoTwo && (
             <YouTubeContainer>
               <YouTubeEmbed

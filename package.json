@@ -38,6 +38,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-spinners": "^0.8.0",
     "react-twitter-embed": "^2.0.8",
     "socket.io-client": "^2.3.0",
     "uuid": "^3.4.0"

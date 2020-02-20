@@ -30,7 +30,7 @@ export const button = css`
   @media (max-width: 600px) {
     padding: 0.75rem;
     &:hover {
-      background-color: ${colors.lightGrey};
+      background-color: white;
       color: ${colors.blue};
     }
   }
