@@ -1,10 +1,20 @@
 import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+
 import { Link } from "gatsby";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { screenSize, button } from "../../../utils/css/themes";
 
 const MashFooter = () => {
+  const videoCount = useStaticQuery(graphql`
+    {
+      allYoutubeVideo {
+        totalCount
+      }
+    }
+  `).allYoutubeVideo.totalCount;
+
   const LinkContainer = styled.footer`
     display: flex;
     margin: 1rem auto 2rem auto;
@@ -48,9 +58,9 @@ const MashFooter = () => {
       <Link
         activeClassName="active"
         css={[ViewResults, button]}
-        to="/youtube-mash/search"
+        to={"/youtube-mash/video/" + Math.floor(Math.random() * videoCount + 1)}
       >
-        Search Videos
+        Random Video
       </Link>
     </LinkContainer>
   );

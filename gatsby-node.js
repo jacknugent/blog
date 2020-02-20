@@ -56,7 +56,28 @@ exports.createPages = async ({ graphql, actions }) => {
 
   initial_rankings.sort((a, b) => b.elo - a.elo);
 
-  const resultsTemplate = path.resolve(`./src/templates/results.js`);
+  const resultsTemplate = path.resolve(
+    `./src/templates/youtube-mash/Results.js`
+  );
+
+  const individualVideoTemplate = path.resolve(
+    `./src/templates/youtube-mash/IndividualVideo.js`
+  );
+
+  initial_rankings.forEach((rank, i) => {
+    createPage({
+      // will be the url for the page
+      path: "/youtube-mash/video/" + (i + 1),
+      // specify the component template of your choice
+      component: slash(individualVideoTemplate),
+      // In the ^template's GraphQL query, 'id' will be available
+      // as a GraphQL variable to query for this posts's data.
+      context: {
+        videoId: rank.videoId,
+        totalVideos: initial_rankings.length
+      }
+    });
+  });
 
   createPage({
     // will be the url for the page

@@ -2,11 +2,11 @@
 import * as React from "react";
 
 // app imports
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
 import styled from "@emotion/styled";
-import Title from "../components/Helpers/YouTubeMash/Title";
-import MashFooter from "../components/Helpers/YouTubeMash/MashFooter";
+import Title from "../../components/Helpers/YouTubeMash/Title";
+import MashFooter from "../../components/Helpers/YouTubeMash/MashFooter";
 
 const PageContainer = styled.div`
   max-width: 800px;
