@@ -8,7 +8,6 @@ import uuidv4 from "uuid/v4";
 import { button, colors } from "../utils/css/themes";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { css } from "@emotion/core";
 import YouTubeEmbed from "../components/Helpers/YouTubeEmbed/YouTubeEmbed";
 import Title from "../components/Helpers/YouTubeMash/Title";
 import styled from "@emotion/styled";
@@ -52,7 +51,7 @@ const YoutubeMash = () => {
     padding: 0 1rem;
     text-align: center;
     @media (max-width: ${screenSize.tablet}) {
-      margin-top: 0.5rem;
+      margin-top: 0rem;
       margin-bottom: 0;
     }
   `;

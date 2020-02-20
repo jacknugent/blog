@@ -37,6 +37,7 @@ export const button = css`
 `;
 
 export const screenSize = {
+  smallMobile: "350px",
   mobile: "600px",
   tablet: "900px"
 };

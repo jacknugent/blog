@@ -7,23 +7,25 @@ import { screenSize, button } from "../../../utils/css/themes";
 const MashFooter = () => {
   const LinkContainer = styled.footer`
     display: flex;
-    margin-top: 1rem;
+    margin: 1rem auto 2rem auto;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     z-index: 3;
     bottom: 0;
     height: 100%;
     width: 100%;
-    margin-bottom: 2rem;
-
     @media (max-width: ${screenSize.mobile}) {
       justify-content: space-around;
+      flex-direction: column;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
     }
   `;
   const ViewResults = css`
-    margin: 0 2rem;
     @media (max-width: ${screenSize.mobile}) {
-      margin: 0;
+      margin: 0.25rem;
+      text-align: center;
+      padding: 0.375rem !important;
     }
   `;
 
@@ -42,6 +44,13 @@ const MashFooter = () => {
         to="/youtube-mash/results"
       >
         View Results
+      </Link>
+      <Link
+        activeClassName="active"
+        css={[ViewResults, button]}
+        to="/youtube-mash/search"
+      >
+        Search Videos
       </Link>
     </LinkContainer>
   );
