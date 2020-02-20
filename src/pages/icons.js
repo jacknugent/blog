@@ -34,13 +34,13 @@ const Icons = () => {
             <th>Publish Date</th>
           </tr>
           <tr>
-            <th colspan={"5"}>
+            <th colSpan={"5"}>
               <hr></hr>
             </th>
           </tr>
 
           {youtube_videos.map((video, i) => (
-            <tr>
+            <tr key={i}>
               <td>
                 <img src={image_icon} alt="[IMG]"></img>
               </td>
