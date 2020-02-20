@@ -46,14 +46,14 @@ const MashFooter = () => {
         css={[ViewResults, button]}
         to="/youtube-mash"
       >
-        Rate Videos
+        Video Battle
       </Link>
       <Link
         activeClassName="active"
         css={[ViewResults, button]}
         to="/youtube-mash/results"
       >
-        View Results
+        Results
       </Link>
       <Link
         activeClassName="active"

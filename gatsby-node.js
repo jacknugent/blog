@@ -74,6 +74,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // as a GraphQL variable to query for this posts's data.
       context: {
         videoId: rank.videoId,
+        rank: i + 1,
         totalVideos: initial_rankings.length
       }
     });

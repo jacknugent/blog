@@ -7,20 +7,50 @@ import Title from "../../components/Helpers/YouTubeMash/Title";
 import MashFooter from "../../components/Helpers/YouTubeMash/MashFooter";
 import YouTubeEmbed from "../../components/Helpers/YouTubeEmbed/YouTubeEmbed";
 import { graphql } from "gatsby";
+import styled from "@emotion/styled";
 
-const IndividualVideo = props => (
-  <Layout
-    header={<Title>Video Rankings</Title>}
-    footer={<MashFooter></MashFooter>}
-  >
-    <SEO title="Video Rankings" />
-    <YouTubeEmbed
-      id={props.data.youtubeVideo.videoId}
-      fluid_url={props.data.youtubeVideo.localThumbnail.childImageSharp.fluid}
-    ></YouTubeEmbed>
-    <h1>{props.data.youtubeVideo.title}</h1>
-  </Layout>
-);
+const VideoContainer = styled.div`
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem;
+`;
+const VideoTitle = styled.h1`
+  text-align: center;
+`;
+const VideoDescription = styled.p``;
+
+const Rank = styled.p`
+  text-align: center;
+`;
+const IndividualVideo = props => {
+  const description = props.data.youtubeVideo.description.match(/[^\n]+/g);
+
+  return (
+    <Layout
+      header={<Title>Video Rankings</Title>}
+      footer={<MashFooter></MashFooter>}
+    >
+      <SEO title="Video Rankings" />
+      <VideoContainer>
+        <YouTubeEmbed
+          id={props.data.youtubeVideo.videoId}
+          fluid_url={
+            props.data.youtubeVideo.localThumbnail.childImageSharp.fluid
+          }
+        ></YouTubeEmbed>
+        <VideoTitle>{props.data.youtubeVideo.title}</VideoTitle>
+        <VideoDescription>
+          {description.length > 1 &&
+            description[1].length > 55 &&
+            description[1]}
+        </VideoDescription>
+        <Rank>
+          Ranking: {props.pageContext.rank}/{props.pageContext.totalVideos}
+        </Rank>
+      </VideoContainer>
+    </Layout>
+  );
+};
 
 export default IndividualVideo;
 
@@ -29,6 +59,7 @@ export const pageQuery = graphql`
     youtubeVideo(videoId: { eq: $videoId }) {
       videoId
       title
+      description
       localThumbnail {
         childImageSharp {
           fluid(maxWidth: 800) {
