@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
       rankings => rankings.videoId === match.loser
     );
 
-    const k_factor = 24; // Federation factor
+    const k_factor = 32; // Rating for newcomers
     const winner_expected =
       1 / (1 + Math.pow(10, (loser.elo - winner.elo) / 400));
     const loser_expected =

@@ -44,14 +44,14 @@ const MashFooter = () => {
       <Link
         activeClassName="active"
         css={[ViewResults, button]}
-        to="/youtube-mash"
+        to="/youtube-mash/"
       >
         Video Battle
       </Link>
       <Link
         activeClassName="active"
         css={[ViewResults, button]}
-        to="/youtube-mash/results"
+        to="/youtube-mash/results/"
       >
         Results
       </Link>

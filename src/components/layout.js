@@ -57,7 +57,10 @@ const globalStyles = css`
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    font: 112.5%/1.45em georgia, serif;
+    font: 112.5%/1.45em "Montserrat", apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    text-rendering: optimizeLegibility;
     box-sizing: border-box;
     overflow-y: scroll;
     height: 100%;
@@ -112,7 +115,9 @@ const SiteContainer = styled.div`
   flex-direction: column;
 `;
 const Layout = props => {
-  const Body = styled.div`
+  // can't be styled.div
+  // or else whole site rerenders
+  const Body = css`
     padding: ${props.header ? "0;" : "5rem 0.5rem 0 0.5rem;"}
     flex-grow: 1;
     @media (max-width: 1300px) {
@@ -127,9 +132,9 @@ const Layout = props => {
     <SiteContainer>
       <Global styles={globalStyles} />
       {props.header ? props.header : <Header />}
-      <Body>
+      <div css={Body}>
         <main>{props.children}</main>
-      </Body>
+      </div>
       {props.footer ? props.footer : <Footer></Footer>}
     </SiteContainer>
   );
