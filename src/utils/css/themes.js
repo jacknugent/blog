@@ -28,7 +28,7 @@ export const button = css`
   }
   &.active {
     cursor: pointer;
-    color: white;
+    color: white !important;
     background-color: ${colors.blue} !important;
   }
   @media (max-width: 600px) {
