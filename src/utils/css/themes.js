@@ -21,11 +21,15 @@ export const button = css`
   border: 1px solid ${colors.blue};
   color: ${colors.blue};
   transition: background-color 0.25s, transform 0.25s;
-  &:hover,
-  &.active {
+  &:hover {
     cursor: pointer;
     color: white;
     background-color: ${colors.blue};
+  }
+  &.active {
+    cursor: pointer;
+    color: white;
+    background-color: ${colors.blue} !important;
   }
   @media (max-width: 600px) {
     padding: 0.75rem;

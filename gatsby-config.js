@@ -13,7 +13,7 @@ module.exports = {
     { resolve: `gatsby-plugin-emotion` },
     { resolve: `gatsby-transformer-sharp` },
     { resolve: `gatsby-plugin-sharp` },
-    { resolve: `gatsby-plugin-remove-trailing-slashes` },
+    { resolve: `gatsby-plugin-force-trailing-slashes` },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
