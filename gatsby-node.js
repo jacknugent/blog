@@ -82,7 +82,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   createPage({
     // will be the url for the page
-    path: "/youtube-mash/results",
+    path: "/youtube-mash/results/",
     // specify the component template of your choice
     component: slash(resultsTemplate),
     // In the ^template's GraphQL query, 'id' will be available
