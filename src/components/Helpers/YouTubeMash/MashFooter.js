@@ -17,13 +17,25 @@ const MashFooter = () => {
 
   const LinkContainer = styled.footer`
     display: flex;
-    margin: 1rem auto 2rem auto;
+    margin: auto;
     flex-wrap: wrap;
     justify-content: space-around;
     z-index: 3;
     bottom: 0;
     height: 100%;
     width: 100%;
+    position: sticky;
+    z-index: 3;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    padding: 1rem 0;
+    @media (max-width: 1300px) {
+      position: relative;
+      padding: 0;
+      margin: 2rem auto 1rem auto;
+    }
     @media (max-width: ${screenSize.mobile}) {
       justify-content: space-around;
       flex-direction: column;
