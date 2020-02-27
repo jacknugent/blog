@@ -10,7 +10,7 @@ import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 
 const VideoContainer = styled.div`
-  max-width: 1000px;
+  max-width: 900px;
   margin: auto;
   padding: 1rem;
 `;
