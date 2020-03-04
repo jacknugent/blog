@@ -27,10 +27,10 @@ const IndividualVideo = props => {
 
   return (
     <Layout
-      header={<Title>Video Rankings</Title>}
+      header={<Title>Random Video</Title>}
       footer={<MashFooter></MashFooter>}
     >
-      <SEO title="Video Rankings" />
+      <SEO title="Random Video" />
       <VideoContainer>
         <YouTubeEmbed
           id={props.data.youtubeVideo.videoId}

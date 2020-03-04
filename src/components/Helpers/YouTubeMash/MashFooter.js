@@ -74,6 +74,13 @@ const MashFooter = () => {
       >
         Random Video
       </Link>
+      <a
+        href="https://patreon.com/nowyouseeit"
+        target="__blank"
+        css={[ViewResults, button]}
+      >
+        Support Us
+      </a>
     </LinkContainer>
   );
 };
