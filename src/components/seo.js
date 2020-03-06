@@ -51,6 +51,7 @@ const SEO = props => {
       {logo && <meta name="image" content={imageLink} />}
       <meta property="og:title" content={props.title} />
       <meta property="og:type" content="article" />
+      <meta name="google-site-verification" content="NeZWBaavKcvpIapfD4Ur8BcIpdSfWABaIhnflR88V_4" />
       <meta property="og:description" content={metaDescription} />
       {logo && <meta property="og:image" content={imageLink} />}
       <meta name="twitter:card" content="summary_large_image" />
