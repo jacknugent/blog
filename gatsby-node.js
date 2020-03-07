@@ -67,7 +67,7 @@ exports.createPages = async ({ graphql, actions }) => {
   initial_rankings.forEach((rank, i) => {
     createPage({
       // will be the url for the page
-      path: "/youtube-mash/video/" + (i + 1),
+      path: "/youtube-mash/video/" + (i + 1) + "/",
       // specify the component template of your choice
       component: slash(individualVideoTemplate),
       // In the ^template's GraphQL query, 'id' will be available

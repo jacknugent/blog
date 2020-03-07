@@ -1,3 +1,9 @@
+- title: YouTube Mash
+  description: Built a website to judge my past YouTube videos. Written using DynamoDB, S3, Cloudfront, React, Gatsby, and Gitlab-CI.
+  site_source: https://www.jacknugent.io/youtube-mash
+  type: external
+  image: ../../media/images/projects/youtube-mash.jpg
+  date (MM/DD/YY): 3/07/20
 - title: See Kids Dream Website
   description: Rewrote a website using Gatsby and Headless WordPress. Currently showcased on offical GatsbyJS site.
   site_source: https://www.gatsbyjs.org/showcase/seekidsdream.org
