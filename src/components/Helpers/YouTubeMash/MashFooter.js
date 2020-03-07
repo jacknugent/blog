@@ -36,7 +36,7 @@ const MashFooter = () => {
       padding: 0;
       margin: 2rem auto 1rem auto;
     }
-    @media (max-width: ${screenSize.mobile}) {
+    @media (max-width: 700px) {
       justify-content: space-around;
       flex-direction: column;
       margin-top: 1.5rem;
@@ -44,7 +44,7 @@ const MashFooter = () => {
     }
   `;
   const ViewResults = css`
-    @media (max-width: ${screenSize.mobile}) {
+    @media (max-width: 700px) {
       margin: 0.25rem;
       text-align: center;
       padding: 0.375rem !important;
