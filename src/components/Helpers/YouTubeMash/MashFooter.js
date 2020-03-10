@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import { screenSize, button } from "../../../utils/css/themes";
+import { button } from "../../../utils/css/themes";
 
 const MashFooter = () => {
   const videoCount = useStaticQuery(graphql`

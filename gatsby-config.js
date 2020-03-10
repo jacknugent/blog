@@ -48,18 +48,18 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID
       }
     },
-    {
-      resolve: "gatsby-source-dynamodb",
-      options: {
-        typeName: "VideoRanking",
-        accessKeyId: process.env.GATSBY_DYNAMO_DB_ID,
-        secretAccessKey: process.env.GATSBY_DYNAMO_DB_KEY,
-        region: "us-east-1",
-        params: {
-          TableName: "nysi-votes"
-        }
-      }
-    },
+    // {
+    //   resolve: "gatsby-source-dynamodb",
+    //   options: {
+    //     typeName: "VideoRanking",
+    //     accessKeyId: process.env.GATSBY_DYNAMO_DB_ID,
+    //     secretAccessKey: process.env.GATSBY_DYNAMO_DB_KEY,
+    //     region: "us-east-1",
+    //     params: {
+    //       TableName: "nysi-votes"
+    //     }
+    //   }
+    // },
     { resolve: `gatsby-plugin-offline` },
     {
       resolve: "gatsby-plugin-robots-txt",
