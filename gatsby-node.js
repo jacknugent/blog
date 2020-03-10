@@ -6,8 +6,8 @@ var AWS = require("aws-sdk");
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const options = {
     typeName: "VideoRanking",
-    accessKeyId: "AKIAXNPENS2UH7FPTWW4",
-    secretAccessKey: "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",
+    accessKeyId: process.env.GATSBY_DYNAMO_DB_ID,
+    secretAccessKey: process.env.GATSBY_DYNAMO_DB_KEY,
     region: "us-east-1",
     params: { TableName: "nysi-votes-backedup" }
   };
@@ -52,7 +52,6 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
         });
 
         if (typeof data.LastEvaluatedKey != "undefined") {
-          console.log(data);
           options.params.ExclusiveStartKey = data.LastEvaluatedKey;
           docClient.scan(options.params, onScan);
         } else {
