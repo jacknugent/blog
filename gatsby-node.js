@@ -3,11 +3,15 @@ const slash = require(`slash`);
 
 var AWS = require("aws-sdk");
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const options = {
     typeName: "VideoRanking",
-    accessKeyId: "AKIAXNPENS2UH7FPTWW4",
-    secretAccessKey: "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",
+    accessKeyId: process.env.GATSBY_DYNAMO_DB_ID,
+    secretAccessKey: process.env.GATSBY_DYNAMO_DB_KEY,
     region: "us-east-1",
     params: { TableName: "nysi-votes-backedup" }
   };
