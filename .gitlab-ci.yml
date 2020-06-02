@@ -3,7 +3,7 @@ stages:
   - deploy
 
 build_staging:
-  image: node:lts
+  image: node:12.17.0
   stage: build
   script:
     - npm install
