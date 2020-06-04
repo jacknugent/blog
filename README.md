@@ -139,7 +139,7 @@ While deploying manually is useful at first, it is highly recommended to set up 
 
 The `.gitlab-ci.yml` file will be used to automate site deployments using GitLab-CI. This file define three build stages: `build`, `test`, and `deploy`. Three environments are also included: `staging`, `QA`, and `production`. The stages and environments can be tailored to your project's needs.
 
-1. In `.gitlab-ci.yml`, replace any instance of `<BUCKET_NAME>` with the appropriate name.
+1. In `.gitlab-ci.yml`, replace any instance of `<BUCKET_NAME>` with the appropriate name. 
 
 1. In AWS, [set up a new user](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users) with permission to write to S3 buckets. At the end, make sure to save the user's `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` somewhere safe. You will not be able to view these again.
 
