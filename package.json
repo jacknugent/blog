@@ -28,7 +28,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-dynamodb": "0.0.2",
     "gatsby-source-filesystem": "^2.3.10",
-    "gatsby-source-youtube": "^1.0.1",
+    "gatsby-source-youtube": "^2.5.1",
     "gatsby-transformer-remark": "^2.8.14",
     "gatsby-transformer-sharp": "^2.5.4",
     "gatsby-transformer-yaml": "^2.4.3",
